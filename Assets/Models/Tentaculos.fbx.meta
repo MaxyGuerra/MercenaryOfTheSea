@@ -1,12 +1,20 @@
 fileFormatVersion: 2
-<<<<<<< Updated upstream
-guid: d6e99249eb2116b42bcc6128a260462a
-=======
-guid: e597b3991d8c69f4ab65eb17244f3c80
->>>>>>> Stashed changes
+guid: 8aa337722e1e2d143902da8291201e79
 ModelImporter:
   serializedVersion: 19300
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      74: -5252816984213320552
+    second: idle
+  - first:
+      74: -2327328701932969061
+    second: Armature|ataque
+  - first:
+      74: -1978303741906493279
+    second: Armature|idle
+  - first:
+      74: 1880242847022165336
+    second: Armature|nada
   externalObjects: {}
   materials:
     materialImportMode: 1
