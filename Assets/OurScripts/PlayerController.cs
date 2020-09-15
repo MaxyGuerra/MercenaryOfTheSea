@@ -20,16 +20,24 @@ public class PlayerController : MonoBehaviour
     {
 
     }
+
+
+    private void OnDrawGizmos()
+    {
+        Gizmos.DrawLine(transform.position, transform.position + moveDirection * 10);
+
+    }
     void MoveShip()
     {
         float hMovement = Input.GetAxis("Horizontal");
         float vMovement = Input.GetAxis("Vertical");
 
-        moveDirection = Vector3.RotateTowards(transform.forward, new Vector3(hMovement, 0, vMovement), 1, 0);
+         moveDirection = Vector3.RotateTowards(transform.forward, new Vector3(hMovement,0 , 0), moveSpeed, 0);
+        //moveDirection += new Vector3(hMovement, 0, 0) * moveSpeed;
 
         transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(moveDirection), Time.fixedDeltaTime * rotationSpeed);
-
-        rb.velocity = transform.forward * moveSpeed;
+        //rb.velocity = transform.forward * moveSpeed * vMovement;
+        rb.velocity = transform.forward * moveSpeed * Mathf.Clamp(vMovement, 0, 1);
 
 
     }
