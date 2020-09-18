@@ -121,6 +121,54 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 23800000, guid: cab59edc4ce2cc4468139935f32fe96c, type: 2}
+--- !u!1 &139571674
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 139571675}
+  - component: {fileID: 139571676}
+  m_Layer: 10
+  m_Name: CannonC
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &139571675
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 139571674}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 1, z: 1.2}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 652515828}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &139571676
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 139571674}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a49ad305843f4b7459bec81f47d44338, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isShooting: 0
+  firePoint: {fileID: 139571675}
+  bulletC: {fileID: 6928173786690623534, guid: 509bdffdfc523fb49bd807b29801ee53, type: 3}
+  bulletSpeedC: 9
+  cadence: 3
 --- !u!1 &250207530
 GameObject:
   m_ObjectHideFlags: 0
@@ -194,7 +242,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 250207530}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0.05, y: 0, z: 1.302}
   m_LocalScale: {x: 5, y: 5, z: 5}
   m_Children: []
   m_Father: {fileID: 0}
@@ -245,7 +293,7 @@ PrefabInstance:
     - target: {fileID: -4216859302048453862, guid: 019c28bff02b95546ad17b66d003a17e,
         type: 3}
       propertyPath: m_RootOrder
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 019c28bff02b95546ad17b66d003a17e,
         type: 3}
@@ -281,6 +329,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Barco
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 019c28bff02b95546ad17b66d003a17e,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 019c28bff02b95546ad17b66d003a17e, type: 3}
@@ -356,8 +409,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 526253445}
-  m_LocalRotation: {x: 0.420748, y: 1e-45, z: -1e-45, w: 0.90717757}
-  m_LocalPosition: {x: 0, y: 13, z: -11}
+  m_LocalRotation: {x: 0.3924886, y: 0.000000038764853, z: -0.000000016542156, w: 0.9197569}
+  m_LocalPosition: {x: 0, y: 12, z: -11.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1222591049}
@@ -376,7 +429,7 @@ GameObject:
   - component: {fileID: 652515829}
   - component: {fileID: 652515830}
   - component: {fileID: 652515831}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -394,6 +447,7 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
+  - {fileID: 139571675}
   - {fileID: 435699316}
   m_Father: {fileID: 0}
   m_RootOrder: 4
@@ -425,7 +479,7 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 68
+  m_Constraints: 4
   m_CollisionDetection: 0
 --- !u!114 &652515831
 MonoBehaviour:
@@ -441,6 +495,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 5
   rotationSpeed: 1
+  cannonC: {fileID: 139571676}
 --- !u!1 &789861747
 GameObject:
   m_ObjectHideFlags: 0
@@ -519,8 +574,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 789861747}
-  m_LocalRotation: {x: 0.420748, y: 1e-45, z: -1e-45, w: 0.90717757}
-  m_LocalPosition: {x: 0, y: 13, z: -11}
+  m_LocalRotation: {x: 0.3924886, y: 0.000000038764853, z: -0.000000016542156, w: 0.9197569}
+  m_LocalPosition: {x: 0, y: 12, z: -11.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -710,7 +765,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_BindingMode: 5
-  m_FollowOffset: {x: 0, y: 13, z: -11}
+  m_FollowOffset: {x: 0, y: 12, z: -11.5}
   m_XDamping: 1
   m_YDamping: 0
   m_ZDamping: 1
@@ -778,7 +833,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1248167379
 MonoBehaviour:
   m_ObjectHideFlags: 0

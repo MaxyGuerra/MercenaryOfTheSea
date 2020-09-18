@@ -10,6 +10,8 @@ public class PlayerController : MonoBehaviour
     public float rotationSpeed = 1;
     private Vector3 moveDirection = Vector3.zero;
 
+    public PlayerShotController cannonC;
+
     private void Awake()
     {
         rb = GetComponent<Rigidbody>();
@@ -29,16 +31,15 @@ public class PlayerController : MonoBehaviour
     }
     void MoveShip()
     {
-        float hMovement = Input.GetAxis("Horizontal");
-        float vMovement = Input.GetAxis("Vertical");
+        float h = Input.GetAxis("Horizontal");
+        float v = Input.GetAxis("Vertical");
 
-         moveDirection = Vector3.RotateTowards(transform.forward, new Vector3(hMovement,0 , 0), moveSpeed, 0);
-        //moveDirection += new Vector3(hMovement, 0, 0) * moveSpeed;
+        moveDirection = Vector3.RotateTowards(transform.forward, new Vector3(h, 0, v), 1, 0);
 
         transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(moveDirection), Time.fixedDeltaTime * rotationSpeed);
-        //rb.velocity = transform.forward * moveSpeed * vMovement;
-        rb.velocity = transform.forward * moveSpeed * Mathf.Clamp(vMovement, 0, 1);
 
+        //  transform.rotation=Quaternion.LookRotation(moveDirection);
+        rb.velocity = transform.forward * moveSpeed * Mathf.Clamp(v, 0, 1);
 
     }
 
@@ -47,4 +48,20 @@ public class PlayerController : MonoBehaviour
     {
         MoveShip();
     }
+
+    void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.C))
+        {
+            cannonC.isShooting = true;
+        }
+
+        if (Input.GetKeyUp(KeyCode.C))
+        {
+          cannonC.isShooting = false;
+        }
+
+    }
 }
+
+
