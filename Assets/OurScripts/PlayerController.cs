@@ -18,6 +18,7 @@ public class PlayerController : MonoBehaviour
     {
         rb = GetComponent<Rigidbody>();
 
+        instance = this;
     }
     // Start is called before the first frame update
     void Start()
@@ -38,7 +39,7 @@ public class PlayerController : MonoBehaviour
 
         moveDirection = Vector3.RotateTowards(transform.forward, new Vector3(h, 0, v), 1, 0);
 
-        transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(moveDirection), Time.fixedDeltaTime * rotationSpeed);
+        transform.rotation = Quaternion.Euler(new Vector3(0, transform.eulerAngles.y + Input.GetAxis("Horizontal"), 0));
 
         //  transform.rotation=Quaternion.LookRotation(moveDirection);
         rb.velocity = transform.forward * moveSpeed * Mathf.Clamp(v, 0, 1);
