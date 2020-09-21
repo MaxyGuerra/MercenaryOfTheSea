@@ -11,7 +11,7 @@ public class PlayerShotController : MonoBehaviour
     public float bulletSpeedC = 3;
 
     public float cadence = 3;
-    private float shootCounterC;
+    private float counter;
     // Start is called before the first frame update
     void Start()
     {
@@ -21,15 +21,15 @@ public class PlayerShotController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        shootCounterC -= Time.deltaTime;
+        counter -= Time.deltaTime;
 
-        if (shootCounterC <= 0)
+        if (counter <= 0)
         {
 
             if (isShooting)
             {
 
-                shootCounterC = cadence;
+                counter = cadence;
 
                 BulletController newBullet = Instantiate(bulletC, firePoint.position, firePoint.rotation) as BulletController;
 
@@ -40,7 +40,7 @@ public class PlayerShotController : MonoBehaviour
             {
                 isShooting = false;
 
-                shootCounterC = 0;
+                counter = 0;
             }
 
         }
