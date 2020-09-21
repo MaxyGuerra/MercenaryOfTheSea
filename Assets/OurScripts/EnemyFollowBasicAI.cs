@@ -13,6 +13,10 @@ public class EnemyFollowBasicAI : MonoBehaviour
     public float AttackDistance = 8;
     [Header("Debug AI")]
     public float remainingDistance;
+
+    [Header("Attack Scripts")]
+    public EnemyShotController enemyShot;
+
     private void Awake()
     {
         navAgent = GetComponent<NavMeshAgent>();
@@ -31,10 +35,13 @@ public class EnemyFollowBasicAI : MonoBehaviour
             //player is dead?
             enemyState = EEnemyState.IDLE;
             return;
+
         }
 
 
         print("Attack! (corutine?");
+
+        enemyShot.canShoot = true;
     }
     void FollowPlayer()
     {

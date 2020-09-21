@@ -6,6 +6,8 @@ public class BulletController : MonoBehaviour
 {
     public float bulletSpeed = 1;
 
+    public float timeToDestroy = 3;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -17,6 +19,6 @@ public class BulletController : MonoBehaviour
     {
         transform.Translate(Vector3.forward * bulletSpeed * Time.deltaTime);
 
-        Destroy(gameObject, 4f);
+        Destroy(gameObject, timeToDestroy);
     }
 }

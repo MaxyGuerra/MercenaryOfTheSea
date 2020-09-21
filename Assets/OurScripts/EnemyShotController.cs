@@ -8,11 +8,12 @@ public class EnemyShotController : MonoBehaviour
     public Transform playerPosition;
     public float rotationSpeed = 1f;
 
-    [Header ("Shooting Settings")]
 
-    public bool isShooting = true;
+    [Header("Shooting Settings")]
+
+    public bool canShoot = false;
     public Transform firePoint;
-
+    public float shootingDistance = 8;
     public BulletController enemyBullet;
     public float enemyBulletSpeed = 1;
 
@@ -22,21 +23,26 @@ public class EnemyShotController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
-    void ShootingPlayer()
+    void Update()
     {
+    
         Vector3 direction = playerPosition.position - transform.position;
         Quaternion rotation = Quaternion.LookRotation(direction);
         transform.rotation = Quaternion.Lerp(transform.rotation, rotation, rotationSpeed * Time.deltaTime);
 
-        counter -= Time.deltaTime;
 
-        if (counter <= 0)
+        if (Vector3.Distance(transform.position, PlayerController.instance.transform.position) < shootingDistance) canShoot = true; 
+        else canShoot = false;
+
+        if (canShoot)
         {
 
-            if (isShooting)
+            counter -= Time.deltaTime;
+
+            if (counter <= 0)
             {
 
                 counter = cadence;
@@ -45,19 +51,7 @@ public class EnemyShotController : MonoBehaviour
 
                 newBullet.bulletSpeed = enemyBulletSpeed;
             }
-
-            else
-            {
-                isShooting = false;
-
-                counter = 0;
-            }
-
         }
-    }
-    // Update is called once per frame
-    void Update()
-    {
-        ShootingPlayer();
+        
     }
 }

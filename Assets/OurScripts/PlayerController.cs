@@ -10,6 +10,8 @@ public class PlayerController : MonoBehaviour
     public float rotationSpeed = 1;
     private Vector3 moveDirection = Vector3.zero;
 
+    public static PlayerController instance;
+
     public PlayerShotController cannonC;
 
     private void Awake()
