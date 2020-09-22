@@ -14,8 +14,11 @@ public class EnemyFollowBasicAI : MonoBehaviour
     [Header("Debug AI")]
     public float remainingDistance;
 
-    [Header("Attack Scripts")]
-    public EnemyShotController enemyShot;
+
+   // [Header("Attack Scripts")]
+
+   // public bool thisEnemyShoot = false;
+   // public EnemyShotController enemycannon;
 
     private void Awake()
     {
@@ -35,13 +38,11 @@ public class EnemyFollowBasicAI : MonoBehaviour
             //player is dead?
             enemyState = EEnemyState.IDLE;
             return;
-
         }
-
-
+      
         print("Attack! (corutine?");
 
-        enemyShot.canShoot = true;
+        //enemycannon.canShoot = true;
     }
     void FollowPlayer()
     {

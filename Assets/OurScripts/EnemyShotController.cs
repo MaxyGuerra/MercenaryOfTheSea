@@ -14,8 +14,11 @@ public class EnemyShotController : MonoBehaviour
     public bool canShoot = false;
     public Transform firePoint;
     public float shootingDistance = 8;
+    public float offset = 1;
     public BulletController enemyBullet;
     public float enemyBulletSpeed = 1;
+
+
 
     public float cadence = 3;
     private float counter;
@@ -28,8 +31,8 @@ public class EnemyShotController : MonoBehaviour
 
     void Update()
     {
-    
-        Vector3 direction = playerPosition.position - transform.position;
+
+        Vector3 direction = playerPosition.position - transform.position + new Vector3(0, offset, 0);
         Quaternion rotation = Quaternion.LookRotation(direction);
         transform.rotation = Quaternion.Lerp(transform.rotation, rotation, rotationSpeed * Time.deltaTime);
 
