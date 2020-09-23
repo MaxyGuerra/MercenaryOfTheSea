@@ -25,7 +25,6 @@ public class MeeleEnemyController : MonoBehaviour
              timeStalled -= Time.deltaTime;
 
 
-
             if(timeStalled >= 0)
             {
 

@@ -7,6 +7,7 @@ public enum EEnemyState { IDLE, PATROL, FOLLOW, ATTACK, RETREAT }
 
 public class EnemyFollowBasicAI : MonoBehaviour
 {
+    public int enemyHealth = 3;
     NavMeshAgent navAgent;
     public EEnemyState enemyState;
     public Transform Player;
@@ -25,10 +26,26 @@ public class EnemyFollowBasicAI : MonoBehaviour
         navAgent = GetComponent<NavMeshAgent>();
         remainingDistance = Mathf.Infinity;
     }
+   
     // Start is called before the first frame update
     void Start()
     {
 
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag("Bullet"))
+        {
+            enemyHealth -= BulletController.damage;
+
+            Destroy(other.gameObject);
+
+            if (enemyHealth <= 0)
+            {
+                Destroy(gameObject);
+            }
+        }
     }
 
     void Attack()

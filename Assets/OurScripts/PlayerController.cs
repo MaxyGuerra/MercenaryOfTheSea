@@ -4,11 +4,13 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    Rigidbody rb;
+
+    public int playerHealth = 10;
 
     public float moveSpeed = 1;
     public float rotationSpeed = 1;
     private Vector3 moveDirection = Vector3.zero;
+    Rigidbody rb;
 
     public static PlayerController instance;
 
@@ -32,6 +34,22 @@ public class PlayerController : MonoBehaviour
         Gizmos.DrawLine(transform.position, transform.position + moveDirection * 10);
 
     }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag("EnemyBullet"))
+        {
+            playerHealth -= BulletController.damage;
+
+            Destroy(other.gameObject);
+
+            if(playerHealth <= 0)
+            {
+                playerHealth = 0;
+            }
+        }
+    }
+
     void MoveShip()
     {
         float h = Input.GetAxis("Horizontal");
