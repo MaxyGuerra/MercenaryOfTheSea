@@ -7,19 +7,21 @@ public enum EEnemyState { IDLE, PATROL, FOLLOW, ATTACK, RETREAT }
 
 public class EnemyFollowBasicAI : MonoBehaviour
 {
-    public int enemyHealth = 3;
+    
     NavMeshAgent navAgent;
     public EEnemyState enemyState;
+
+    public int enemyHealth = 3;
+
     public Transform Player;
     public float AttackDistance = 8;
     [Header("Debug AI")]
     public float remainingDistance;
+    
+    // [Header("Attack Scripts")]
 
-
-   // [Header("Attack Scripts")]
-
-   // public bool thisEnemyShoot = false;
-   // public EnemyShotController enemycannon;
+    // public bool thisEnemyShoot = false;
+    // public EnemyShotController enemycannon;
 
     private void Awake()
     {
