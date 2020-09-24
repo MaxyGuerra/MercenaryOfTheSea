@@ -15,7 +15,8 @@ public class PlayerController : MonoBehaviour
     public static PlayerController instance;
 
     public PlayerShotController cannonC;
-
+    public Joint joint;
+    public LineRenderer hookLine;
     private void Awake()
     {
         rb = GetComponent<Rigidbody>();
@@ -27,8 +28,31 @@ public class PlayerController : MonoBehaviour
     {
 
     }
+    private void OnEnable()
+    {
+        BossAIScript.OnBossDead += BossAIScript_OnBossDead;
+        hookLine.positionCount =0;
+    }
 
+   
 
+    private void OnDisable()
+    {
+        BossAIScript.OnBossDead -= BossAIScript_OnBossDead;
+
+    }
+    private void BossAIScript_OnBossDead(Transform BossTransform)
+    {
+        joint.connectedBody = BossTransform.GetComponentInChildren<Rigidbody>();
+
+    }
+    void DrawHookLine()
+    {
+        if (joint.connectedBody == null) return;
+        hookLine.positionCount = 2;
+        hookLine.SetPosition(0, transform.position);
+        hookLine.SetPosition(1, joint.connectedBody.position);
+    }
     private void OnDrawGizmos()
     {
         Gizmos.DrawLine(transform.position, transform.position + moveDirection * 10);
@@ -68,6 +92,7 @@ public class PlayerController : MonoBehaviour
     void FixedUpdate()
     {
         MoveShip();
+        DrawHookLine();
     }
 
     void Update()

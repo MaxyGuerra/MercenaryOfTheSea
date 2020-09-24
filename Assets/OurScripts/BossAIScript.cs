@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.AI;
 
 
-public enum BossState { IDLE,FOLLOW}
+public enum BossState { IDLE,FOLLOW,DEAD}
 public class BossAIScript : MonoBehaviour
 {
 
@@ -14,9 +14,10 @@ public class BossAIScript : MonoBehaviour
     public bool isFollowingPlayer = false;
 
     public int enemyHealth = 3;
-  
+    public BossState bossState;
 
-
+    public delegate void FBossDeadNotify(Transform BossTransform);
+    public static event FBossDeadNotify OnBossDead;
 
     private void Awake()
     {
@@ -30,6 +31,21 @@ public class BossAIScript : MonoBehaviour
         
     }
 
+    public void ApplyDamage(int Damage)
+    {
+        if (bossState == BossState.DEAD) return;
+        enemyHealth -= Damage;
+        if (enemyHealth <= 0)
+            SetDead();
+    }    
+
+    void SetDead()
+    {
+        bossState = BossState.DEAD;
+        navAgent.enabled = false;
+        GetComponent<Rigidbody>().isKinematic = false;
+        OnBossDead?.Invoke(transform);
+    }
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.CompareTag("Player"))
@@ -51,13 +67,30 @@ public class BossAIScript : MonoBehaviour
         remainingDistance = navAgent.remainingDistance;
     }
 
+    void Brain()
+    {
+        switch(bossState)
+        {
+            case BossState.IDLE:
 
+                break;
+            case BossState.FOLLOW:
+                if (isFollowingPlayer == true)
+                {
+                    FollowPlayer();
+                }
+                break;
+            case BossState.DEAD:
+
+                break;
+
+        }
+    }
     // Update is called once per frame
     void Update()
     {
-        if (isFollowingPlayer == true)
-        {
-            FollowPlayer();
-        }
+        if (Input.GetKeyDown(KeyCode.K)) ApplyDamage(31);
+        Brain();
+       
     }
 }
