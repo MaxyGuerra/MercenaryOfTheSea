@@ -13,7 +13,7 @@ public class BossAIScript : MonoBehaviour
     public Transform playerTarget;
     public bool isFollowingPlayer = false;
 
-    public int enemyHealth = 3;
+    public int bossHealth = 3;
     public BossState bossState;
 
     public delegate void FBossDeadNotify(Transform BossTransform);
@@ -31,13 +31,22 @@ public class BossAIScript : MonoBehaviour
         
     }
 
-    public void ApplyDamage(int Damage)
+    private void OnTriggerEnter(Collider other)
     {
-        if (bossState == BossState.DEAD) return;
-        enemyHealth -= Damage;
-        if (enemyHealth <= 0)
-            SetDead();
-    }    
+        if (other.gameObject.CompareTag("Harpoon"))
+        {
+            if (bossState == BossState.DEAD) return;
+
+            bossHealth -= BulletController.damage;
+
+            Destroy(other.gameObject);
+
+            if (bossHealth <= 0)
+            {
+                SetDead();
+            }
+        }
+    }
 
     void SetDead()
     {
@@ -46,16 +55,7 @@ public class BossAIScript : MonoBehaviour
         GetComponent<Rigidbody>().isKinematic = false;
         OnBossDead?.Invoke(transform);
     }
-    private void OnCollisionEnter(Collision collision)
-    {
-        if (collision.gameObject.CompareTag("Player"))
-        {
-            Debug.Log("I'm following you");
-
-            isFollowingPlayer = true;
-
-        }
-    }
+  
 
     void FollowPlayer()
     {
@@ -89,7 +89,6 @@ public class BossAIScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.K)) ApplyDamage(31);
         Brain();
        
     }

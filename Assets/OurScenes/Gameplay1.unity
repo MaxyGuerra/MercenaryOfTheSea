@@ -824,9 +824,9 @@ GameObject:
   - component: {fileID: 2999278768750223048}
   - component: {fileID: 2999278768750223049}
   - component: {fileID: 2999278768750223050}
+  - component: {fileID: 2999278768750223055}
   - component: {fileID: 2999278768750223051}
   - component: {fileID: 2999278768750223054}
-  - component: {fileID: 2999278768750223055}
   m_Layer: 0
   m_Name: BossForTesting
   m_TagString: Enemy
@@ -849,7 +849,7 @@ MonoBehaviour:
   remainingDistance: 0
   playerTarget: {fileID: 652515828}
   isFollowingPlayer: 0
-  enemyHealth: 3
+  bossHealth: 3
   bossState: 0
 --- !u!54 &2999278768750223055
 Rigidbody:
@@ -933,6 +933,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5022654792366418344, guid: 688e5b36eccf0314db25e9caec5a5257,
+        type: 3}
+      propertyPath: m_Name
+      value: Harpoon (CannonC)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 688e5b36eccf0314db25e9caec5a5257, type: 3}
