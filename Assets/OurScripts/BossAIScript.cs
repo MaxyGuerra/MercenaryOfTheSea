@@ -9,11 +9,12 @@ public class BossAIScript : MonoBehaviour
 {
 
     NavMeshAgent navAgent;
-    public float remainingDistance;
+    public float remainingDistance; 
+    public Transform playerTarget;
     public bool isFollowingPlayer = false;
 
     public int enemyHealth = 3;
-    public Transform playerTarget;
+  
 
 
 
@@ -36,6 +37,7 @@ public class BossAIScript : MonoBehaviour
             Debug.Log("I'm following you");
 
             isFollowingPlayer = true;
+
         }
     }
 
