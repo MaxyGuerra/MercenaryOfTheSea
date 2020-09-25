@@ -12,6 +12,7 @@ public class BossAIScript : MonoBehaviour
     public float remainingDistance; 
     public Transform playerTarget;
     public bool isFollowingPlayer = false;
+    public bool isDead = false;
 
     public int bossHealth = 3;
     public BossState bossState;
@@ -43,11 +44,20 @@ public class BossAIScript : MonoBehaviour
 
             if (bossHealth <= 0)
             {
-                SetDead();
+
+                isDead = true;
             }
         }
     }
 
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("Player") && (isDead == true))
+        {
+            SetDead();
+        }
+    }
     void SetDead()
     {
         bossState = BossState.DEAD;
