@@ -14,7 +14,7 @@ public class PlayerController : MonoBehaviour
 
     public static PlayerController instance;
 
-    public PlayerShotController cannonC;
+    public PlayerShotController _playerShotController;
     public Joint joint;
     public LineRenderer hookLine;
     private void Awake()
@@ -97,16 +97,31 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
+        // Harpoon Shot;
+
+        if (Input.GetKeyDown(KeyCode.F))
+        {
+            _playerShotController.isShootingHarpoon = true;
+        }
+
+        if (Input.GetKeyUp(KeyCode.F))
+        {
+          _playerShotController.isShootingHarpoon = false;
+        }
+
+        // Left Cannon Shot 
+
         if (Input.GetKeyDown(KeyCode.C))
         {
-            cannonC.isShooting = true;
+            _playerShotController.isShootingCannonC = true;
         }
 
-        if (Input.GetKeyUp(KeyCode.C))
+        if (Input.GetKeyUp(KeyCode.F))
         {
-          cannonC.isShooting = false;
+            _playerShotController.isShootingCannonC = false;
         }
 
+        //Right Cannon Shot
     }
 }
 

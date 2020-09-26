@@ -4,14 +4,24 @@ using UnityEngine;
 
 public class PlayerShotController : MonoBehaviour
 {
-    public bool isShooting = false;
-    public Transform firePoint;
-
-    public BulletController bulletC;
-    public float bulletSpeedC = 3;
-
     public float cadence = 3;
     private float counter;
+
+    [Header("Harpoon")]
+
+    public Transform harpoonFirePoint;
+    public bool isShootingHarpoon = false;
+    public BulletController harpoonF;
+    public float harpoonSpeedF = 3;
+
+
+    [Header("CannonLeft")]
+    public Transform cannonCFirePoint;
+    public bool isShootingCannonC = false;
+    public BulletController cannonC;
+    public float cannonCSpeed;
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -25,24 +35,43 @@ public class PlayerShotController : MonoBehaviour
 
         if (counter <= 0)
         {
+            // Harpoon Shoot
 
-            if (isShooting)
+            if (isShootingHarpoon)
             {
 
                 counter = cadence;
 
-                BulletController newBullet = Instantiate(bulletC, firePoint.position, firePoint.rotation) as BulletController;
+                BulletController newBullet = Instantiate(harpoonF, harpoonFirePoint.position, harpoonFirePoint.rotation) as BulletController;
 
-                newBullet.bulletSpeed = bulletSpeedC;
+                newBullet.bulletSpeed = harpoonSpeedF;
             }
 
             else
             {
-                isShooting = false;
+                isShootingHarpoon = false;
 
                 counter = 0;
             }
 
+            // Left Cannon Shoot
+
+            if (isShootingCannonC)
+            {
+                counter = cadence;
+
+                BulletController newBulletC = Instantiate(cannonC, cannonCFirePoint.position, cannonCFirePoint.rotation) as BulletController;
+            }
+
+            else
+            {
+                isShootingCannonC = false;
+
+                counter = 0;
+            }
+
+
+            //Right Cannon Shoot
         }
       
     }

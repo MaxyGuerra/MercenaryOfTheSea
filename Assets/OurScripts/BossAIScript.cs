@@ -44,20 +44,19 @@ public class BossAIScript : MonoBehaviour
 
             if (bossHealth <= 0)
             {
-
+                bossHealth = 0;
                 isDead = true;
             }
         }
-    }
 
-
-    private void OnCollisionEnter(Collision collision)
-    {
-        if (collision.gameObject.CompareTag("Player") && (isDead == true))
+        if (other.gameObject.CompareTag("Harpoon") && (isDead == true))
         {
             SetDead();
         }
     }
+
+
+ 
     void SetDead()
     {
         bossState = BossState.DEAD;
