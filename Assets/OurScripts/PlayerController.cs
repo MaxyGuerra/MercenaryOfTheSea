@@ -16,6 +16,7 @@ public class PlayerController : MonoBehaviour
 
     public HarpoonShotController harpoon;
     public CannonCController rightCannon;
+    public CannonVController leftCannon;
 
     public Joint joint;
     public LineRenderer hookLine;
@@ -118,12 +119,23 @@ public class PlayerController : MonoBehaviour
             rightCannon.isShootingCannonC = true;
         }
 
-        if (Input.GetKeyUp(KeyCode.F))
+        if (Input.GetKeyUp(KeyCode.C))
         {
             rightCannon.isShootingCannonC = false;
         }
 
         //Right Cannon Shot
+
+        if (Input.GetKeyDown(KeyCode.V))
+        {
+            leftCannon.isShootingCannonV = true;
+        }
+
+        if (Input.GetKeyUp(KeyCode.V))
+        {
+            leftCannon.isShootingCannonV = false;
+        }
+
     }
 }
 

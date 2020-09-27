@@ -5,11 +5,11 @@ using UnityEngine;
 public class CannonCController : MonoBehaviour
 {
     public float cadence = 3;
-    private float counter = 3;
+    private float counter;
 
     public Transform cannonCFirePoint;
     public bool isShootingCannonC = false;
-    public BulletController cannonC;
+    public BulletController cannonCBullet;
     public float CannonCBulletSpeed;
 
 
@@ -24,24 +24,25 @@ public class CannonCController : MonoBehaviour
     {
         counter -= Time.deltaTime;
 
-            // Left Cannon Shoot
+        if (counter <= 0)
+        {
+            if (isShootingCannonC)
+            {
+                counter = cadence;
+                BulletController newBullet = Instantiate(cannonCBullet, transform.position + Vector3.right * Time.deltaTime * -CannonCBulletSpeed, Quaternion.Euler(0, -90,0)) as BulletController;
 
-              if (isShootingCannonC)
-              {
-                  counter = cadence;
-                  //BulletController newBullet = Instantiate(cannonC, transform.position += Vector3.right * Time.deltaTime * -CannonCBulletSpeed) as BulletController;
+                newBullet.bulletSpeed = CannonCBulletSpeed;
+            }
 
-                 // newBullet.bulletSpeed = CannonCBulletSpeed;
+            else
+            {
+                isShootingCannonC = false;
+
+                counter = 0;
+            }
+
+
         }
-
-              else
-              {
-                  isShootingCannonC = false;
-
-                  counter = 0;
-              }
-   
-
     }
 }
 

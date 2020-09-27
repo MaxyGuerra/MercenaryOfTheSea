@@ -1,5 +1,54 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &785722706
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 785722708}
+  - component: {fileID: 785722707}
+  m_Layer: 0
+  m_Name: CannonC
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &785722708
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 785722706}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.8, y: 1, z: -0.3}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 5022654791803519366}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &785722707
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 785722706}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c1fcc7c310497774fbb00852d54e54f4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cadence: 3
+  cannonCFirePoint: {fileID: 785722708}
+  isShootingCannonC: 0
+  cannonCBullet: {fileID: 3583802880769398650, guid: 509bdffdfc523fb49bd807b29801ee53,
+    type: 3}
+  CannonCBulletSpeed: 10
 --- !u!1 &1181963254
 GameObject:
   m_ObjectHideFlags: 0
@@ -31,7 +80,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 5022654791803519366}
-  m_RootOrder: 4
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!54 &1181963257
 Rigidbody:
@@ -160,7 +209,7 @@ LineRenderer:
     generateLightingData: 0
   m_UseWorldSpace: 1
   m_Loop: 0
---- !u!1 &1711268398
+--- !u!1 &452520471439830103
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -168,28 +217,47 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 1711268399}
-  m_Layer: 10
-  m_Name: GameObject
+  - component: {fileID: 8097021712472472144}
+  - component: {fileID: 5022654792228952181}
+  m_Layer: 0
+  m_Name: CannonV
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &1711268399
+--- !u!4 &8097021712472472144
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1711268398}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.98, y: 0, z: 0}
+  m_GameObject: {fileID: 452520471439830103}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.8, y: 1, z: -0.3}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 5022654791803519366}
-  m_RootOrder: 5
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5022654792228952181
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 452520471439830103}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ce1b5d5b4119bce4abde2a29cf5fa969, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cadence: 3
+  cannonVFirePoint: {fileID: 8097021712472472144}
+  isShootingCannonV: 0
+  cannonVBullet: {fileID: 3583802880769398650, guid: 509bdffdfc523fb49bd807b29801ee53,
+    type: 3}
+  CannonVBulletSpeed: 10
 --- !u!1 &5022654791803519361
 GameObject:
   m_ObjectHideFlags: 0
@@ -222,10 +290,11 @@ Transform:
   m_Children:
   - {fileID: 5022654793746806560}
   - {fileID: 5022654792366418345}
+  - {fileID: 785722708}
+  - {fileID: 8097021712472472144}
   - {fileID: 5022654792219703574}
   - {fileID: 5022654792338415997}
   - {fileID: 1181963255}
-  - {fileID: 1711268399}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -273,7 +342,9 @@ MonoBehaviour:
   playerHealth: 10
   moveSpeed: 5
   rotationSpeed: 4
-  _playerShotController: {fileID: 0}
+  harpoon: {fileID: 1542687161}
+  rightCannon: {fileID: 785722707}
+  leftCannon: {fileID: 5022654792228952181}
   joint: {fileID: 1181963256}
   hookLine: {fileID: 1181963258}
 --- !u!1 &5022654791942933761
@@ -421,7 +492,7 @@ Transform:
   m_LocalScale: {x: 14, y: 14, z: 14}
   m_Children: []
   m_Father: {fileID: 5022654791803519366}
-  m_RootOrder: 3
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
 --- !u!33 &5022654792122518162
 MeshFilter:
@@ -499,7 +570,7 @@ Transform:
   m_Children:
   - {fileID: 5022654791942933764}
   m_Father: {fileID: 5022654791803519366}
-  m_RootOrder: 2
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &5022654792366418344
 GameObject:
@@ -510,6 +581,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5022654792366418345}
+  - component: {fileID: 1542687161}
   m_Layer: 10
   m_Name: Harpoon
   m_TagString: Untagged
@@ -531,6 +603,24 @@ Transform:
   m_Father: {fileID: 5022654791803519366}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1542687161
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5022654792366418344}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ad18dbc0d1f72742bb0f0b30837b667, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  harpoonFirePoint: {fileID: 5022654792366418345}
+  isShootingHarpoon: 0
+  harpoonF: {fileID: 3583802880769398650, guid: 509bdffdfc523fb49bd807b29801ee53,
+    type: 3}
+  harpoonSpeedF: 9
+  cadence: 3
 --- !u!1 &5022654793746806563
 GameObject:
   m_ObjectHideFlags: 0
