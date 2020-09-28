@@ -2,20 +2,21 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerShotController : MonoBehaviour
+public class HarpoonShotController : MonoBehaviour
 {
-    public bool isShooting = false;
-    public Transform firePoint;
-
-    public BulletController bulletC;
-    public float bulletSpeedC = 3;
+  
+    public Transform harpoonFirePoint;
+    public bool isShootingHarpoon = false;
+    public BulletController harpoonF;
+    public float harpoonSpeedF = 3;
 
     public float cadence = 3;
     private float counter;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
@@ -25,25 +26,24 @@ public class PlayerShotController : MonoBehaviour
 
         if (counter <= 0)
         {
+            // Harpoon Shoot
 
-            if (isShooting)
+            if (isShootingHarpoon)
             {
 
                 counter = cadence;
 
-                BulletController newBullet = Instantiate(bulletC, firePoint.position, firePoint.rotation) as BulletController;
+                BulletController newBullet = Instantiate(harpoonF, harpoonFirePoint.position, harpoonFirePoint.rotation) as BulletController;
 
-                newBullet.bulletSpeed = bulletSpeedC;
+                newBullet.bulletSpeed = harpoonSpeedF;
             }
 
             else
             {
-                isShooting = false;
+                isShootingHarpoon = false;
 
                 counter = 0;
             }
-
         }
-      
     }
 }

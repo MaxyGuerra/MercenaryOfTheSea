@@ -4,18 +4,21 @@ using UnityEngine;
 using UnityEngine.AI;
 
 
-public enum BossState { IDLE,FOLLOW}
+public enum BossState { IDLE,FOLLOW,DEAD}
 public class BossAIScript : MonoBehaviour
 {
 
     NavMeshAgent navAgent;
-    public float remainingDistance;
-    public bool isFollowingPlayer = false;
-
-    public int enemyHealth = 3;
+    public float remainingDistance; 
     public Transform playerTarget;
+    public bool isFollowingPlayer = false;
+    public bool isDead = false;
 
+    public int bossHealth = 3;
+    public BossState bossState;
 
+    public delegate void FBossDeadNotify(Transform BossTransform);
+    public static event FBossDeadNotify OnBossDead;
 
     private void Awake()
     {
@@ -29,15 +32,39 @@ public class BossAIScript : MonoBehaviour
         
     }
 
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider other)
     {
-        if (collision.gameObject.CompareTag("Player"))
+        if (other.gameObject.CompareTag("Harpoon"))
         {
-            Debug.Log("I'm following you");
+            if (bossState == BossState.DEAD) return;
 
-            isFollowingPlayer = true;
+            bossHealth -= BulletController.damage;
+
+            Destroy(other.gameObject);
+
+            if (bossHealth <= 0)
+            {
+                bossHealth = 0;
+                isDead = true;
+            }
+        }
+
+        if (other.gameObject.CompareTag("Harpoon") && (isDead == true))
+        {
+            SetDead();
         }
     }
+
+
+ 
+    void SetDead()
+    {
+        bossState = BossState.DEAD;
+        navAgent.enabled = false;
+        GetComponent<Rigidbody>().isKinematic = false;
+        OnBossDead?.Invoke(transform);
+    }
+  
 
     void FollowPlayer()
     {
@@ -49,13 +76,29 @@ public class BossAIScript : MonoBehaviour
         remainingDistance = navAgent.remainingDistance;
     }
 
+    void Brain()
+    {
+        switch(bossState)
+        {
+            case BossState.IDLE:
 
+                break;
+            case BossState.FOLLOW:
+                if (isFollowingPlayer == true)
+                {
+                    FollowPlayer();
+                }
+                break;
+            case BossState.DEAD:
+
+                break;
+
+        }
+    }
     // Update is called once per frame
     void Update()
     {
-        if (isFollowingPlayer == true)
-        {
-            FollowPlayer();
-        }
+        Brain();
+       
     }
 }

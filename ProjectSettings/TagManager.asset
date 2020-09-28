@@ -8,6 +8,8 @@ TagManager:
   - Bullet
   - EnemyBullet
   - Boss
+  - Harpoon
+  - Goal
   layers:
   - Default
   - TransparentFX
