@@ -10,7 +10,7 @@ public class EnemyFollowBasicAI : MonoBehaviour
     
     NavMeshAgent navAgent;
     public EEnemyState enemyState;
-
+    public HealthBar enemyHealthBar;
     public int enemyHealth = 3;
 
     public Transform Player;
@@ -32,7 +32,7 @@ public class EnemyFollowBasicAI : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        enemyHealthBar.SetMaxHealth(enemyHealth);
     }
 
     private void OnTriggerEnter(Collider other)
@@ -40,6 +40,10 @@ public class EnemyFollowBasicAI : MonoBehaviour
         if (other.gameObject.CompareTag("Bullet"))
         {
             enemyHealth -= BulletController.damage;
+
+            enemyHealthBar.SetHealth(enemyHealth);
+
+            GUIUtility.ExitGUI();
 
             Destroy(other.gameObject);
 
