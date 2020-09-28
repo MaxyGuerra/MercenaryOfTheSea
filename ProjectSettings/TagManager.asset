@@ -10,6 +10,7 @@ TagManager:
   - Boss
   - Harpoon
   - Goal
+  - Tentaculos
   layers:
   - Default
   - TransparentFX
