@@ -11,6 +11,7 @@ TagManager:
   - Harpoon
   - Goal
   - Tentaculos
+  - Obstacle
   layers:
   - Default
   - TransparentFX
