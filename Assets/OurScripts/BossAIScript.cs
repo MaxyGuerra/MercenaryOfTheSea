@@ -99,6 +99,7 @@ public class BossAIScript : MonoBehaviour
     void Update()
     {
         Brain();
-       
+
+        transform.LookAt(playerTarget);
     }
 }
