@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.UI;
 
 
 public enum BossState { IDLE,FOLLOW,DEAD}
@@ -12,13 +13,17 @@ public class BossAIScript : MonoBehaviour
     public float remainingDistance; 
     public Transform playerTarget;
     public bool isFollowingPlayer = false;
-    public bool isDead = false;
+    public delegate void FBossDeadNotify(Transform BossTransform);
+    public static event FBossDeadNotify OnBossDead;
 
+    [Header("Life settings")]
+    public bool isDead = false;
+    public GameObject healthBarSlider;
+    public HealthBar bossHealthBar;
     public int bossHealth = 3;
     public BossState bossState;
 
-    public delegate void FBossDeadNotify(Transform BossTransform);
-    public static event FBossDeadNotify OnBossDead;
+   
 
     private void Awake()
     {
@@ -29,7 +34,7 @@ public class BossAIScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        bossHealthBar.SetMaxHealth(bossHealth);
     }
 
     private void OnTriggerEnter(Collider other)
@@ -40,11 +45,16 @@ public class BossAIScript : MonoBehaviour
 
             bossHealth -= BulletController.damage;
 
+            bossHealthBar.SetHealth(bossHealth);
+
             Destroy(other.gameObject);
 
             if (bossHealth <= 0)
             {
+                healthBarSlider.SetActive(false);
+
                 bossHealth = 0;
+                
                 isDead = true;
             }
         }

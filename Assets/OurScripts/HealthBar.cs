@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class HealthBar : MonoBehaviour
 {
     public Slider _healthbar;
-    public EnemyFollowBasicAI enemyReference;
+ 
 
     // Start is called before the first frame update
     void Start()

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class HarpoonShotController : MonoBehaviour
 {
-  
+    Transform playerTransform;
     public Transform harpoonFirePoint;
     public bool isShootingHarpoon = false;
     public BulletController harpoonF;
@@ -13,6 +13,10 @@ public class HarpoonShotController : MonoBehaviour
     public float cadence = 3;
     private float counter;
 
+    void Awake()
+    {
+        playerTransform = transform.parent;
+    }
     // Start is called before the first frame update
     void Start()
     {
@@ -33,7 +37,7 @@ public class HarpoonShotController : MonoBehaviour
 
                 counter = cadence;
 
-                BulletController newBullet = Instantiate(harpoonF, harpoonFirePoint.position, harpoonFirePoint.rotation) as BulletController;
+                BulletController newBullet = Instantiate(harpoonF, harpoonFirePoint.position,playerTransform.rotation) as BulletController;
 
                 newBullet.bulletSpeed = harpoonSpeedF;
             }
