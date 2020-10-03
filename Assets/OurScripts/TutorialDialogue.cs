@@ -81,6 +81,11 @@ public class TutorialDialogue : MonoBehaviour
             BeginDialogue();
     }
 
+    private void OnTriggerExit(Collider other)
+    {
+        Destroy(gameObject);
+    }
+
     IEnumerator Type()
     {
         StartCoroutine(BlockButton());
