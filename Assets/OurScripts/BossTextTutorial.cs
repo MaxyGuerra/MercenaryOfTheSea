@@ -6,17 +6,42 @@ using TMPro;
 public class BossTextTutorial : MonoBehaviour
 {
     public TextMeshProUGUI textDisplay;
+    public PlayerController playerReference;
     public string[] sentences;
     private int index;
     public float typingSpeed;
 
     public float skipTime = 1f;
     bool bCanSkip;
+    [Header("Dialogue reaction")]
+
+    public bool dialogueIsPlaying;
+    private Coroutine typeCorutine;//variable que almacena la corutina
 
     void Start()
     {
 
     }
+
+    void BeginDialogue()
+    {
+
+        if (dialogueIsPlaying) return;
+        textDisplay.transform.parent.gameObject.SetActive(true);
+        dialogueIsPlaying = true;
+        typeCorutine = StartCoroutine(Type());//guardas la corutina en uan variable para detenerla despues
+        print(gameObject);
+
+
+    }
+
+    void EndDialogue()
+    {
+        textDisplay.text = " ";
+
+        textDisplay.transform.parent.gameObject.SetActive(false);
+    }
+
     IEnumerator Type()
     {
         StartCoroutine(BlockButton());
@@ -40,8 +65,7 @@ public class BossTextTutorial : MonoBehaviour
       
         if (other.gameObject.CompareTag("Boss"))
         {
-            Debug.Log("The boss is here");
-            StartCoroutine(Type());
+            BeginDialogue();
         }
     }
     private void Update()
@@ -61,8 +85,12 @@ public class BossTextTutorial : MonoBehaviour
         {
             index++;
             textDisplay.text = "";
+            typeCorutine = StartCoroutine(Type());
         }
 
-
+        else
+        {
+            EndDialogue();
+        }
     }
 }
