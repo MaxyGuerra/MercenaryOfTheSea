@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
+public enum EPlayerActions { NONE,PlayerMove,ShootingHarpoon,ShootingCannon}
 public class PlayerController : MonoBehaviour
 {
 
@@ -20,6 +22,10 @@ public class PlayerController : MonoBehaviour
 
     public Joint joint;
     public LineRenderer hookLine;
+
+
+    public delegate void FNotifyAction(EPlayerActions currentAction);
+    public static event FNotifyAction OnPlayerActionActivate;
     private void Awake()
     {
         rb = GetComponent<Rigidbody>();
@@ -64,7 +70,7 @@ public class PlayerController : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.CompareTag("Tentaculo"))
+        if (collision.gameObject.CompareTag("Tentaculos"))
         {
             playerHealth--;
         }
@@ -96,6 +102,8 @@ public class PlayerController : MonoBehaviour
 
         //  transform.rotation=Quaternion.LookRotation(moveDirection);
         rb.velocity = transform.forward * moveSpeed * Mathf.Clamp(v, 0, 1);
+        if(rb.velocity.magnitude >0.9f) OnPlayerActionActivate?.Invoke(EPlayerActions.PlayerMove);
+
 
     }
 
@@ -113,6 +121,7 @@ public class PlayerController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.F))
         {
            harpoon.isShootingHarpoon = true;
+            OnPlayerActionActivate?.Invoke(EPlayerActions.ShootingHarpoon);
         }
 
         if (Input.GetKeyUp(KeyCode.F))
@@ -125,6 +134,7 @@ public class PlayerController : MonoBehaviour
        if (Input.GetKeyDown(KeyCode.C))
         {
             rightCannon.isShootingCannonC = true;
+            OnPlayerActionActivate?.Invoke(EPlayerActions.ShootingCannon);
         }
 
         if (Input.GetKeyUp(KeyCode.C))
@@ -137,6 +147,7 @@ public class PlayerController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.V))
         {
             leftCannon.isShootingCannonV = true;
+            OnPlayerActionActivate?.Invoke(EPlayerActions.ShootingCannon);
         }
 
         if (Input.GetKeyUp(KeyCode.V))

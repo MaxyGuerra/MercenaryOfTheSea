@@ -343,6 +343,7 @@ MonoBehaviour:
   playerHealth: 10
   moveSpeed: 8
   rotationSpeed: 5
+  canMove: 0
   harpoon: {fileID: 1542687161}
   rightCannon: {fileID: 785722707}
   leftCannon: {fileID: 5022654792228952181}
