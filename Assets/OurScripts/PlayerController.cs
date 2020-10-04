@@ -14,17 +14,14 @@ public class PlayerController : MonoBehaviour
     private Vector3 moveDirection = Vector3.zero;
     Rigidbody rb;
 
-    public bool canMove = true;
-
-    [Header ("Gadget Settings")]
     public static PlayerController instance;
+
     public HarpoonShotController harpoon;
     public CannonCController rightCannon;
     public CannonVController leftCannon;
+
     public Joint joint;
     public LineRenderer hookLine;
-
-    
 
 
     public delegate void FNotifyAction(EPlayerActions currentAction);
@@ -113,12 +110,8 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        if(canMove == true)
-        {
-           MoveShip();
-           DrawHookLine();
-        }
-       
+        MoveShip();
+        DrawHookLine();
     }
 
     void Update()

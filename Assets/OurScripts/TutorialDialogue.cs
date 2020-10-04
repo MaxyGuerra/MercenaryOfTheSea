@@ -35,23 +35,19 @@ public class TutorialDialogue : MonoBehaviour
         
         if (dialogueIsPlaying) return;
         textDisplay.transform.parent.gameObject.SetActive(true);
-        playerReference.canMove = false;
-        typeCorutine = StartCoroutine(Type());//guardas la corutina en una variable para detenerla despues
+        dialogueIsPlaying = true;
+        typeCorutine = StartCoroutine(Type());//guardas la corutina en uan variable para detenerla despues
         print(gameObject);
-        playerReference.canMove = true;
 
 
     }
 
         void EndDialogue()
         {
-            
             textDisplay.text = " ";
 
-            textDisplay.transform.parent.gameObject.SetActive(false);
-    
+         textDisplay.transform.parent.gameObject.SetActive(false);
         }
-
     private void OnEnable()
     {
         PlayerController.OnPlayerActionActivate += PlayerController_OnPlayerActionActivate;
