@@ -40,6 +40,7 @@ public class BossTextTutorial : MonoBehaviour
       
         if (other.gameObject.CompareTag("Boss"))
         {
+            Debug.Log("The boss is here");
             StartCoroutine(Type());
         }
     }
