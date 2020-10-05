@@ -6,16 +6,19 @@ using TMPro;
 public class BossTextTutorial : MonoBehaviour
 {
     public TextMeshProUGUI textDisplay;
-    public PlayerController playerReference;
     public string[] sentences;
     private int index;
     public float typingSpeed;
 
     public float skipTime = 1f;
     bool bCanSkip;
+
+    public LineRenderer hookLineReference;
     [Header("Dialogue reaction")]
 
     public bool dialogueIsPlaying;
+    public GameObject newZone;
+    private int numberOfBossesInBase = 0;
     private Coroutine typeCorutine;//variable que almacena la corutina
 
     void Start()
@@ -65,9 +68,23 @@ public class BossTextTutorial : MonoBehaviour
       
         if (other.gameObject.CompareTag("Boss"))
         {
+
+            numberOfBossesInBase++;
+
             BeginDialogue();
+
+            Destroy(other.gameObject);
+            hookLineReference.gameObject.SetActive(false);
+
+            if (numberOfBossesInBase == 1)
+            {
+                Debug.Log("There are" + "" + numberOfBossesInBase + "" + "in base");
+                Destroy(newZone);
+            }
         }
     }
+  
+
     private void Update()
     {
 
@@ -91,6 +108,8 @@ public class BossTextTutorial : MonoBehaviour
         else
         {
             EndDialogue();
+
+            hookLineReference.gameObject.SetActive(true);
         }
     }
 }
