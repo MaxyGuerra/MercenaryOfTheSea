@@ -6,8 +6,10 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
 
-   void NextLevel()
+    public void NextScene()
     {
-        Debug.Log("Next Level");
+        Debug.Log("Next Scene");
+
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex+1);
     }
 }
