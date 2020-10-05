@@ -18,6 +18,7 @@ public class TutorialDialogue : MonoBehaviour
     public EPlayerActions endingAction;
     public bool useTriggerToBegin = true;
     public bool dialogueIsPlaying;
+
     private bool isWaitingForInput;
     private Coroutine typeCorutine;//variable que almacena la corutina
 
@@ -79,7 +80,10 @@ public class TutorialDialogue : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        Destroy(gameObject);
+        if (other.CompareTag("Player"))
+        {
+            Destroy(gameObject);
+        }
     }
 
     IEnumerator Type()
