@@ -1121,6 +1121,7 @@ MonoBehaviour:
   typingSpeed: 0
   skipTime: 2
   hookLineReference: {fileID: 1596009870}
+  playerPosition: {x: 0, y: 0, z: 0}
   dialogueIsPlaying: 0
   enemies: {fileID: 1674190630}
   newZone: {fileID: 702398027}
@@ -3773,17 +3774,17 @@ PrefabInstance:
     - target: {fileID: 5022654791942933764, guid: 688e5b36eccf0314db25e9caec5a5257,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.5591929
+      value: 0.5150381
       objectReference: {fileID: 0}
     - target: {fileID: 5022654791942933764, guid: 688e5b36eccf0314db25e9caec5a5257,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.8290376
+      value: 0.85716736
       objectReference: {fileID: 0}
     - target: {fileID: 5022654791942933764, guid: 688e5b36eccf0314db25e9caec5a5257,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
-      value: 68
+      value: 62
       objectReference: {fileID: 0}
     - target: {fileID: 5022654791942933764, guid: 688e5b36eccf0314db25e9caec5a5257,
         type: 3}
@@ -3943,7 +3944,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 702398027}
   m_LocalRotation: {x: -0, y: 0.36603338, z: -0, w: 0.9306018}
-  m_LocalPosition: {x: -39.932953, y: 9, z: -34.40327}
+  m_LocalPosition: {x: -39.932953, y: 10, z: -34.40327}
   m_LocalScale: {x: 51.764, y: 20, z: 5}
   m_Children: []
   m_Father: {fileID: 0}
@@ -4447,7 +4448,7 @@ PrefabInstance:
     - target: {fileID: 1318447879468420450, guid: ace93a7c0fefc4742b53eb2734f94a5d,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.6876715
+      value: 0.68767154
       objectReference: {fileID: 0}
     - target: {fileID: 1318447879468420450, guid: ace93a7c0fefc4742b53eb2734f94a5d,
         type: 3}
@@ -9687,7 +9688,7 @@ Light:
     serializedVersion: 2
     m_Bits: 4294967295
   m_RenderingLayerMask: 1
-  m_Lightmapping: 4
+  m_Lightmapping: 1
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1

@@ -15,6 +15,7 @@ public class BossTextTutorial : MonoBehaviour
     bool bCanSkip;
 
     public LineRenderer hookLineReference;
+    public Vector3 playerPosition;
     [Header("Dialogue reaction")]
 
     public bool dialogueIsPlaying;
@@ -76,6 +77,8 @@ public class BossTextTutorial : MonoBehaviour
 
             Destroy(other.gameObject);
             hookLineReference.gameObject.SetActive(false);
+            hookLineReference.SetPosition(0, transform.position);
+            hookLineReference.SetPosition(1, transform.position);
 
             if (numberOfBossesInBase == 1)
             {
