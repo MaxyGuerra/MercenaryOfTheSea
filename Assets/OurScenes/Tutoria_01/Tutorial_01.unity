@@ -6363,9 +6363,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textDisplay: {fileID: 913090475}
   winText: {fileID: 771198035}
-  sentences: []
+  sentences:
+  - Well done, Matey!
+  - We must find another monster
+  - Let's catch it!
   typingSpeed: 0
-  skipTime: 1
+  skipTime: 2
   hookLineReference: {fileID: 1596009870}
   playerPosition: {x: 0, y: 0, z: 0}
   dialogueIsPlaying: 0
