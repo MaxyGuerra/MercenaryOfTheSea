@@ -13,7 +13,7 @@ public class GameManager : MonoBehaviour
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex+1);
     }
 
-    void ReloadScene()
+    public void ReloadScene()
     {
         Debug.Log("Restart Actual Scene");
         Time.timeScale = 1;
@@ -21,7 +21,7 @@ public class GameManager : MonoBehaviour
 
     }
 
-    void QuitGame()
+    public void QuitGame()
     {
         Debug.Log("Quit!");
         Time.timeScale = 1;
