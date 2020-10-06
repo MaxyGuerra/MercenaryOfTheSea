@@ -6,6 +6,7 @@ public class CannonCController : MonoBehaviour
 {
     public float cadence = 3;
     private float counter;
+    public PlayerController playerReference;
 
     public Transform cannonCFirePoint;
     public bool isShootingCannonC = false;
@@ -29,7 +30,7 @@ public class CannonCController : MonoBehaviour
             if (isShootingCannonC)
             {
                 counter = cadence;
-                BulletController newBullet = Instantiate(cannonCBullet, transform.position + Vector3.right * Time.deltaTime * -CannonCBulletSpeed, Quaternion.Euler(0, -90,0)) as BulletController;
+                BulletController newBullet = Instantiate(cannonCBullet, transform.position + Vector3.right, playerReference.transform.rotation) as BulletController;
 
                 newBullet.bulletSpeed = CannonCBulletSpeed;
             }
