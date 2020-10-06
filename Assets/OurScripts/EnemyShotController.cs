@@ -18,6 +18,8 @@ public class EnemyShotController : MonoBehaviour
     public BulletController enemyBullet;
     public float enemyBulletSpeed = 1;
 
+    public AudioClip enemyShot;
+    AudioSource _audioSource;
 
 
     public float cadence = 3;
@@ -26,7 +28,12 @@ public class EnemyShotController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        _audioSource = GetComponent<AudioSource>();
+    }
 
+    public void PlayEnemySound()
+    {
+        _audioSource.Play();
     }
 
     void Update()
@@ -49,6 +56,8 @@ public class EnemyShotController : MonoBehaviour
             {
 
                 counter = cadence;
+
+                PlayEnemySound();
 
                 BulletController newBullet = Instantiate(enemyBullet, firePoint.position, firePoint.rotation) as BulletController;
 
