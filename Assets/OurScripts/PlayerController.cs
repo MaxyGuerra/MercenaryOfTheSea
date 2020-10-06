@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 
 public enum EPlayerActions { NONE,PlayerMove,ShootingHarpoon,ShootingCannon}
@@ -8,7 +9,9 @@ public class PlayerController : MonoBehaviour
 {
 
     public int playerHealth = 10;
-
+    public PlayerHealthBar playerHealthBar;
+    public CanvasGroup loseScreen;
+    //AudioClip playerDeath;
     public float moveSpeed = 1;
     public float rotationSpeed = 1;
     private Vector3 moveDirection = Vector3.zero;
@@ -42,6 +45,7 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         _audioSource = GetComponent<AudioSource>();
+        playerHealthBar.SetMaxHealth(playerHealth);
     }
     private void OnEnable()
     {
@@ -79,6 +83,16 @@ public class PlayerController : MonoBehaviour
         if (collision.gameObject.CompareTag("Tentaculos"))
         {
             playerHealth--;
+
+            playerHealthBar.SetHealth(playerHealth);
+
+            if (playerHealth <= 0)
+            {
+                playerHealth = 0;
+
+                PlayerIsDead();
+            }
+
         }
     }
 
@@ -88,13 +102,26 @@ public class PlayerController : MonoBehaviour
         {
             playerHealth -= BulletController.damage;
 
+            playerHealthBar.SetHealth(playerHealth);
+
             Destroy(other.gameObject);
 
             if(playerHealth <= 0)
             {
                 playerHealth = 0;
+
+                PlayerIsDead();
             }
         }
+    }
+
+    void PlayerIsDead()
+    {
+        //_audioSource.PlayOneShot(playerDeath);
+
+        loseScreen.gameObject.SetActive(true);
+
+        Time.timeScale = 0;
     }
 
     void MoveShip()
@@ -113,9 +140,9 @@ public class PlayerController : MonoBehaviour
 
     }
 
-    public void PlaySound()
+    public void PlaySoundShoot()
     {
-        _audioSource.Play();
+       _audioSource.PlayOneShot(shootSound);
     }
 
     // Update is called once per frame
@@ -131,7 +158,7 @@ public class PlayerController : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.F))
         {
-            PlaySound();
+            PlaySoundShoot();
             harpoon.isShootingHarpoon = true;
             OnPlayerActionActivate?.Invoke(EPlayerActions.ShootingHarpoon);
         }
@@ -145,7 +172,7 @@ public class PlayerController : MonoBehaviour
 
        if (Input.GetKeyDown(KeyCode.C))
         {
-            PlaySound();
+            PlaySoundShoot();
             rightCannon.isShootingCannonC = true;
             OnPlayerActionActivate?.Invoke(EPlayerActions.ShootingCannon);
         }
@@ -159,7 +186,7 @@ public class PlayerController : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.V))
         {
-            PlaySound();
+            PlaySoundShoot();
             leftCannon.isShootingCannonV = true;
             OnPlayerActionActivate?.Invoke(EPlayerActions.ShootingCannon);
         }
