@@ -1660,6 +1660,7 @@ GameObject:
   - component: {fileID: 1882553946}
   - component: {fileID: 1882553948}
   - component: {fileID: 1882553947}
+  - component: {fileID: 1882553949}
   m_Layer: 5
   m_Name: LosePanel
   m_TagString: Untagged
@@ -1724,6 +1725,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1882553945}
   m_CullTransparentMesh: 0
+--- !u!225 &1882553949
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1882553945}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &1902041104
 GameObject:
   m_ObjectHideFlags: 0
@@ -2537,6 +2550,11 @@ PrefabInstance:
       propertyPath: playerHealthBar
       value: 
       objectReference: {fileID: 2027481269}
+    - target: {fileID: 5022654791803519365, guid: 688e5b36eccf0314db25e9caec5a5257,
+        type: 3}
+      propertyPath: loseScreen
+      value: 
+      objectReference: {fileID: 1882553949}
     - target: {fileID: 5022654791803519366, guid: 688e5b36eccf0314db25e9caec5a5257,
         type: 3}
       propertyPath: m_LocalPosition.x
