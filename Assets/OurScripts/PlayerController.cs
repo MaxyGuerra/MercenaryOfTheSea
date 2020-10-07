@@ -113,6 +113,22 @@ public class PlayerController : MonoBehaviour
                 PlayerIsDead();
             }
         }
+
+        if (other.gameObject.CompareTag("BossBullet"))
+        {
+            playerHealth -= BulletController.bossDamage;
+
+            playerHealthBar.SetHealth(playerHealth);
+
+            Destroy(other.gameObject);
+
+            if (playerHealth <= 0)
+            {
+                playerHealth = 0;
+
+                PlayerIsDead();
+            }
+        }
     }
 
     void PlayerIsDead()

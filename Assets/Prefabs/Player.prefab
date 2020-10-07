@@ -29,7 +29,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 5022654791803519366}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &785722707
 MonoBehaviour:
@@ -44,6 +44,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cadence: 3
+  playerReference: {fileID: 0}
   cannonCFirePoint: {fileID: 785722708}
   isShootingCannonC: 0
   cannonCBullet: {fileID: 3583802880769398650, guid: 509bdffdfc523fb49bd807b29801ee53,
@@ -239,7 +240,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 5022654791803519366}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &5022654792228952181
 MonoBehaviour:
@@ -254,6 +255,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cadence: 3
+  playerReference: {fileID: 0}
   cannonVFirePoint: {fileID: 8097021712472472144}
   isShootingCannonV: 0
   cannonVBullet: {fileID: 3583802880769398650, guid: 509bdffdfc523fb49bd807b29801ee53,
@@ -291,8 +293,8 @@ Transform:
   m_Children:
   - {fileID: 5022654793746806560}
   - {fileID: 5022654792366418345}
-  - {fileID: 785722708}
   - {fileID: 8097021712472472144}
+  - {fileID: 785722708}
   - {fileID: 5022654792219703574}
   - {fileID: 5022654792338415997}
   - {fileID: 1181963255}
@@ -341,12 +343,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerHealth: 10
+  playerHealthBar: {fileID: 0}
+  loseScreen: {fileID: 0}
   moveSpeed: 8
   rotationSpeed: 5
-  canMove: 0
   harpoon: {fileID: 1542687161}
   rightCannon: {fileID: 785722707}
   leftCannon: {fileID: 5022654792228952181}
+  shootSound: {fileID: 0}
   joint: {fileID: 1181963256}
   hookLine: {fileID: 1181963258}
 --- !u!1 &5022654791942933761

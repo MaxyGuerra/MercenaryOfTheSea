@@ -8,7 +8,9 @@ public class BulletController : MonoBehaviour
 
     public float timeToDestroy = 3;
 
-    public static int damage = 1;
+    static public int damage = 1;
+
+    static public int bossDamage = 3;
 
     // Start is called before the first frame update
     void Start()

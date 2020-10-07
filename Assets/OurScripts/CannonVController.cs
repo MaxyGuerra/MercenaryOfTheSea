@@ -7,12 +7,13 @@ public class CannonVController : MonoBehaviour
 
     public float cadence = 3;
     private float counter;
+    public PlayerController playerReference;
 
     public Transform cannonVFirePoint;
     public bool isShootingCannonV= false;
     public BulletController cannonVBullet;
     public float CannonVBulletSpeed;
-
+    
 
     // Start is called before the first frame update
     void Start()
@@ -30,7 +31,7 @@ public class CannonVController : MonoBehaviour
             if (isShootingCannonV)
             {
                 counter = cadence;
-                BulletController newBullet = Instantiate(cannonVBullet, transform.position + Vector3.right * Time.deltaTime * -CannonVBulletSpeed, Quaternion.Euler(0, 90, 0)) as BulletController;
+                BulletController newBullet = Instantiate(cannonVBullet, transform.right, transform.rotation) as BulletController;
 
                 newBullet.bulletSpeed = CannonVBulletSpeed;
             }

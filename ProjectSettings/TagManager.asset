@@ -12,6 +12,7 @@ TagManager:
   - Goal
   - Tentaculos
   - Obstacle
+  - BossBullet
   layers:
   - Default
   - TransparentFX

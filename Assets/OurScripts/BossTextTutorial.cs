@@ -90,6 +90,7 @@ public class BossTextTutorial : MonoBehaviour
             else if(numberOfBossesInBase == 2)
             {
                 winText.gameObject.SetActive(true);
+                Time.timeScale = 0;
             }
    
         }

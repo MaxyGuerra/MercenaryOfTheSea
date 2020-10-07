@@ -18,7 +18,7 @@ public class BossAIScript : MonoBehaviour
 
     [Header("Life settings")]
     public bool isDead = false;
-    public GameObject healthBarSlider;
+    public GameObject healthBarCanvas;
     public HealthBar bossHealthBar;
     public int bossHealth = 3;
     public BossState bossState;
@@ -43,7 +43,7 @@ public class BossAIScript : MonoBehaviour
         {
             if (bossState == BossState.DEAD) return;
 
-            bossHealth -= BulletController.damage;
+            bossHealth--;
 
             bossHealthBar.SetHealth(bossHealth);
 
@@ -51,7 +51,7 @@ public class BossAIScript : MonoBehaviour
 
             if (bossHealth <= 0)
             {
-                healthBarSlider.SetActive(false);
+                healthBarCanvas.SetActive(false);
 
                 bossHealth = 0;
                 
