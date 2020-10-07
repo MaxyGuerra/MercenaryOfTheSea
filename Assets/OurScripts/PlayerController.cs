@@ -16,6 +16,7 @@ public class PlayerController : MonoBehaviour
     public float rotationSpeed = 1;
     private Vector3 moveDirection = Vector3.zero;
     Rigidbody rb;
+    public static bool canMove = true;
 
     public static PlayerController instance;
 
@@ -142,14 +143,15 @@ public class PlayerController : MonoBehaviour
 
     void MoveShip()
     {
-        float h = Input.GetAxis("Horizontal");
-        float v = Input.GetAxis("Vertical");
+        float h = (canMove ? Input.GetAxis("Horizontal"): 0);
+        float v = (canMove ? Input.GetAxis("Vertical") : 0);
 
         moveDirection = Vector3.RotateTowards(transform.forward, new Vector3(h, 0, v), 1, 0);
 
-        transform.rotation = Quaternion.Euler(new Vector3(0, transform.eulerAngles.y + Input.GetAxis("Horizontal"), 0));
+        transform.rotation = Quaternion.Euler(new Vector3(0, transform.eulerAngles.y + h, 0));
 
         //  transform.rotation=Quaternion.LookRotation(moveDirection);
+
         rb.velocity = transform.forward * moveSpeed * Mathf.Clamp(v, 0, 1);
         if(rb.velocity.magnitude >0.9f) OnPlayerActionActivate?.Invoke(EPlayerActions.PlayerMove);
 

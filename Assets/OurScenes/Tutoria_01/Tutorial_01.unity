@@ -225,6 +225,12 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!1 &22516946 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3994752416294071989, guid: dc805ebdab0769e4094dec8ed0697779,
+    type: 3}
+  m_PrefabInstance: {fileID: 510213801}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &26018829
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1911,6 +1917,26 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 853412705}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &314492958 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1181963254, guid: 688e5b36eccf0314db25e9caec5a5257,
+    type: 3}
+  m_PrefabInstance: {fileID: 685897083}
+  m_PrefabAsset: {fileID: 0}
+--- !u!138 &314492961
+FixedJoint:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 314492958}
+  m_ConnectedBody: {fileID: 0}
+  m_BreakForce: Infinity
+  m_BreakTorque: Infinity
+  m_EnableCollision: 0
+  m_EnablePreprocessing: 1
+  m_MassScale: 1
+  m_ConnectedMassScale: 1
 --- !u!1001 &323145354
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2599,18 +2625,12 @@ MonoBehaviour:
     type: 3}
   m_PrefabInstance: {fileID: 510213801}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 510213803}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4164dbe8158fdf94583e6458045a987f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1 &510213803 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3994752415321781140, guid: dc805ebdab0769e4094dec8ed0697779,
-    type: 3}
-  m_PrefabInstance: {fileID: 510213801}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &524068555 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5212237561698773063, guid: e1311d0a5bbdb8f4f87f6cc35c073457,
@@ -3114,7 +3134,7 @@ MonoBehaviour:
   playerTarget: {fileID: 1420203457}
   isFollowingPlayer: 0
   isDead: 0
-  healthBarSlider: {fileID: 1904330490}
+  healthBarCanvas: {fileID: 1035299505}
   bossHealthBar: {fileID: 1904330489}
   bossHealth: 3
   bossState: 0
@@ -3213,7 +3233,7 @@ MonoBehaviour:
   playerTarget: {fileID: 1420203457}
   isFollowingPlayer: 0
   isDead: 0
-  healthBarSlider: {fileID: 1453568367}
+  healthBarCanvas: {fileID: 1467278059}
   bossHealthBar: {fileID: 1453568368}
   bossHealth: 3
   bossState: 0
@@ -3590,7 +3610,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 785722707, guid: 688e5b36eccf0314db25e9caec5a5257, type: 3}
       propertyPath: CannonCBulletSpeed
-      value: 30
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 785722707, guid: 688e5b36eccf0314db25e9caec5a5257, type: 3}
       propertyPath: cadence
@@ -3612,6 +3632,14 @@ PrefabInstance:
     - target: {fileID: 1181963255, guid: 688e5b36eccf0314db25e9caec5a5257, type: 3}
       propertyPath: m_LocalPosition.y
       value: -2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1181963256, guid: 688e5b36eccf0314db25e9caec5a5257, type: 3}
+      propertyPath: m_EnableCollision
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1181963256, guid: 688e5b36eccf0314db25e9caec5a5257, type: 3}
+      propertyPath: m_ConnectedMassScale
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 1181963257, guid: 688e5b36eccf0314db25e9caec5a5257, type: 3}
       propertyPath: m_Constraints
@@ -3640,11 +3668,21 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 5022654791803519364, guid: 688e5b36eccf0314db25e9caec5a5257,
+        type: 3}
+      propertyPath: m_Constraints
+      value: 116
+      objectReference: {fileID: 0}
     - target: {fileID: 5022654791803519365, guid: 688e5b36eccf0314db25e9caec5a5257,
         type: 3}
       propertyPath: moveSpeed
-      value: 12
+      value: 14
       objectReference: {fileID: 0}
+    - target: {fileID: 5022654791803519365, guid: 688e5b36eccf0314db25e9caec5a5257,
+        type: 3}
+      propertyPath: joint
+      value: 
+      objectReference: {fileID: 314492961}
     - target: {fileID: 5022654791803519366, guid: 688e5b36eccf0314db25e9caec5a5257,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3758,7 +3796,7 @@ PrefabInstance:
     - target: {fileID: 5022654792228952181, guid: 688e5b36eccf0314db25e9caec5a5257,
         type: 3}
       propertyPath: CannonVBulletSpeed
-      value: 30
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 5022654792228952181, guid: 688e5b36eccf0314db25e9caec5a5257,
         type: 3}
@@ -3801,7 +3839,8 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 10
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1181963256, guid: 688e5b36eccf0314db25e9caec5a5257, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 688e5b36eccf0314db25e9caec5a5257, type: 3}
 --- !u!4 &685897084 stripped
 Transform:
@@ -3826,7 +3865,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!65 &702398028
 BoxCollider:
@@ -4568,7 +4607,7 @@ MonoBehaviour:
   playerTarget: {fileID: 1420203457}
   isFollowingPlayer: 0
   isDead: 0
-  healthBarSlider: {fileID: 510213803}
+  healthBarCanvas: {fileID: 22516946}
   bossHealthBar: {fileID: 510213802}
   bossHealth: 3
   bossState: 0
@@ -5041,6 +5080,12 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4201695064906606737, guid: d8ed0a026639aa9408ed8eafb5ef8281,
     type: 3}
   m_PrefabInstance: {fileID: 113750207}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1035299505 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3994752416294071989, guid: dc805ebdab0769e4094dec8ed0697779,
+    type: 3}
+  m_PrefabInstance: {fileID: 1904330488}
   m_PrefabAsset: {fileID: 0}
 --- !u!4 &1081887771 stripped
 Transform:
@@ -6931,19 +6976,13 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1429327659}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1453568367 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3994752415321781140, guid: dc805ebdab0769e4094dec8ed0697779,
-    type: 3}
-  m_PrefabInstance: {fileID: 572924190}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &1453568368 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3994752415321781143, guid: dc805ebdab0769e4094dec8ed0697779,
     type: 3}
   m_PrefabInstance: {fileID: 572924190}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1453568367}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4164dbe8158fdf94583e6458045a987f, type: 3}
@@ -7151,6 +7190,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2380932612f5a3e4cb25107a96145103, type: 3}
+--- !u!1 &1467278059 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3994752416294071989, guid: dc805ebdab0769e4094dec8ed0697779,
+    type: 3}
+  m_PrefabInstance: {fileID: 572924190}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1468346281
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9219,18 +9264,12 @@ MonoBehaviour:
     type: 3}
   m_PrefabInstance: {fileID: 1904330488}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1904330490}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4164dbe8158fdf94583e6458045a987f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1 &1904330490 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3994752415321781140, guid: dc805ebdab0769e4094dec8ed0697779,
-    type: 3}
-  m_PrefabInstance: {fileID: 1904330488}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1953456241
 PrefabInstance:
   m_ObjectHideFlags: 0
