@@ -56,6 +56,7 @@ public class BossCounterForWin : MonoBehaviour
 
                 thirdCatchIcon.gameObject.SetActive(true);
 
+                Time.timeScale = 0;
                 canvasWin.gameObject.SetActive(true);
             }
 
