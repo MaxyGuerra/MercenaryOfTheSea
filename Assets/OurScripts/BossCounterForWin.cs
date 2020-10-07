@@ -9,11 +9,14 @@ public class BossCounterForWin : MonoBehaviour
     public GameObject secondZone;
     //public GameObject thirdZone;
 
-    public GameObject enemiesFirstZone;
     public GameObject enemiesSecondZone;
+    public GameObject enemiesThirdZone;
     //public GameObject enemiesThirdZone;
     private int numberOfBossesInBase;
     public CanvasGroup canvasWin;
+    public GameObject firstCatchIcon;
+    public GameObject secondCatchIcon;
+    public GameObject thirdCatchIcon;
 
     // Start is called before the first frame update
     void Start()
@@ -33,7 +36,9 @@ public class BossCounterForWin : MonoBehaviour
             {
                 Debug.Log("There are" + " " + numberOfBossesInBase + " " + "Bosses" + " " + "in base");
                 Destroy(firstZone);
-                enemiesFirstZone.gameObject.SetActive(true);
+                enemiesSecondZone.gameObject.SetActive(true);
+                firstCatchIcon.gameObject.SetActive(true);
+
             }
 
             else if (numberOfBossesInBase == 2)
@@ -41,22 +46,20 @@ public class BossCounterForWin : MonoBehaviour
 
                 Debug.Log("There are" + " " + numberOfBossesInBase + " " + "Bosses" + " " + "in base");
                 Destroy(secondZone);
-                enemiesSecondZone.gameObject.SetActive(true);
+                enemiesThirdZone.gameObject.SetActive(true);
+                secondCatchIcon.gameObject.SetActive(true);
+            }
+
+            else if (numberOfBossesInBase == 3)
+            {
+                Debug.Log("There are" + " " + numberOfBossesInBase + " " + "Bosses" + " " + "in base");
+
+                thirdCatchIcon.gameObject.SetActive(true);
+
                 canvasWin.gameObject.SetActive(true);
             }
 
-            /*else if(numberOfBossesInBase == 3)
-            {
-                Debug.Log("There are" + " " + numberOfBossesInBase + " " + "Bosses" + " " + "in base");
-                Destroy(enemiesThirdZone);
-                enemiesThirdZone.gameObject.SetActive(true);
-            }*/
-
         }
     }
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+   
 }
