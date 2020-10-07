@@ -31,7 +31,7 @@ public class CannonVController : MonoBehaviour
             if (isShootingCannonV)
             {
                 counter = cadence;
-                BulletController newBullet = Instantiate(cannonVBullet, transform.right, transform.rotation) as BulletController;
+                BulletController newBullet = Instantiate(cannonVBullet, transform.position, transform.rotation * Quaternion.Euler(0, 90, 0)) as BulletController;
 
                 newBullet.bulletSpeed = CannonVBulletSpeed;
             }

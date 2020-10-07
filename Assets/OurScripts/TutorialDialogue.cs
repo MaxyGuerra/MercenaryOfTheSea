@@ -27,13 +27,13 @@ public class TutorialDialogue : MonoBehaviour
       
         if(!useTriggerToBegin)
         { BeginDialogue(); }
-
+      
 
     }
 
     void BeginDialogue()
     {
-        
+        PlayerController.canMove = false;
         if (dialogueIsPlaying) return;
         textDisplay.transform.parent.gameObject.SetActive(true);
         dialogueIsPlaying = true;
@@ -123,6 +123,11 @@ public class TutorialDialogue : MonoBehaviour
         if (index < sentences.Length - 1)
         {
             index++;
+            if(index == 2)
+            {
+                PlayerController.canMove = true;
+            }
+
             textDisplay.text = "";
             typeCorutine = StartCoroutine(Type());
         }
