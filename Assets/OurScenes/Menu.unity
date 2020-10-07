@@ -314,7 +314,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1119049183}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: UnityEngine.Behaviour, UnityEngine
         m_MethodName: set_enabled
         m_Mode: 6
@@ -896,20 +896,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1043170316}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1119049183
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1119049182}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 742274b9989300a4d997b81a17d941ac, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 25
-  puedeMoverse: 0
 --- !u!95 &1119049184
 Animator:
   serializedVersion: 3
@@ -923,7 +909,7 @@ Animator:
   m_Controller: {fileID: 9100000, guid: 7aec7e2836af4d74b9b7fc975306330e, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
-  m_ApplyRootMotion: 1
+  m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
