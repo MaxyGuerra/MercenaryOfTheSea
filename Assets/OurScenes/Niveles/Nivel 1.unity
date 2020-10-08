@@ -711,6 +711,41 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 117571315}
   m_PrefabAsset: {fileID: 0}
+--- !u!4 &117571317 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2765110415164562607, guid: 3d83b3bba3f2e6648b529b16a62bc459,
+    type: 3}
+  m_PrefabInstance: {fileID: 117571315}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &117571318 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3537395482756158397, guid: 3d83b3bba3f2e6648b529b16a62bc459,
+    type: 3}
+  m_PrefabInstance: {fileID: 117571315}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &117571319
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 117571318}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 44e984d492a45a847b3e9ccf494116c3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerPosition: {fileID: 388307587}
+  rotationSpeed: 1
+  canShoot: 1
+  firePoint: {fileID: 117571317}
+  shootingDistance: 8
+  offset: 1
+  enemyBullet: {fileID: 8591834648606094271, guid: 15bc92f54f94e1045aceadeb5aed63f4,
+    type: 3}
+  enemyBulletSpeed: 1
+  enemyShot: {fileID: 0}
+  cadence: 3
 --- !u!1 &126035102 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8110402519030480118, guid: 0f026f5d5207b0e4a9bc9e18afb52aa1,
@@ -5795,6 +5830,41 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1360930079}
   m_PrefabAsset: {fileID: 0}
+--- !u!4 &1360930081 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2765110415164562607, guid: 3d83b3bba3f2e6648b529b16a62bc459,
+    type: 3}
+  m_PrefabInstance: {fileID: 1360930079}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1360930082 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3537395482756158397, guid: 3d83b3bba3f2e6648b529b16a62bc459,
+    type: 3}
+  m_PrefabInstance: {fileID: 1360930079}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1360930083
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1360930082}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 44e984d492a45a847b3e9ccf494116c3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerPosition: {fileID: 388307587}
+  rotationSpeed: 1
+  canShoot: 1
+  firePoint: {fileID: 1360930081}
+  shootingDistance: 8
+  offset: 1
+  enemyBullet: {fileID: 8591834648606094271, guid: 15bc92f54f94e1045aceadeb5aed63f4,
+    type: 3}
+  enemyBulletSpeed: 1
+  enemyShot: {fileID: 0}
+  cadence: 3
 --- !u!1001 &1366644108
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6505,6 +6575,41 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1464386655}
   m_PrefabAsset: {fileID: 0}
+--- !u!4 &1464386657 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2765110415164562607, guid: 3d83b3bba3f2e6648b529b16a62bc459,
+    type: 3}
+  m_PrefabInstance: {fileID: 1464386655}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1464386658 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3537395482756158397, guid: 3d83b3bba3f2e6648b529b16a62bc459,
+    type: 3}
+  m_PrefabInstance: {fileID: 1464386655}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1464386659
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1464386658}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 44e984d492a45a847b3e9ccf494116c3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerPosition: {fileID: 388307587}
+  rotationSpeed: 1
+  canShoot: 1
+  firePoint: {fileID: 1464386657}
+  shootingDistance: 8
+  offset: 1
+  enemyBullet: {fileID: 8591834648606094271, guid: 15bc92f54f94e1045aceadeb5aed63f4,
+    type: 3}
+  enemyBulletSpeed: 1
+  enemyShot: {fileID: 0}
+  cadence: 3
 --- !u!4 &1480271957 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5022654791803519366, guid: 688e5b36eccf0314db25e9caec5a5257,
@@ -8337,6 +8442,41 @@ PrefabInstance:
 --- !u!4 &1898975067 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3939987611947415862, guid: 3d83b3bba3f2e6648b529b16a62bc459,
+    type: 3}
+  m_PrefabInstance: {fileID: 1898975066}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1898975068 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3537395482756158397, guid: 3d83b3bba3f2e6648b529b16a62bc459,
+    type: 3}
+  m_PrefabInstance: {fileID: 1898975066}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1898975069
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1898975068}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 44e984d492a45a847b3e9ccf494116c3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerPosition: {fileID: 388307587}
+  rotationSpeed: 1
+  canShoot: 1
+  firePoint: {fileID: 1898975070}
+  shootingDistance: 7
+  offset: 1
+  enemyBullet: {fileID: 8591834648606094271, guid: 15bc92f54f94e1045aceadeb5aed63f4,
+    type: 3}
+  enemyBulletSpeed: 1
+  enemyShot: {fileID: 0}
+  cadence: 3
+--- !u!4 &1898975070 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2765110415164562607, guid: 3d83b3bba3f2e6648b529b16a62bc459,
     type: 3}
   m_PrefabInstance: {fileID: 1898975066}
   m_PrefabAsset: {fileID: 0}
