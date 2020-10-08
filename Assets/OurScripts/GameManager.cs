@@ -16,6 +16,13 @@ public class GameManager : MonoBehaviour
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex+1);
     }
 
+    public void GoToInitialMenu()
+    {
+        Debug.Log("Next Scene");
+        Time.timeScale = 1;
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex -2);
+    }
+
     public void ReloadScene()
     {
         Debug.Log("Restart Actual Scene");
