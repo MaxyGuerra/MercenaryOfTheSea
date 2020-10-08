@@ -47,10 +47,12 @@ public class EnemyFollowBasicAI : MonoBehaviour
 
             Destroy(other.gameObject);
 
+            /*
             if (enemyHealth <= 0)
             {
                 Destroy(gameObject);
             }
+            */
         }
     }
 
@@ -120,6 +122,11 @@ public class EnemyFollowBasicAI : MonoBehaviour
     {
 
         AIBrain();
+
+        if (enemyHealth <= 0)
+        {
+            Destroy(gameObject);
+        }
     }
 }
 
