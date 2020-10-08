@@ -1852,7 +1852,7 @@ PrefabInstance:
         type: 3}
     - target: {fileID: 785722707, guid: 688e5b36eccf0314db25e9caec5a5257, type: 3}
       propertyPath: CannonCBulletSpeed
-      value: 50
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 785722707, guid: 688e5b36eccf0314db25e9caec5a5257, type: 3}
       propertyPath: cadence
@@ -1970,7 +1970,7 @@ PrefabInstance:
     - target: {fileID: 5022654792228952181, guid: 688e5b36eccf0314db25e9caec5a5257,
         type: 3}
       propertyPath: CannonVBulletSpeed
-      value: 50
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 5022654792228952181, guid: 688e5b36eccf0314db25e9caec5a5257,
         type: 3}
@@ -3803,7 +3803,7 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 412725566}
   m_PrefabAsset: {fileID: 0}
---- !u!82 &892160976
+--- !u!82 &892160977
 AudioSource:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -3911,7 +3911,7 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1073864158}
   m_PrefabAsset: {fileID: 0}
---- !u!82 &912654261
+--- !u!82 &912654262
 AudioSource:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -5453,7 +5453,7 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1325319109}
   m_PrefabAsset: {fileID: 0}
---- !u!82 &1242436824
+--- !u!82 &1242436825
 AudioSource:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
