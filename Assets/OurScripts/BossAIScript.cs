@@ -78,12 +78,14 @@ public class BossAIScript : MonoBehaviour
 
     void FollowPlayer()
     {
-        if (playerTarget ==null) return;
+        if (playerTarget == null) return;
+
 
         if (!navAgent.SetDestination(playerTarget.position)) return;
 
         if (!navAgent.hasPath) return;
         remainingDistance = navAgent.remainingDistance;
+
     }
 
     void Brain()
