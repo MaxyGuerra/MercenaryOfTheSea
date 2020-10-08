@@ -39,7 +39,7 @@ public class EnemyFollowBasicAI : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Bullet"))
         {
-            enemyHealth -= BulletController.damage;
+            enemyHealth--;
 
             enemyHealthBar.SetHealth(enemyHealth);
 
