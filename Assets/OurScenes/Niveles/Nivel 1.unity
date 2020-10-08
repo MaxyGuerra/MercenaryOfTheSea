@@ -8464,6 +8464,11 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3537395482756158397, guid: 3d83b3bba3f2e6648b529b16a62bc459,
+        type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     - target: {fileID: 3939987611947415856, guid: 3d83b3bba3f2e6648b529b16a62bc459,
         type: 3}
       propertyPath: Player
@@ -8589,7 +8594,7 @@ MonoBehaviour:
   enemyBullet: {fileID: 8591834648606094271, guid: 15bc92f54f94e1045aceadeb5aed63f4,
     type: 3}
   enemyBulletSpeed: 1
-  enemyShot: {fileID: 0}
+  enemyShot: {fileID: 8300000, guid: 6e25eeee21624e24b9857bf9abc6cca9, type: 3}
   cadence: 3
 --- !u!4 &1898975070 stripped
 Transform:
