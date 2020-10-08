@@ -252,7 +252,6 @@ MonoBehaviour:
   enemyBullet: {fileID: 8591834648606094271, guid: 15bc92f54f94e1045aceadeb5aed63f4,
     type: 3}
   enemyBulletSpeed: 8
-  enemyShot: {fileID: 8300000, guid: 6e25eeee21624e24b9857bf9abc6cca9, type: 3}
   cadence: 3
 --- !u!1001 &123221611
 PrefabInstance:
@@ -1648,6 +1647,16 @@ PrefabInstance:
       propertyPath: cam
       value: 
       objectReference: {fileID: 1568193251}
+    - target: {fileID: 6235469984458677577, guid: 3d83b3bba3f2e6648b529b16a62bc459,
+        type: 3}
+      propertyPath: firePoint
+      value: 
+      objectReference: {fileID: 1518907218}
+    - target: {fileID: 6235469984458677577, guid: 3d83b3bba3f2e6648b529b16a62bc459,
+        type: 3}
+      propertyPath: playerPosition
+      value: 
+      objectReference: {fileID: 1518907218}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3d83b3bba3f2e6648b529b16a62bc459, type: 3}
 --- !u!1 &1438602336
@@ -2007,12 +2016,12 @@ PrefabInstance:
     - target: {fileID: 3994752415836726654, guid: dc805ebdab0769e4094dec8ed0697779,
         type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3994752415836726654, guid: dc805ebdab0769e4094dec8ed0697779,
         type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3994752416294071989, guid: dc805ebdab0769e4094dec8ed0697779,
         type: 3}
@@ -2372,15 +2381,20 @@ PrefabInstance:
       propertyPath: m_Name
       value: Pulpo01
       objectReference: {fileID: 0}
-    - target: {fileID: 3994752415326573174, guid: 8bc7f9829a66a294fa272370c31e765a,
+    - target: {fileID: 3376928855754898135, guid: 8bc7f9829a66a294fa272370c31e765a,
         type: 3}
-      propertyPath: m_AnchorMax.x
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3994752415326573174, guid: 8bc7f9829a66a294fa272370c31e765a,
         type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3994752415326573174, guid: 8bc7f9829a66a294fa272370c31e765a,
+        type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3994752416991877553, guid: 8bc7f9829a66a294fa272370c31e765a,
         type: 3}
@@ -2598,6 +2612,11 @@ PrefabInstance:
       propertyPath: loseScreen
       value: 
       objectReference: {fileID: 1882553949}
+    - target: {fileID: 5022654791803519365, guid: 688e5b36eccf0314db25e9caec5a5257,
+        type: 3}
+      propertyPath: shootSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 73be499084551914dbb21ab98e948618, type: 3}
     - target: {fileID: 5022654791803519366, guid: 688e5b36eccf0314db25e9caec5a5257,
         type: 3}
       propertyPath: m_LocalPosition.x
