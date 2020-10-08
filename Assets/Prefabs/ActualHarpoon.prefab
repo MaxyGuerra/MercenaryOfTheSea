@@ -77,7 +77,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bulletSpeed: 1
-  timeToDestroy: 1.5
+  timeToDestroy: 1
 --- !u!1 &8448643784670038835
 GameObject:
   m_ObjectHideFlags: 0
