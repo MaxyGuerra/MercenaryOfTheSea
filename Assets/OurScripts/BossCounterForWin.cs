@@ -8,8 +8,7 @@ public class BossCounterForWin : MonoBehaviour
     public GameObject firstZone;
     public GameObject secondZone;
     //public GameObject thirdZone;
-    public GameObject roadToSecondZone;
-    public GameObject roadToThirdZone;
+
     public GameObject enemiesSecondZone;
     public GameObject enemiesThirdZone;
     //public GameObject enemiesThirdZone;
@@ -39,7 +38,6 @@ public class BossCounterForWin : MonoBehaviour
                 Destroy(firstZone);
                 enemiesSecondZone.gameObject.SetActive(true);
                 firstCatchIcon.gameObject.SetActive(true);
-                roadToSecondZone.gameObject.SetActive(true);
 
             }
 
@@ -50,7 +48,7 @@ public class BossCounterForWin : MonoBehaviour
                 Destroy(secondZone);
                 enemiesThirdZone.gameObject.SetActive(true);
                 secondCatchIcon.gameObject.SetActive(true);
-                roadToThirdZone.gameObject.SetActive(true);
+         
             }
 
             else if (numberOfBossesInBase == 3)
