@@ -6,6 +6,9 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
 
+    public bool canPause;
+    public CanvasGroup pausePanel;
+
     public void NextScene()
     {
         Debug.Log("Next Scene");
@@ -26,5 +29,29 @@ public class GameManager : MonoBehaviour
         Debug.Log("Quit!");
         Time.timeScale = 1;
         Application.Quit();
+    }
+
+    public void PauseGame()
+    {
+        if(canPause == true)
+        {
+            pausePanel.gameObject.SetActive(true);
+
+            Time.timeScale = 0;
+        }
+    }
+
+    public void ContinueGame()
+    {
+        pausePanel.gameObject.SetActive(false);
+        Time.timeScale = 1;
+    }
+
+   public void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            PauseGame();
+        }
     }
 }

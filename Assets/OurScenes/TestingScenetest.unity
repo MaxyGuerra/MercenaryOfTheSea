@@ -244,6 +244,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 210da4be9614e234d8b1d0e386e9b443, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  canPause: 1
+  pausePanel: {fileID: 1739125345}
 --- !u!4 &145525459
 Transform:
   m_ObjectHideFlags: 0
@@ -1603,6 +1605,12 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1669753998}
   m_PrefabAsset: {fileID: 0}
+--- !u!225 &1739125345 stripped
+CanvasGroup:
+  m_CorrespondingSourceObject: {fileID: 7101611290781602734, guid: 478e928115933924aba83336cd0e879a,
+    type: 3}
+  m_PrefabInstance: {fileID: 4309178287136968636}
+  m_PrefabAsset: {fileID: 0}
 --- !u!225 &1882553949 stripped
 CanvasGroup:
   m_CorrespondingSourceObject: {fileID: 4309178287404708321, guid: 478e928115933924aba83336cd0e879a,
@@ -2122,26 +2130,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1063896778352347192, guid: 478e928115933924aba83336cd0e879a,
-        type: 3}
-      propertyPath: m_Color.r
-      value: 0.23137255
-      objectReference: {fileID: 0}
-    - target: {fileID: 1063896778352347192, guid: 478e928115933924aba83336cd0e879a,
-        type: 3}
-      propertyPath: m_Color.g
-      value: 0.29411766
-      objectReference: {fileID: 0}
-    - target: {fileID: 1063896778352347192, guid: 478e928115933924aba83336cd0e879a,
-        type: 3}
-      propertyPath: m_Color.b
-      value: 0.29411766
-      objectReference: {fileID: 0}
-    - target: {fileID: 1063896778352347192, guid: 478e928115933924aba83336cd0e879a,
-        type: 3}
-      propertyPath: m_Color.a
-      value: 0.69411767
-      objectReference: {fileID: 0}
+    - target: {fileID: 642304759, guid: 478e928115933924aba83336cd0e879a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 145525458}
+    - target: {fileID: 896788537, guid: 478e928115933924aba83336cd0e879a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 145525458}
+    - target: {fileID: 1844592694, guid: 478e928115933924aba83336cd0e879a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 145525458}
     - target: {fileID: 4309178286313090563, guid: 478e928115933924aba83336cd0e879a,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
