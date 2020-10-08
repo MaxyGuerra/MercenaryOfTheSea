@@ -72,7 +72,7 @@ MonoBehaviour:
   enemyState: 0
   enemyHealthBar: {fileID: 134426239739822212}
   enemyHealth: 3
-  Player: {fileID: 0}
+  Player: {fileID: 5022654791803519366, guid: 688e5b36eccf0314db25e9caec5a5257, type: 3}
   AttackDistance: 8
   remainingDistance: 0
 --- !u!82 &7943057396234914839
