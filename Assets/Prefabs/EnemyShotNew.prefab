@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 1907214053775845689}
   - component: {fileID: 1907214053775845694}
   - component: {fileID: 4819137844507221017}
+  - component: {fileID: 6887942051903344455}
   m_Layer: 12
   m_Name: EnemyShotNew
   m_TagString: Enemy
@@ -172,6 +173,19 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!65 &6887942051903344455
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1907214053775845695}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.0070784, y: 5.214072, z: 7.234644}
+  m_Center: {x: 0.02419579, y: 2.432036, z: -0.37794876}
 --- !u!1 &2147432774374589363
 GameObject:
   m_ObjectHideFlags: 0
@@ -373,19 +387,6 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
---- !u!65 &1907214054197089417
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7590293828948280777}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.1, y: 0.35, z: 0.25}
-  m_Center: {x: 0, y: 0, z: 0.11}
 --- !u!1001 &1907214054301244608
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -480,12 +481,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a9f8d1f89b6b70a448609c5c1aaeaf0a, type: 3}
---- !u!1 &7590293828948280777 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: -927199367670048503, guid: a9f8d1f89b6b70a448609c5c1aaeaf0a,
-    type: 3}
-  m_PrefabInstance: {fileID: 1907214054301244608}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &6849268997932431322 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -4216859302048453862, guid: a9f8d1f89b6b70a448609c5c1aaeaf0a,
