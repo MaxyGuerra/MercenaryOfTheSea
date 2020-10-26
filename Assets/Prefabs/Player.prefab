@@ -350,7 +350,6 @@ MonoBehaviour:
   harpoon: {fileID: 1542687161}
   rightCannon: {fileID: 785722707}
   leftCannon: {fileID: 5022654792228952181}
-  shootSound: {fileID: 0}
   joint: {fileID: 1181963256}
   hookLine: {fileID: 1181963258}
 --- !u!1 &5022654791942933761
