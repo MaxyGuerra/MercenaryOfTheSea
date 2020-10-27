@@ -13,6 +13,9 @@ public class HarpoonShotController : MonoBehaviour
     public float cadence = 3;
     private float counter;
 
+    public AudioClip shootSound;
+    AudioSource _audioSource;
+
     void Awake()
     {
         playerTransform = transform.parent;
@@ -20,7 +23,12 @@ public class HarpoonShotController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        _audioSource = GetComponent<AudioSource>();
+    }
 
+    public void PlaySoundShoot()
+    {
+        _audioSource.PlayOneShot(shootSound);
     }
 
     // Update is called once per frame
@@ -40,6 +48,8 @@ public class HarpoonShotController : MonoBehaviour
                 BulletController newBullet = Instantiate(harpoonF, harpoonFirePoint.position,playerTransform.rotation) as BulletController;
 
                 newBullet.bulletSpeed = harpoonSpeedF;
+
+                PlaySoundShoot();
             }
 
             else

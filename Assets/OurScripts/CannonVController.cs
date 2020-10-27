@@ -13,13 +13,22 @@ public class CannonVController : MonoBehaviour
     public bool isShootingCannonV= false;
     public BulletController cannonVBullet;
     public float CannonVBulletSpeed;
-    
+
+    public AudioClip shootSound;
+    AudioSource _audioSource;
+
 
     // Start is called before the first frame update
     void Start()
     {
-
+        _audioSource = GetComponent<AudioSource>();
     }
+
+    public void PlaySoundShoot()
+    {
+        _audioSource.PlayOneShot(shootSound);
+    }
+
 
     // Update is called once per frame
     void Update()
@@ -34,6 +43,8 @@ public class CannonVController : MonoBehaviour
                 BulletController newBullet = Instantiate(cannonVBullet, transform.position, transform.rotation * Quaternion.Euler(0, 90, 0)) as BulletController;
 
                 newBullet.bulletSpeed = CannonVBulletSpeed;
+
+                PlaySoundShoot();
             }
 
             else

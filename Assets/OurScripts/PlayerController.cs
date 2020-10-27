@@ -26,9 +26,6 @@ public class PlayerController : MonoBehaviour
     public CannonCController rightCannon;
     public CannonVController leftCannon;
 
-    //public AudioClip shootSound;
-    //AudioSource _audioSource;
-
     [Header("Hook")]
     public Joint joint;
     public LineRenderer hookLine;
@@ -45,7 +42,6 @@ public class PlayerController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //_audioSource = GetComponent<AudioSource>();
         playerHealthBar.SetMaxHealth(playerHealth);
     }
     private void OnEnable()
@@ -158,12 +154,6 @@ public class PlayerController : MonoBehaviour
 
     }
 
-    //public void PlaySoundShoot()
-    //{
-      
-    //_audioSource.PlayOneShot(shootSound);
-    //}
-
     // Update is called once per frame
     void FixedUpdate()
     {
@@ -175,14 +165,13 @@ public class PlayerController : MonoBehaviour
     {
         // Harpoon Shot;
 
-        if (Input.GetKeyDown(KeyCode.F))
+        if (Input.GetKeyDown(KeyCode.Space))
         {
-          // PlaySoundShoot();
             harpoon.isShootingHarpoon = true;
             OnPlayerActionActivate?.Invoke(EPlayerActions.ShootingHarpoon);
         }
 
-        if (Input.GetKeyUp(KeyCode.F))
+        if (Input.GetKeyUp(KeyCode.Space))
         {
           harpoon.isShootingHarpoon = false;
         }
@@ -191,7 +180,7 @@ public class PlayerController : MonoBehaviour
 
        if (Input.GetKeyDown(KeyCode.C))
         {
-            //PlaySoundShoot();
+
             rightCannon.isShootingCannonC = true;
             OnPlayerActionActivate?.Invoke(EPlayerActions.ShootingCannon);
         }
@@ -205,7 +194,7 @@ public class PlayerController : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.V))
         {
-            //PlaySoundShoot();
+            
             leftCannon.isShootingCannonV = true;
             OnPlayerActionActivate?.Invoke(EPlayerActions.ShootingCannon);
         }
