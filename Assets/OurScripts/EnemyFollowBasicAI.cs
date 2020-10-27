@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.UI;
 
 public enum EEnemyState { IDLE, PATROL, FOLLOW, ATTACK, RETREAT }
 
@@ -43,16 +44,9 @@ public class EnemyFollowBasicAI : MonoBehaviour
 
             enemyHealthBar.SetHealth(enemyHealth);
 
-            GUIUtility.ExitGUI();
 
             Destroy(other.gameObject);
-
-            /*
-            if (enemyHealth <= 0)
-            {
-                Destroy(gameObject);
-            }
-            */
+            
         }
     }
 

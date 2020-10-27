@@ -43,13 +43,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c1fcc7c310497774fbb00852d54e54f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cadence: 3
-  playerReference: {fileID: 0}
+  cadence: 1
+  playerReference: {fileID: 5022654791803519365}
   cannonCFirePoint: {fileID: 785722708}
   isShootingCannonC: 0
-  cannonCBullet: {fileID: 3583802880769398650, guid: 509bdffdfc523fb49bd807b29801ee53,
+  cannonCBullet: {fileID: 5157009745987459819, guid: fe03163fea7db9f41b94061a68cb05d0,
     type: 3}
-  CannonCBulletSpeed: 10
+  CannonCBulletSpeed: 40
 --- !u!1 &1181963254
 GameObject:
   m_ObjectHideFlags: 0
@@ -254,13 +254,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce1b5d5b4119bce4abde2a29cf5fa969, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cadence: 3
-  playerReference: {fileID: 0}
+  cadence: 1
+  playerReference: {fileID: 5022654791803519365}
   cannonVFirePoint: {fileID: 8097021712472472144}
   isShootingCannonV: 0
-  cannonVBullet: {fileID: 3583802880769398650, guid: 509bdffdfc523fb49bd807b29801ee53,
+  cannonVBullet: {fileID: 5157009745987459819, guid: fe03163fea7db9f41b94061a68cb05d0,
     type: 3}
-  CannonVBulletSpeed: 10
+  CannonVBulletSpeed: 60
 --- !u!1 &5022654791803519361
 GameObject:
   m_ObjectHideFlags: 0
@@ -328,7 +328,7 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 84
+  m_Constraints: 116
   m_CollisionDetection: 0
 --- !u!114 &5022654791803519365
 MonoBehaviour:
@@ -364,6 +364,7 @@ GameObject:
   - component: {fileID: 5022654791942933767}
   - component: {fileID: 5022654791942933766}
   - component: {fileID: 5022654791942933765}
+  - component: {fileID: 1595784676}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -378,8 +379,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5022654791942933761}
-  m_LocalRotation: {x: 0.43051103, y: 0, z: 0, w: 0.9025853}
-  m_LocalPosition: {x: 0, y: 32, z: -14}
+  m_LocalRotation: {x: 0.56072503, y: -0.000000020148182, z: 0.000000013644398, w: 0.82800215}
+  m_LocalPosition: {x: 0, y: 44, z: -13}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 5022654792219703574}
@@ -467,6 +468,40 @@ MonoBehaviour:
   m_RequiresDepthTexture: 0
   m_RequiresColorTexture: 0
   m_Version: 2
+--- !u!114 &1595784676
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5022654791942933761}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 72ece51f2901e7445ab60da3685d6b5f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ShowDebugText: 0
+  m_ShowCameraFrustum: 1
+  m_IgnoreTimeScale: 0
+  m_WorldUpOverride: {fileID: 0}
+  m_UpdateMethod: 2
+  m_BlendUpdateMethod: 1
+  m_DefaultBlend:
+    m_Style: 1
+    m_Time: 2
+    m_CustomCurve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+  m_CustomBlends: {fileID: 0}
+  m_CameraCutEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_CameraActivatedEvent:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &5022654792122518188
 GameObject:
   m_ObjectHideFlags: 0
@@ -494,7 +529,7 @@ Transform:
   m_GameObject: {fileID: 5022654792122518188}
   m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0.2, z: 0}
-  m_LocalScale: {x: 14, y: 14, z: 14}
+  m_LocalScale: {x: 18, y: 18, z: 18}
   m_Children: []
   m_Father: {fileID: 5022654791803519366}
   m_RootOrder: 5
@@ -558,7 +593,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5022654792219703574}
   m_Layer: 0
-  m_Name: Camara
+  m_Name: OffsetEmpty
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -624,7 +659,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   harpoonFirePoint: {fileID: 5022654792366418345}
   isShootingHarpoon: 0
-  harpoonF: {fileID: 3583802880769398650, guid: 509bdffdfc523fb49bd807b29801ee53,
+  harpoonF: {fileID: 4194994142426213030, guid: 7c83472035081444bab555e468eeb00f,
     type: 3}
   harpoonSpeedF: 30
   cadence: 2
