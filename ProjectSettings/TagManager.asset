@@ -13,6 +13,8 @@ TagManager:
   - Tentaculos
   - Obstacle
   - BossBullet
+  - GameManager
+  - GameMaster
   layers:
   - Default
   - TransparentFX
