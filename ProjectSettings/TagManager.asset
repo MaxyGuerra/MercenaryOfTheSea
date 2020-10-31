@@ -15,6 +15,7 @@ TagManager:
   - BossBullet
   - GameManager
   - GameMaster
+  - AreaBoya
   layers:
   - Default
   - TransparentFX
