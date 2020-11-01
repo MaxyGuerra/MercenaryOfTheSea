@@ -519,7 +519,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 511158895}
-  m_LocalRotation: {x: 0.56072503, y: 0.000000020148187, z: -0.0000000136444, w: 0.82800215}
+  m_LocalRotation: {x: 0.56072503, y: 0.000000020148185, z: -0.0000000136443985, w: 0.82800215}
   m_LocalPosition: {x: 20, y: 44, z: -13}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -870,6 +870,7 @@ GameObject:
   - component: {fileID: 853274864}
   - component: {fileID: 853274863}
   - component: {fileID: 853274867}
+  - component: {fileID: 853274868}
   m_Layer: 0
   m_Name: CannonForTesting
   m_TagString: Untagged
@@ -966,14 +967,35 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf3b9c6693c6dc845a19b1304f4ebc5b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  firePoint: {fileID: 0}
+  firePoint: {fileID: 1413837491}
   canShoot: 0
-  cannonBall: {fileID: 0}
+  cannonBall: {fileID: 5157009745987459819, guid: fe03163fea7db9f41b94061a68cb05d0,
+    type: 3}
   cannonSpeed: 3
-  shootingPower: 0
+  shootingPower: 7
   cadence: 3
   rotationSpeed: 3
   mainCamara: {fileID: 259202024}
+--- !u!114 &853274868
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 853274862}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e16029e916963641b283d9397cad5a6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerHealth: 10
+  playerHealthBar: {fileID: 1155384363}
+  loseScreen: {fileID: 1882553949}
+  moveSpeed: 1
+  rotationSpeed: 1
+  cannon: {fileID: 853274867}
+  joint: {fileID: 1481767487}
+  hookLine: {fileID: 1481767486}
 --- !u!1 &902770486
 GameObject:
   m_ObjectHideFlags: 0
@@ -1737,6 +1759,18 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!120 &1481767486 stripped
+LineRenderer:
+  m_CorrespondingSourceObject: {fileID: 1181963258, guid: 688e5b36eccf0314db25e9caec5a5257,
+    type: 3}
+  m_PrefabInstance: {fileID: 5022654792228952178}
+  m_PrefabAsset: {fileID: 0}
+--- !u!138 &1481767487 stripped
+FixedJoint:
+  m_CorrespondingSourceObject: {fileID: 1181963256, guid: 688e5b36eccf0314db25e9caec5a5257,
+    type: 3}
+  m_PrefabInstance: {fileID: 5022654792228952178}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1518907218 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5022654793746806560, guid: 688e5b36eccf0314db25e9caec5a5257,
@@ -2742,12 +2776,12 @@ PrefabInstance:
     - target: {fileID: 5022654791942933764, guid: 688e5b36eccf0314db25e9caec5a5257,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.000000020148187
+      value: 0.000000020148185
       objectReference: {fileID: 0}
     - target: {fileID: 5022654791942933764, guid: 688e5b36eccf0314db25e9caec5a5257,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.0000000136444
+      value: -0.0000000136443985
       objectReference: {fileID: 0}
     - target: {fileID: 5022654792228952181, guid: 688e5b36eccf0314db25e9caec5a5257,
         type: 3}

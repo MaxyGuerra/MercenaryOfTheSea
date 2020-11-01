@@ -32,7 +32,6 @@ public class PlayerCannonController : MonoBehaviour
         Rigidbody _rb = BulletController.rb;
         _rb.velocity = shootingPower * firePoint.forward;
 
-            
     }
 
     // Update is called once per frame
@@ -58,7 +57,6 @@ public class PlayerCannonController : MonoBehaviour
             {
                 counter = cadence;
 
-                if (Input.GetMouseButton(0))
                 {
                     ShootCannonBall();
                 }
