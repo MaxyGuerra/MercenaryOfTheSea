@@ -165,6 +165,13 @@ public class PlayerController : MonoBehaviour
     {
         // Harpoon Shot;
 
+        if (Input.GetMouseButton(0))
+        {
+            
+        }
+
+       
+
         if (Input.GetKeyDown(KeyCode.Space))
         {
             harpoon.isShootingHarpoon = true;

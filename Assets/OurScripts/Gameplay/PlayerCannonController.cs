@@ -23,6 +23,16 @@ public class PlayerCannonController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        
+    }
+
+    void ShootCannonBall()
+    {
+        BulletController ammon = Instantiate(cannonBall, firePoint.position, Quaternion.identity);
+        Rigidbody _rb = BulletController.rb;
+        _rb.velocity = shootingPower * firePoint.forward;
+
+            
     }
 
     // Update is called once per frame
@@ -36,6 +46,31 @@ public class PlayerCannonController : MonoBehaviour
         {
             Vector3 pointToLook = cameraRay.GetPoint(rayLeght);
             Debug.DrawLine(cameraRay.origin, pointToLook, Color.blue);
+        }
+
+        counter -= Time.deltaTime;
+
+        if (counter <= 0)
+        {
+            // CannonShoot
+
+            if (canShoot)
+            {
+                counter = cadence;
+
+                if (Input.GetMouseButton(0))
+                {
+                    ShootCannonBall();
+                }
+
+            }
+
+            else
+            {
+                canShoot= false;
+
+                counter = 0;
+            }
         }
     }
 }

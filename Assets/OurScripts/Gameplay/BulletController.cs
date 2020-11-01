@@ -8,6 +8,10 @@ public class BulletController : MonoBehaviour
 
     public float timeToDestroy = 3;
 
+    public float timeToStartRB = 1;
+
+    static public Rigidbody rb;
+
     static public int damage = 1;
 
     static public int bossDamage = 3;
@@ -15,7 +19,7 @@ public class BulletController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        rb = GetComponent<Rigidbody>();
     }
 
     private void OnTriggerEnter(Collider other)
@@ -28,6 +32,13 @@ public class BulletController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        timeToStartRB -= Time.deltaTime;
+
+        if(timeToStartRB <= 0)
+        {
+            rb.useGravity = true;
+        }
+
         transform.Translate(Vector3.forward * bulletSpeed * Time.deltaTime);
 
         Destroy(gameObject, timeToDestroy);
