@@ -7,30 +7,54 @@ public class PlayerCannonController : MonoBehaviour
     Transform playerTransform;
     public Transform firePoint;
     public bool canShoot = false;
-    public BulletController cannonBall;
-    public float cannonSpeed = 3;
+    public Rigidbody cannonBallBullet;
+    
 
-    public float shootingPower;
 
     public float cadence = 3;
     private float counter;
 
-    [Header("Rotation Settings")]
-    public float rotationSpeed = 3;
-    public Camera mainCamara;
+    
+    //[Header("")]
+    
+    private Camera mainCamara;
+    public GameObject cursor; 
+    public LayerMask layer;
+    
    
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        mainCamara = Camera.main;
     }
 
     void ShootCannonBall()
     {
-        BulletController ammon = Instantiate(cannonBall, firePoint.position, Quaternion.identity);
-        Rigidbody _rb = BulletController.rb;
-        _rb.velocity = shootingPower * firePoint.forward;
+        
+
+    }
+
+    Vector3 CalculateVelocity(Vector3 target, Vector3 origin, float timeInAir)
+    {
+        Vector3 distance = target - origin;
+        Vector3 distanceXZ = distance;
+        distanceXZ.y = 0f;
+
+        //Float to represent distance  
+
+        float heightY = distance.y;
+        float heightXZ = distanceXZ.magnitude;
+
+        float Vxz = heightXZ / timeInAir;
+        float Vy = heightXZ / timeInAir + 0.5f * Mathf.Abs(Physics.gravity.y) * timeInAir;
+
+
+        Vector3 result = distanceXZ.normalized;
+        result *= Vxz;
+        result.y = Vy; 
+
+        return result;
 
     }
 
