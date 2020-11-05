@@ -12,6 +12,7 @@ public class NewPlayerController : MonoBehaviour
     public float moveSpeed = 1;
     public float rotationSpeed = 1;
     private Vector3 moveDirection = Vector3.zero;
+
     Rigidbody rb;
     public static bool canMove = true;
 
@@ -67,7 +68,7 @@ public class NewPlayerController : MonoBehaviour
     private void OnDrawGizmos()
     {
         Gizmos.DrawLine(transform.position, transform.position + moveDirection * 10);
-        Gizmos.DrawWireSphere(debugMousePosition, .5f);
+        Gizmos.color = Color.red; 
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -148,39 +149,36 @@ public class NewPlayerController : MonoBehaviour
 
 
     }
-    public Vector3 debugMousePositionWorld;
-    public Vector2 debugMousePosition;
-    void UpdateCannonRotation()
-    {
-        debugMousePosition= Input.mousePosition;
-      Vector3 mouseWorldPosition=   Camera.main.ScreenToWorldPoint(Input.mousePosition);
-
-        //  mouseWorldPosition.y=cannon.transform.position.y;
-        debugMousePositionWorld = mouseWorldPosition;
-        cannon.transform.LookAt(mouseWorldPosition );
-    }
+  
+   
     // Update is called once per frame
     void FixedUpdate()
     {
         MoveShip();
         DrawHookLine();
+        if (Input.GetButton("Fire1"))
+        {
+
+            cannon.HoldCannonPower();
+        }
+
+        cannon.UpdateCannon();
     }
 
     void Update()
     {
         // Harpoon Shot;
-        UpdateCannonRotation();
-        if (Input.GetMouseButtonDown(0))
-        {
-            cannon.canShoot = true;
-            OnPlayerActionActivate?.Invoke(EPlayerActions.ShootingCannon);
-        }
 
+     
+
+     
         if (Input.GetMouseButtonUp(0))
         {
-            cannon.canShoot = false;
+            cannon.TryToShootCannon();
+            OnPlayerActionActivate?.Invoke(EPlayerActions.ShootingCannon);
+           
         }
-
+       
     }
 }
 
