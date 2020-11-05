@@ -7,7 +7,7 @@ public class PlayerCannonController : MonoBehaviour
     Transform playerTransform;
     public Transform firePoint;
     public bool canShoot = false;
-    public GameObject cannonBallBullet;
+    public Rigidbody cannonBallBullet;
     public float shootDistance = 100f;
 
     //public float m
@@ -50,11 +50,8 @@ public class PlayerCannonController : MonoBehaviour
 
     void ShootCannon()
     {
-       // Rigidbody bullet = Instantiate(cannonBallBullet, firePoint.position, Quaternion.identity);
-        //bullet.velocity = CalculateVelocity(hit.point, transform.position, 1f);
-
-        GameObject bullet = Instantiate(cannonBallBullet, firePoint.position, Quaternion.identity);
-        bullet.GetComponent < BulletController> ().SetVelocity(firePoint.position, cursor.transform.position);
+        Rigidbody bullet = Instantiate(cannonBallBullet, firePoint.position, Quaternion.identity);
+        bullet.velocity = CalculateVelocity(hit.point, transform.position, 1f);
     }
 
 
