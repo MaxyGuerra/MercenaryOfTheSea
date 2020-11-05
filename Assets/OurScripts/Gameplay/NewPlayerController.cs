@@ -67,7 +67,7 @@ public class NewPlayerController : MonoBehaviour
     private void OnDrawGizmos()
     {
         Gizmos.DrawLine(transform.position, transform.position + moveDirection * 10);
-
+        Gizmos.DrawWireSphere(debugMousePosition, .5f);
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -148,7 +148,17 @@ public class NewPlayerController : MonoBehaviour
 
 
     }
+    public Vector3 debugMousePositionWorld;
+    public Vector2 debugMousePosition;
+    void UpdateCannonRotation()
+    {
+        debugMousePosition= Input.mousePosition;
+      Vector3 mouseWorldPosition=   Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
+        //  mouseWorldPosition.y=cannon.transform.position.y;
+        debugMousePositionWorld = mouseWorldPosition;
+        cannon.transform.LookAt(mouseWorldPosition );
+    }
     // Update is called once per frame
     void FixedUpdate()
     {
@@ -159,7 +169,7 @@ public class NewPlayerController : MonoBehaviour
     void Update()
     {
         // Harpoon Shot;
-
+        UpdateCannonRotation();
         if (Input.GetMouseButtonDown(0))
         {
             cannon.canShoot = true;

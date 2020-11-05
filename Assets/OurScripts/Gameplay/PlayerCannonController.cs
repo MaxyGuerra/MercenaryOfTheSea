@@ -32,6 +32,7 @@ public class PlayerCannonController : MonoBehaviour
     void Start()
     {
         mainCamara = Camera.main;
+        print(gameObject.name);
     }
 
     void FiringPoint()
