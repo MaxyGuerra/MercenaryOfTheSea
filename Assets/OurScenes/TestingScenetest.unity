@@ -291,7 +291,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   firePoint: {fileID: 139571675}
   canShoot: 0
-  cannonBallBullet: {fileID: 5761427339541238542, guid: fe03163fea7db9f41b94061a68cb05d0,
+  cannonBallBullet: {fileID: 1587670511332709808, guid: fe03163fea7db9f41b94061a68cb05d0,
     type: 3}
   shootDistance: 1000
   cadence: 2
@@ -485,7 +485,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 511158895}
-  m_LocalRotation: {x: 0.56072503, y: 0.000000020148187, z: -0.0000000136444, w: 0.82800215}
+  m_LocalRotation: {x: 0.56072503, y: -0.000000020148182, z: 0.000000013644398, w: 0.82800215}
   m_LocalPosition: {x: 20, y: 44, z: -13}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -613,7 +613,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 578970778}
   m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0.07, z: 0}
   m_LocalScale: {x: 10, y: 10, z: 10}
   m_Children: []
   m_Father: {fileID: 0}
@@ -956,7 +956,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 789861747}
-  m_LocalRotation: {x: 0.56072503, y: 0.000000020148187, z: -0.0000000136444, w: 0.82800215}
+  m_LocalRotation: {x: 0.56072503, y: -0.000000020148182, z: 0.000000013644398, w: 0.82800215}
   m_LocalPosition: {x: 20, y: 44, z: -13}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
