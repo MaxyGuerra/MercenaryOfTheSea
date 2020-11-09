@@ -167,9 +167,7 @@ public class NewPlayerController : MonoBehaviour
 
     void Update()
     {
-        // Harpoon Shot;
-
-     
+        // Shot;
 
      
         if (Input.GetMouseButtonUp(0))
@@ -178,7 +176,12 @@ public class NewPlayerController : MonoBehaviour
             OnPlayerActionActivate?.Invoke(EPlayerActions.ShootingCannon);
            
         }
-       
+
+        else
+        {
+            cannon.RestartCannonRotation();
+
+        }
+
     }
 }
-

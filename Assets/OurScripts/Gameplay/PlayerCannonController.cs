@@ -17,13 +17,17 @@ public class PlayerCannonController : MonoBehaviour
     /// </summary>
     [Header("Cannon settings")]
     public float maxCannonAngleMod = 15;
+    public float initialCannonAngleMod = 0f;
+
     public float baseCannonShootPower = 10;//poder base de lanzamiento de la bala
-    public float extraShootPowerByHoldingButton = 10;//el maximo de poder al lanzar la bala.se suma al base dependiendo de que tanto mantenga el boton
+    public float extraShootPowerByHoldingButton = 10;//el maximo de poder al lanzar la bala.
+    //se suma al base dependiendo de que tanto mantenga el boton
     public float cannonHoldSpeed=1;/// <summary>
     /// que tan rapido se demora en subir el cañon
     /// </summary>
 
     float currentCannonHoldPower = 0;
+    public float initialCannonHoldPower = 0f;
     Vector3 mouseWorldPosition;
 
     /// <summary>
@@ -119,7 +123,8 @@ public class PlayerCannonController : MonoBehaviour
         //el plano de interseccion se eleva dependiendo de que tanto presionas el boton hasta el maximo de maxCannonAngleMod
         float heightOffset = Mathf.Lerp(0, maxCannonAngleMod, currentCannonHoldPower);
 
-        //Create a new plane with normal (0,0,1) at the position away from the camera you define in the Inspector. This is the plane that you can click so make sure it is reachable.
+        //Create a new plane with normal (0,0,1) at the position away from the camera you define in the Inspector. 
+        //This is the plane that you can click so make sure it is reachable.
        
         Plane planeIntersection = new Plane(Vector3.up,  transform.position +  transform.up * heightOffset);
         Vector3 mousePosition = Input.mousePosition;
@@ -137,6 +142,11 @@ public class PlayerCannonController : MonoBehaviour
 
         }
 
+    }
+
+    public void RestartCannonRotation()
+    {
+        float initialOffset = Mathf.Lerp(0, initialCannonAngleMod, initialCannonHoldPower);
     }
 
     // Update is called once per frame
