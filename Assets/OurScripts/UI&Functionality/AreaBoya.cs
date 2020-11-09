@@ -5,24 +5,19 @@ using UnityEngine;
 
 public class AreaBoya : MonoBehaviour
 {
+    public GameObject Bandera;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        Bandera.SetActive(false);
     }
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
         {
-
+            Bandera.SetActive(true);
         }
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }
