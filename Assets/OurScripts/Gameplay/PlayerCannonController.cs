@@ -1,7 +1,5 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-
 public class PlayerCannonController : MonoBehaviour
 {
     Transform playerTransform;
@@ -33,7 +31,7 @@ public class PlayerCannonController : MonoBehaviour
     /// <summary>
     /// cambio la cadencia de disparo con una corutina y un booleano
     /// </summary>
-    public float cadence = 3;
+    public float coolDown = 3;
     public bool bCannonIsInCooldown; 
 
 
@@ -43,11 +41,7 @@ public class PlayerCannonController : MonoBehaviour
     public GameObject cursor;
     public LayerMask layer;
     RaycastHit hit;
-
-
-
-
-    // Start is called before the first frame update
+      
     void Start()
     {
         mainCamara = Camera.main; 
@@ -80,18 +74,24 @@ public class PlayerCannonController : MonoBehaviour
     public void TryToShootCannon() 
     {
         if (bCannonIsInCooldown) return;
-        StartCoroutine(CannonCooldown());
+
+        bCannonIsInCooldown = true;
+        LeanTween.alpha(gameObject,1, coolDown).setOnComplete(OnCooldownCompleted).setOnUpdate(OnCoolDownUpdate);
+       // StartCoroutine(CannonCooldown());
         Rigidbody bullet = Instantiate(cannonBallBullet, firePoint.position, Quaternion.identity);
         // bullet.velocity = CalculateVelocity(hit.point, transform.position, 1f);
         bullet.velocity = transform.forward * (extraShootPowerByHoldingButton + baseCannonShootPower);
     }
  
-    IEnumerator CannonCooldown()
+    void OnCoolDownUpdate(float Alpha)
     {
-        bCannonIsInCooldown = true;
-        yield return new WaitForSeconds(cadence);
+        currentCannonHoldPower = Mathf.Lerp(maxCannonAngleMod, 0, Alpha);
+    }
+    void OnCooldownCompleted()
+    {
         bCannonIsInCooldown = false;
     }
+    
 
     Vector3 CalculateVelocity(Vector3 target, Vector3 origin, float timeInAir)
     {
@@ -149,6 +149,10 @@ public class PlayerCannonController : MonoBehaviour
         float initialOffset = Mathf.Lerp(0, initialCannonAngleMod, initialCannonHoldPower);
     }
 
+    void ResetValue()
+    {
+       
+    }
     // Update is called once per frame
     public void UpdateCannon()
     {
