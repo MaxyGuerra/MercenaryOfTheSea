@@ -5,9 +5,11 @@ using UnityEngine;
 public class ControladorAnimacionesCalamar : MonoBehaviour
 {
     private Animator Animacion;
-    private bool opened = false;
     private float tiempo;
     public float Cadencia;
+
+    public string[] animationsList=new string[7];
+
 
     // Start is called before the first frame update
     void Start()
@@ -17,8 +19,9 @@ public class ControladorAnimacionesCalamar : MonoBehaviour
 
     public void DoAnimacion()
     {
-        Animacion.SetBool("Puerta1", opened);
-        opened = !opened;
+        string targetAnimationName=animationsList[Random.Range(0,animationsList.Length)];
+
+        Animacion.SetTrigger(targetAnimationName);
     }
 
     // Update is called once per frame
@@ -26,7 +29,7 @@ public class ControladorAnimacionesCalamar : MonoBehaviour
     {
         tiempo = tiempo + Time.deltaTime;
 
-        if(Cadencia>=tiempo)
+        if(Cadencia<=tiempo)
         { 
             DoAnimacion();
             tiempo=0;

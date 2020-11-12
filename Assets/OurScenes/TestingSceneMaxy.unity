@@ -383,7 +383,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 511158895}
-  m_LocalRotation: {x: 0.39016137, y: -0.5946879, z: 0.4027241, w: 0.57613695}
+  m_LocalRotation: {x: 0.3901614, y: -0.5946878, z: 0.40272397, w: 0.57613707}
   m_LocalPosition: {x: -10.106525, y: 41.14, z: -2.0881524}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -1243,8 +1243,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 92de375c7cdc4504fa106957283d0dec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Cadencia: 0
-  ListaBolls: 00000000000000
+  Cadencia: 6
+  animationsList:
+  - Gate1
+  - Gate2
+  - Gate3
+  - Gate4
+  - Gate5
+  - Gate6
+  - Gate7
 --- !u!1001 &1359586444
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2056,7 +2063,7 @@ PrefabInstance:
     - target: {fileID: 5022654791942933764, guid: 688e5b36eccf0314db25e9caec5a5257,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.8278982
+      value: -0.82789826
       objectReference: {fileID: 0}
     - target: {fileID: 5022654791942933764, guid: 688e5b36eccf0314db25e9caec5a5257,
         type: 3}
@@ -2066,12 +2073,12 @@ PrefabInstance:
     - target: {fileID: 5022654791942933764, guid: 688e5b36eccf0314db25e9caec5a5257,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.008883208
+      value: -0.008883089
       objectReference: {fileID: 0}
     - target: {fileID: 5022654791942933764, guid: 688e5b36eccf0314db25e9caec5a5257,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: -0.013117492
+      value: -0.013117373
       objectReference: {fileID: 0}
     - target: {fileID: 5022654791942933764, guid: 688e5b36eccf0314db25e9caec5a5257,
         type: 3}
