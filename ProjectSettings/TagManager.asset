@@ -16,6 +16,7 @@ TagManager:
   - GameManager
   - GameMaster
   - AreaBoya
+  - Checkpoint
   layers:
   - Default
   - TransparentFX
