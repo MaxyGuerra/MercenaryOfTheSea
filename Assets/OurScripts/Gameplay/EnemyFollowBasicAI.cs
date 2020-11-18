@@ -38,7 +38,7 @@ public class EnemyFollowBasicAI : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag("Bullet"))
+        if (other.gameObject.CompareTag("PlayerBullet"))
         {
             enemyHealth--;
 

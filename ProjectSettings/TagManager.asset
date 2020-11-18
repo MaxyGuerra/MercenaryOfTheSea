@@ -5,7 +5,6 @@ TagManager:
   serializedVersion: 2
   tags:
   - Enemy
-  - Bullet
   - EnemyBullet
   - Boss
   - Harpoon
@@ -17,6 +16,7 @@ TagManager:
   - GameMaster
   - AreaBoya
   - Checkpoint
+  - PlayerBullet
   layers:
   - Default
   - TransparentFX
