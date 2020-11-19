@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class BulletController : MonoBehaviour
 {
     public float bulletSpeed = 1;
@@ -37,11 +38,6 @@ public class BulletController : MonoBehaviour
         if((isBreakRock = true) && other.gameObject.CompareTag("Obstacle"))
         {
             Destroy(other.gameObject);
-        }
-
-        if ((isSlower = true) && other.gameObject.CompareTag("Enemy"))
-        {
-           
         }
     }
     // Update is called once per frame
