@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
-
+//todo: deprecated?
 public enum EPlayerActions { NONE,PlayerMove,ShootingHarpoon,ShootingCannon}
 public class PlayerController : MonoBehaviour
 {
@@ -42,7 +42,7 @@ public class PlayerController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        playerHealthBar.SetMaxHealth(playerHealth);
+        playerHealthBar?.SetMaxHealth(playerHealth);
     }
     private void OnEnable()
     {

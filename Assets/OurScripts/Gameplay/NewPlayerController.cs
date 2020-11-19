@@ -21,14 +21,16 @@ public class NewPlayerController : MonoBehaviour
     private bool isRespawning;
     private Vector3 respawnPoint;
 
-    [Header("ShootControlers")]
-
-    public PlayerCannonController cannon;
+    [Header("Weapon Selection")]
+    public int currentWeaponIndex;    
 
     [Header("NewHook")]
     public Joint joint;
     public LineRenderer hookLine;
 
+
+    public static event FNotify OnFireDown, OnFireHold, OnFireRelease;
+    public static event FNotify_1Params<int> OnWeaponIndexChange;
 
     public delegate void FNotifyAction(EPlayerActions currentAction);
     public static event FNotifyAction OnPlayerActionActivate;
@@ -162,39 +164,64 @@ public class NewPlayerController : MonoBehaviour
 
 
     }
-  
-   
+ 
+   void UpdateFireInput()
+    {
+         /*
+            cannon.TryToShootCannon();
+            OnPlayerActionActivate?.Invoke(EPlayerActions.ShootingCannon);*/
+        if (Input.GetButtonUp("Fire1") )
+        {
+            OnFireRelease ?.Invoke();
+            return;
+
+        }
+        if (Input.GetButtonDown("Fire1"))
+        {
+            OnFireDown?.Invoke();
+            return;
+
+        }
+        if (Input.GetButton("Fire1"))
+        {
+            OnFireHold?.Invoke();
+
+        }
+    
+
+       
+    }
+
+
+    void UpdateWeaponIndex()
+    {
+        
+        if (Input.GetKeyDown(KeyCode.Alpha1)) ChangeWeaponIndex(0);
+        if (Input.GetKeyDown(KeyCode.Alpha2)) ChangeWeaponIndex(1);
+
+
+
+    }
+    void ChangeWeaponIndex(int nextWeapon)
+    {
+            currentWeaponIndex = nextWeapon;
+         //   print(currentWeaponIndex + "  " + nextWeapon);
+
+            OnWeaponIndexChange?.Invoke(currentWeaponIndex);
+    }
     // Update is called once per frame
     void FixedUpdate()
     {
         MoveShip();
         DrawHookLine();
-        if (Input.GetButton("Fire1"))
-        {
 
-            cannon.HoldCannonPower();
-        }
+        UpdateWeaponIndex();
+        UpdateFireInput();
 
-        cannon.UpdateCannon();
-    }
 
-    void Update()
-    {
-        // Shot;
 
-     
-        if (Input.GetMouseButtonUp(0))
-        {
-            cannon.TryToShootCannon();
-            OnPlayerActionActivate?.Invoke(EPlayerActions.ShootingCannon);
-           
-        }
-
-        else
-        {
-            cannon.RestartCannonRotation();
-
-        }
 
     }
+
+    
 }
