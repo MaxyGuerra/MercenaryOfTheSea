@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 5761427339541238542}
   m_Layer: 9
   m_Name: Cannon
-  m_TagString: Bullet
+  m_TagString: StickyBall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -111,8 +111,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bulletSpeed: 1
   timeToDestroy: 2
-  m_timeToReach: 2
-  m_verticalMultiplier: 2
+  isBreakRock: 0
+  isSlower: 0
 --- !u!54 &5761427339541238542
 Rigidbody:
   m_ObjectHideFlags: 0

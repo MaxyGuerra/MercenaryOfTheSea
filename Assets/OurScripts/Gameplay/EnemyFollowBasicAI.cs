@@ -13,6 +13,7 @@ public class EnemyFollowBasicAI : MonoBehaviour
     public EEnemyState enemyState;
     public HealthBar enemyHealthBar;
     public int enemyHealth = 3;
+    private NavMeshAgent speedReference;
 
     public Transform Player;
     public float AttackDistance = 8;
@@ -27,6 +28,7 @@ public class EnemyFollowBasicAI : MonoBehaviour
     private void Awake()
     {
         navAgent = GetComponent<NavMeshAgent>();
+        speedReference = GetComponent<NavMeshAgent>();
         remainingDistance = Mathf.Infinity;
     }
    
@@ -47,6 +49,11 @@ public class EnemyFollowBasicAI : MonoBehaviour
 
             Destroy(other.gameObject);
             
+        }
+
+        if (other.gameObject.CompareTag("StickyBall"))
+        {
+            speedReference.speed = 2;
         }
     }
 

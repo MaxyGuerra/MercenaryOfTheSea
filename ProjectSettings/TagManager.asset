@@ -17,6 +17,7 @@ TagManager:
   - AreaBoya
   - Checkpoint
   - PlayerBullet
+  - StickyBall
   layers:
   - Default
   - TransparentFX
