@@ -4,7 +4,7 @@ using UnityEngine;
 public enum NewEPlayerActions { NONE, PlayerMove, ShootingHarpoon, ShootingCannon }
 public class NewPlayerController : MonoBehaviour
 {
-    private PlayerController thePlayer;
+    //private PlayerController thePlayer;
     public int playerHealth = 10;
     public PlayerHealthBar playerHealthBar;
     public CanvasGroup loseScreen;
@@ -140,7 +140,7 @@ public class NewPlayerController : MonoBehaviour
 
     void PlayerRespawn()
     {
-        thePlayer.transform.position = respawnPoint;
+        //thePlayer.transform.position = respawnPoint;
     }
 
     public void SetSpawnPoint(Vector3 newPosition)

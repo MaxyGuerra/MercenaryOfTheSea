@@ -6,9 +6,14 @@ public class WeaponHarpoon : AddonBase
 {
     [Header("Harpoon settings")]
     public Rigidbody HarpoonBullet;
+    Transform playerTransform;
 
     public float shootPower=10;
 
+    private void Awake()
+    {
+        playerTransform = transform.parent;
+    }
     protected override void NewPlayerController_OnFireDown()
     {
         TryToShoot();
@@ -23,9 +28,8 @@ public class WeaponHarpoon : AddonBase
             BeginCooldown();
 
             // StartCoroutine(CannonCooldown());
-            Rigidbody bullet = Instantiate(HarpoonBullet, transform.position, Quaternion.identity);
+            Rigidbody bullet = Instantiate(HarpoonBullet, transform.position, playerTransform.rotation);
             // bullet.velocity = CalculateVelocity(hit.point, transform.position, 1f);
             bullet.velocity = transform.forward * shootPower;
-       
     }
 }
