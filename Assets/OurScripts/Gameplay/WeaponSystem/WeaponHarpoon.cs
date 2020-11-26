@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+public enum EWeaponType { CannonBall,Harpoon}
 public class WeaponHarpoon : AddonBase
 {
     [Header("Harpoon settings")]
@@ -32,4 +33,6 @@ public class WeaponHarpoon : AddonBase
             // bullet.velocity = CalculateVelocity(hit.point, transform.position, 1f);
             bullet.velocity = transform.forward * shootPower;
     }
+
+   
 }

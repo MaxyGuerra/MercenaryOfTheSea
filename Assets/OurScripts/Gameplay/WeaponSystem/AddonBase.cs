@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class AddonBase : MonoBehaviour
 {
+    
     public int weaponIndex;
     public bool canShoot = false;
 

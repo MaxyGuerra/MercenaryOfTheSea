@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 
 public enum BossState { IDLE,FOLLOW,DEAD}
-public class BossAIScript : MonoBehaviour
+public class BossAIScript : MonoBehaviour, IDamageable
 {
 
     NavMeshAgent navAgent;
@@ -40,30 +40,7 @@ public class BossAIScript : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag("Harpoon"))
-        {
-            if (bossState == BossState.DEAD) return;
-
-            bossHealth-=4;
-
-            bossHealthBar.SetHealth(bossHealth);
-
-            Destroy(other.gameObject);
-
-            if (bossHealth <= 0)
-            {
-                healthBarCanvas.SetActive(false);
-
-                bossHealth = 0;
-                
-                isDead = true;
-            }
-        }
-
-        if (other.gameObject.CompareTag("Harpoon") && (isDead == true))
-        {
-            SetDead();
-        }
+       
 
         if(isDead && other.CompareTag("Puerto") && !isCollected)
         {
@@ -85,6 +62,7 @@ public class BossAIScript : MonoBehaviour
  
     void SetDead()
     {
+        isDead = true;
         bossState = BossState.DEAD;
         navAgent.enabled = false;
         GetComponent<Rigidbody>().isKinematic = false;
@@ -129,5 +107,30 @@ public class BossAIScript : MonoBehaviour
         Brain();
 
         transform.LookAt(playerTarget);
+    }
+
+ 
+
+    public void ApplyDamage(int Dmg, EWeaponType weaponType)
+    {
+        if (weaponType != EWeaponType.Harpoon) return;
+
+        if (bossState == BossState.DEAD) return;
+
+        bossHealth -= Dmg;
+
+        bossHealthBar.SetHealth(bossHealth);
+
+
+
+        if (bossHealth <= 0)
+        {
+            healthBarCanvas.SetActive(false);
+
+            bossHealth = 0;
+
+            SetDead();
+        }
+       
     }
 }

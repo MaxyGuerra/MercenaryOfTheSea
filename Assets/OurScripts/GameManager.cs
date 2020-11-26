@@ -10,6 +10,7 @@ public class GameManager : Singleton<GameManager>
     public CanvasGroup pausePanel;
     public static event FNotify_1Params<BossAIScript> OnBossCollected;
 
+    public WeaponsDatabase weaponsDbReference;
     public void NextScene()
     {
         Debug.Log("Next Scene");
@@ -69,4 +70,6 @@ public class GameManager : Singleton<GameManager>
         OnBossCollected?.Invoke(bossAIScript);
 
     }
+
+   
 }

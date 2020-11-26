@@ -5,6 +5,8 @@ using UnityEngine;
 
 public class BulletController : MonoBehaviour
 {
+    public EWeaponType weaponType;
+    public bool destroyOnHit = true;
     public float bulletSpeed = 1;
 
     public float timeToDestroy = 5;
@@ -27,23 +29,28 @@ public class BulletController : MonoBehaviour
         
     }
 
+    private void Start()
+    {
+        damage = WeaponsDatabase.instance.GetWeaponDefinition(weaponType).baseDamage;
+
+    }
+
+    private void OnEnable()
+    {
+        Destroy(gameObject, timeToDestroy);
+         
+    }
+   
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag("Obstacle"))
-        {
-            Destroy(gameObject);
-        }
 
-        if((isBreakRock = true) && other.gameObject.CompareTag("Obstacle"))
-        {
-            Destroy(other.gameObject);
-        }
-    }
-    // Update is called once per frame
-    void Update()
-    {
+        other.GetComponent<IDamageable>()?.ApplyDamage(damage, weaponType);
 
-        Destroy(gameObject, timeToDestroy);
+        if(destroyOnHit)
+        Destroy(gameObject);
+ 
+
     }
+   
 }
