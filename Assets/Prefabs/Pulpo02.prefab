@@ -884,6 +884,7 @@ GameObject:
   - component: {fileID: 4194848887521911247}
   - component: {fileID: 4194848887521911245}
   - component: {fileID: 4194848887521911244}
+  - component: {fileID: 6883832971056415355}
   m_Layer: 0
   m_Name: Pulpo02
   m_TagString: Boss
@@ -1001,6 +1002,26 @@ MonoBehaviour:
   animationsList:
   - Gate1
   - Gate2
+--- !u!114 &6883832971056415355
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3960477198927961257}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6f60c857b80ce4e43982bc695f574a5b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  remainingDistance: 0
+  playerTarget: {fileID: 0}
+  isFollowingPlayer: 0
+  isDead: 0
+  healthBarCanvas: {fileID: 0}
+  bossHealthBar: {fileID: 0}
+  bossHealth: 3
+  bossState: 0
 --- !u!1 &4049781766228148824
 GameObject:
   m_ObjectHideFlags: 0
