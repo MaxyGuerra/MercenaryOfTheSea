@@ -232,7 +232,7 @@ GameObject:
   - component: {fileID: 8925354088467688919}
   - component: {fileID: 6645568162284869917}
   m_Layer: 0
-  m_Name: Isla5
+  m_Name: Isla05
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -245,9 +245,9 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5132187644466116808}
-  m_LocalRotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+  m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
   m_LocalPosition: {x: -0, y: 0, z: 0}
-  m_LocalScale: {x: 100, y: 100, z: 100}
+  m_LocalScale: {x: 50, y: 50, z: 50}
   m_Children:
   - {fileID: 7866086182021285565}
   - {fileID: 2148761418626260059}
@@ -263,7 +263,7 @@ Transform:
   - {fileID: 7365015764535324386}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
 --- !u!33 &8925354088467688919
 MeshFilter:
   m_ObjectHideFlags: 0
