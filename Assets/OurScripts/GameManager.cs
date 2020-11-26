@@ -3,11 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class GameManager : MonoBehaviour
+public class GameManager : Singleton<GameManager>
 {
 
     public bool canPause;
     public CanvasGroup pausePanel;
+    public static event FNotify_1Params<BossAIScript> OnBossCollected;
 
     public void NextScene()
     {
@@ -60,5 +61,12 @@ public class GameManager : MonoBehaviour
         {
             PauseGame();
         }
+    }
+
+    public void SetBossCollected(BossAIScript bossAIScript)
+    {
+
+        OnBossCollected?.Invoke(bossAIScript);
+
     }
 }

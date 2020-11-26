@@ -47,22 +47,35 @@ public class NewPlayerController : MonoBehaviour
     }
     private void OnEnable()
     {
+        GameManager.OnBossCollected += GameManager_OnBossCollected;
         BossAIScript.OnBossDead += BossAIScript_OnBossDead;
         hookLine.positionCount = 0;
     }
 
 
-
     private void OnDisable()
     {
+        GameManager.OnBossCollected -= GameManager_OnBossCollected;
+
         BossAIScript.OnBossDead -= BossAIScript_OnBossDead;
 
     }
     private void BossAIScript_OnBossDead(Transform BossTransform)
     {
-        joint.connectedBody = BossTransform.GetComponentInChildren<Rigidbody>();
+
+        joint.connectedBody = BossTransform.GetComponent<BossAIScript>().SetHooked(true);
 
     }
+
+
+    private void GameManager_OnBossCollected(BossAIScript Param1)
+    {
+        joint.connectedBody = null;
+
+        hookLine.positionCount =0;
+    }
+
+
     void DrawHookLine()
     {
         if (joint.connectedBody == null) return;

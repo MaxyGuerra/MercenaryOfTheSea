@@ -259,10 +259,10 @@ MonoBehaviour:
   playerHealth: 10
   playerHealthBar: {fileID: 0}
   loseScreen: {fileID: 0}
-  moveSpeed: 1
-  rotationSpeed: 1
+  moveSpeed: 8
+  rotationSpeed: 6
   currentWeaponIndex: 0
-  joint: {fileID: 5083319868465086673}
+  joint: {fileID: 2129877082}
   hookLine: {fileID: 5083319868465086675}
 --- !u!1 &234074552648003187
 GameObject:
@@ -336,8 +336,8 @@ GameObject:
   m_Component:
   - component: {fileID: 5083319868465086686}
   - component: {fileID: 5083319868465086672}
-  - component: {fileID: 5083319868465086673}
   - component: {fileID: 5083319868465086675}
+  - component: {fileID: 2129877082}
   m_Layer: 10
   m_Name: Hook
   m_TagString: Untagged
@@ -375,20 +375,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 14
   m_CollisionDetection: 0
---- !u!138 &5083319868465086673
-FixedJoint:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5083319868465086687}
-  m_ConnectedBody: {fileID: 0}
-  m_BreakForce: Infinity
-  m_BreakTorque: Infinity
-  m_EnableCollision: 0
-  m_EnablePreprocessing: 1
-  m_MassScale: 1
-  m_ConnectedMassScale: 1
 --- !u!120 &5083319868465086675
 LineRenderer:
   m_ObjectHideFlags: 0
@@ -487,6 +473,101 @@ LineRenderer:
     generateLightingData: 0
   m_UseWorldSpace: 1
   m_Loop: 0
+--- !u!153 &2129877082
+ConfigurableJoint:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5083319868465086687}
+  m_ConnectedBody: {fileID: 0}
+  m_Anchor: {x: 0, y: 2.1, z: 0}
+  m_Axis: {x: 1, y: 0, z: 0}
+  m_AutoConfigureConnectedAnchor: 0
+  m_ConnectedAnchor: {x: 20.512644, y: 0.4999999, z: 7.6505756}
+  serializedVersion: 2
+  m_SecondaryAxis: {x: 0, y: 1, z: 0}
+  m_XMotion: 1
+  m_YMotion: 0
+  m_ZMotion: 1
+  m_AngularXMotion: 2
+  m_AngularYMotion: 2
+  m_AngularZMotion: 2
+  m_LinearLimitSpring:
+    spring: 0
+    damper: 0
+  m_LinearLimit:
+    limit: 1
+    bounciness: 0
+    contactDistance: 0
+  m_AngularXLimitSpring:
+    spring: 0
+    damper: 0
+  m_LowAngularXLimit:
+    limit: 0
+    bounciness: 0
+    contactDistance: 0
+  m_HighAngularXLimit:
+    limit: 0
+    bounciness: 0
+    contactDistance: 0
+  m_AngularYZLimitSpring:
+    spring: 0
+    damper: 0
+  m_AngularYLimit:
+    limit: 0
+    bounciness: 0
+    contactDistance: 0
+  m_AngularZLimit:
+    limit: 0
+    bounciness: 0
+    contactDistance: 0
+  m_TargetPosition: {x: 0, y: 0, z: 0}
+  m_TargetVelocity: {x: 0, y: 0, z: 0}
+  m_XDrive:
+    serializedVersion: 3
+    positionSpring: 0
+    positionDamper: 0
+    maximumForce: 3.4028233e+38
+  m_YDrive:
+    serializedVersion: 3
+    positionSpring: 0
+    positionDamper: 0
+    maximumForce: 3.4028233e+38
+  m_ZDrive:
+    serializedVersion: 3
+    positionSpring: 0
+    positionDamper: 0
+    maximumForce: 3.4028233e+38
+  m_TargetRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_TargetAngularVelocity: {x: 0, y: 0, z: 0}
+  m_RotationDriveMode: 0
+  m_AngularXDrive:
+    serializedVersion: 3
+    positionSpring: 0
+    positionDamper: 0
+    maximumForce: 3.4028233e+38
+  m_AngularYZDrive:
+    serializedVersion: 3
+    positionSpring: 0
+    positionDamper: 0
+    maximumForce: 3.4028233e+38
+  m_SlerpDrive:
+    serializedVersion: 3
+    positionSpring: 0
+    positionDamper: 0
+    maximumForce: 3.4028233e+38
+  m_ProjectionMode: 0
+  m_ProjectionDistance: 0.1
+  m_ProjectionAngle: 180
+  m_ConfiguredInWorldSpace: 0
+  m_SwapBodies: 0
+  m_BreakForce: Infinity
+  m_BreakTorque: Infinity
+  m_EnableCollision: 0
+  m_EnablePreprocessing: 1
+  m_MassScale: 1
+  m_ConnectedMassScale: 1
 --- !u!1001 &4540855788703940961
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -573,6 +654,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: WeaponHarpoon
+      objectReference: {fileID: 0}
+    - target: {fileID: 7807047906300141682, guid: c7cc7f735db9ad347ae8d04db277d55e,
+        type: 3}
+      propertyPath: shootPower
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 7807047906300141683, guid: c7cc7f735db9ad347ae8d04db277d55e,
         type: 3}

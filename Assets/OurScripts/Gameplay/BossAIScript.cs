@@ -18,6 +18,7 @@ public class BossAIScript : MonoBehaviour
 
     [Header("Life settings")]
     public bool isDead = false;
+    public bool isCollected = false;
     public GameObject healthBarCanvas;
     public HealthBar bossHealthBar;
     public int bossHealth = 3;
@@ -43,7 +44,7 @@ public class BossAIScript : MonoBehaviour
         {
             if (bossState == BossState.DEAD) return;
 
-            bossHealth--;
+            bossHealth-=4;
 
             bossHealthBar.SetHealth(bossHealth);
 
@@ -63,9 +64,24 @@ public class BossAIScript : MonoBehaviour
         {
             SetDead();
         }
+
+        if(isDead && other.CompareTag("Puerto") && !isCollected)
+        {
+            isCollected = true;
+            GameManager.Instance.SetBossCollected(this);
+            Destroy(gameObject);
+
+        }
     }
 
 
+    public Rigidbody SetHooked(bool IsHooked)
+    {
+        GetComponent<Collider>().isTrigger = true;
+
+        return GetComponent<Rigidbody>();
+
+    }
  
     void SetDead()
     {

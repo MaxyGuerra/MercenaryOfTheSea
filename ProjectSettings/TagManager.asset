@@ -18,6 +18,7 @@ TagManager:
   - Checkpoint
   - PlayerBullet
   - StickyBall
+  - Puerto
   layers:
   - Default
   - TransparentFX
