@@ -28,6 +28,8 @@ public class NewPlayerController : MonoBehaviour
     public Joint joint;
     public LineRenderer hookLine;
 
+    public GameObject compass;
+
 
     public static event FNotify OnFireDown, OnFireHold, OnFireRelease;
     public static event FNotify_1Params<int> OnWeaponIndexChange;
@@ -82,6 +84,8 @@ public class NewPlayerController : MonoBehaviour
         hookLine.positionCount = 2;
         hookLine.SetPosition(0, transform.position);
         hookLine.SetPosition(1, joint.connectedBody.position);
+
+        compass.gameObject.SetActive(true);
     }
     private void OnDrawGizmos()
     {

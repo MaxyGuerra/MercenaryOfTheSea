@@ -12,8 +12,8 @@ public class WeaponDefinition
 
 [CreateAssetMenu(fileName = "Data", menuName = "ScriptableObjects/WeaponsDatabase", order = 1)]
 
-public class WeaponsDatabase : UnityEditor.ScriptableSingleton<WeaponsDatabase>
-{
+public class WeaponsDatabase : SingletonScriptableObject<WeaponsDatabase>
+{ 
     public WeaponDefinition[] weapons;
 
     public WeaponDefinition GetWeaponDefinition(EWeaponType eWeaponType)

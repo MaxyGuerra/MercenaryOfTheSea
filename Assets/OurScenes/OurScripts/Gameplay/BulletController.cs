@@ -11,10 +11,6 @@ public class BulletController : MonoBehaviour
 
     public float timeToDestroy = 5;
 
-    public bool isBreakRock = false;
-
-    public bool isSlower = false;
-
     //References to other scripts
 
     static public Rigidbody rb;
@@ -31,7 +27,7 @@ public class BulletController : MonoBehaviour
 
     private void Start()
     {
-        damage = WeaponsDatabase.instance.GetWeaponDefinition(weaponType).baseDamage;
+        damage = WeaponsDatabase.Instance.GetWeaponDefinition(weaponType).baseDamage;
 
     }
 
