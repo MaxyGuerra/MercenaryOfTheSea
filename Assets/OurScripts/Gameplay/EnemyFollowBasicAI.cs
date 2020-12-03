@@ -16,7 +16,7 @@ public class EnemyFollowBasicAI : MonoBehaviour
     private NavMeshAgent speedReference;
     private float timeToWait;
 
-    public Transform Player;
+    public Transform player;
     public float AttackDistance = 8;
     [Header("Debug AI")]
     public float remainingDistance;
@@ -37,6 +37,7 @@ public class EnemyFollowBasicAI : MonoBehaviour
     void Start()
     {
         enemyHealthBar.SetMaxHealth(enemyHealth);
+       
     }
 
     private void OnTriggerEnter(Collider other)
@@ -61,7 +62,7 @@ public class EnemyFollowBasicAI : MonoBehaviour
 
     void Attack()
     {
-        if (Player == null)
+        if (player == null)
         {
             //player is dead?
             enemyState = EEnemyState.IDLE;
@@ -74,10 +75,10 @@ public class EnemyFollowBasicAI : MonoBehaviour
     }
     void FollowPlayer()
     {
-        if (Player == null) return;
+        if (player == null) return;
 
 
-        if (!navAgent.SetDestination(Player.position)) return;
+        if (!navAgent.SetDestination(player.position)) return;
 
         if (!navAgent.hasPath) return;
         remainingDistance = navAgent.remainingDistance;
@@ -99,7 +100,7 @@ public class EnemyFollowBasicAI : MonoBehaviour
         {
             case EEnemyState.IDLE:
 
-                if (Player == null) return;
+                if (player == null) return;
 
                 enemyState = EEnemyState.FOLLOW;
 

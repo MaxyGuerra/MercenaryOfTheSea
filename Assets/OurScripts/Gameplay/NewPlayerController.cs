@@ -4,7 +4,7 @@ using UnityEngine;
 public enum NewEPlayerActions { NONE, PlayerMove, ShootingHarpoon, ShootingCannon }
 public class NewPlayerController : MonoBehaviour
 {
-    //private PlayerController thePlayer;
+   
     public int playerHealth = 10;
     public PlayerHealthBar playerHealthBar;
     public CanvasGroup loseScreen;
@@ -15,6 +15,7 @@ public class NewPlayerController : MonoBehaviour
 
     Rigidbody rb;
     public static bool canMove = true;
+ 
 
     public static NewPlayerController instance;
 
@@ -150,14 +151,16 @@ public class NewPlayerController : MonoBehaviour
     {
         //_audioSource.PlayOneShot(playerDeath);
 
-        loseScreen.gameObject.SetActive(true);
+        //loseScreen.gameObject.SetActive(true);
 
-       // Time.timeScale = 0;
+        // Time.timeScale = 0;
+
+        PlayerRespawn();
     }
 
     void PlayerRespawn()
     {
-        //thePlayer.transform.position = respawnPoint;
+        transform.position = respawnPoint;
     }
 
     public void SetSpawnPoint(Vector3 newPosition)
@@ -237,7 +240,10 @@ public class NewPlayerController : MonoBehaviour
 
 
 
-
+        if(Input.GetKeyDown(KeyCode.X))
+        {
+            playerHealth = -2;
+        }
     }
 
     
