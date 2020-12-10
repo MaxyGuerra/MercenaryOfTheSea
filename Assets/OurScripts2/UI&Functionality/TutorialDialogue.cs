@@ -6,7 +6,7 @@ using TMPro;
 public class TutorialDialogue : MonoBehaviour
 {
     public TextMeshProUGUI textDisplay;
-    public PlayerController playerReference;
+    public NewPlayerController playerReference;
     public string[] sentences;
     private int index;
     public float typingSpeed;
@@ -33,7 +33,7 @@ public class TutorialDialogue : MonoBehaviour
 
     void BeginDialogue()
     {
-        PlayerController.canMove = false;
+        playerReference.canMove = false;
         if (dialogueIsPlaying) return;
         textDisplay.transform.parent.gameObject.SetActive(true);
         dialogueIsPlaying = true;
@@ -51,11 +51,12 @@ public class TutorialDialogue : MonoBehaviour
         }
     private void OnEnable()
     {
-        PlayerController.OnPlayerActionActivate += PlayerController_OnPlayerActionActivate;
+         
+        NewPlayerController.OnPlayerActionActivate += PlayerController_OnPlayerActionActivate;
     }
     private void OnDisable()
     {
-        PlayerController.OnPlayerActionActivate -= PlayerController_OnPlayerActionActivate;
+        NewPlayerController.OnPlayerActionActivate -= PlayerController_OnPlayerActionActivate;
     }
     private void PlayerController_OnPlayerActionActivate(EPlayerActions currentAction)
     {
@@ -66,7 +67,7 @@ public class TutorialDialogue : MonoBehaviour
 
         
             endingAction = EPlayerActions.NONE;
-            PlayerController.OnPlayerActionActivate -= PlayerController_OnPlayerActionActivate;
+            NewPlayerController.OnPlayerActionActivate -= PlayerController_OnPlayerActionActivate;
             EndDialogue();
         
     }
@@ -125,7 +126,7 @@ public class TutorialDialogue : MonoBehaviour
             index++;
             if(index == 2)
             {
-                PlayerController.canMove = true;
+                playerReference.canMove = true;
             }
 
             textDisplay.text = "";

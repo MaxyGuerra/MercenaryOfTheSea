@@ -2,12 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public enum EWeaponType { CannonBall,Harpoon}
+public enum EWeaponType { CannonBall,Harpoon, MineCannon}
 public class WeaponHarpoon : AddonBase
 {
     [Header("Harpoon settings")]
     public Rigidbody HarpoonBullet;
-    Transform playerTransform;
+    private Transform playerTransform;
 
     public float shootPower=10;
 

@@ -2,10 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 public enum NewEPlayerActions { NONE, PlayerMove, ShootingHarpoon, ShootingCannon }
-public class NewPlayerController : MonoBehaviour
+//todo: deprecated?
+public enum EPlayerActions { NONE, PlayerMove, ShootingHarpoon, ShootingCannon }
+
+
+
+public class NewPlayerController : MonoBehaviour,IDamageable
 {
    
-    public int playerHealth = 10;
+    public int playerHealth = 10; 
     public PlayerHealthBar playerHealthBar;
     public CanvasGroup loseScreen;
     //AudioClip playerDeath;
@@ -14,7 +19,7 @@ public class NewPlayerController : MonoBehaviour
     private Vector3 moveDirection = Vector3.zero;
 
     Rigidbody rb;
-    public static bool canMove = true;
+    public   bool canMove = true;
  
 
     public static NewPlayerController instance;
@@ -112,40 +117,7 @@ public class NewPlayerController : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.gameObject.CompareTag("EnemyBullet"))
-        {
-            playerHealth -= BulletController.damage;
-
-            playerHealthBar.SetHealth(playerHealth);
-
-            Destroy(other.gameObject);
-
-            if (playerHealth <= 0)
-            {
-                playerHealth = 0;
-
-                PlayerIsDead();
-            }
-        }
-
-        if (other.gameObject.CompareTag("BossBullet"))
-        {
-            playerHealth -= BulletController.bossDamage;
-
-            playerHealthBar.SetHealth(playerHealth);
-
-            Destroy(other.gameObject);
-
-            if (playerHealth <= 0)
-            {
-                playerHealth = 0;
-
-                PlayerIsDead();
-            }
-        }
-    }
+ 
 
     void PlayerIsDead()
     {
@@ -246,5 +218,19 @@ public class NewPlayerController : MonoBehaviour
         }
     }
 
-    
+    public void ApplyDamage(int Dmg, EWeaponType weaponType)
+    {
+
+        playerHealth -= Dmg;
+        playerHealthBar.SetHealth(playerHealth);
+
+        if (playerHealth <= 0)
+        {
+            playerHealth = 0;
+
+            PlayerIsDead();
+        }
+
+         
+    }
 }

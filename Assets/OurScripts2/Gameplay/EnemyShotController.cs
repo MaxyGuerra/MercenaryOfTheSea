@@ -36,7 +36,7 @@ public class EnemyShotController : MonoBehaviour
         transform.rotation = Quaternion.Lerp(transform.rotation, rotation, rotationSpeed * Time.deltaTime);
 
 
-        if (Vector3.Distance(transform.position, PlayerController.instance.transform.position) < shootingDistance) canShoot = true; 
+        if (Vector3.Distance(transform.position, NewPlayerController.instance.transform.position) < shootingDistance) canShoot = true; 
         else canShoot = false;
 
         if (canShoot)

@@ -5,51 +5,42 @@ using UnityEngine;
 
 public class BulletController : MonoBehaviour
 {
-    public EWeaponType weaponType;
-    public bool destroyOnHit = true;
-    public float bulletSpeed = 1;
 
-    public float timeToDestroy = 5;
+    [SerializeField] private EWeaponType WeaponType;
+    [SerializeField] private float m_bulletSpeed = 2;
+    [SerializeField] private int damage = 1;
 
-    //References to other scripts
+    public float bulletSpeed { get { return m_bulletSpeed; } set { m_bulletSpeed = value; } }
+    private int timeToDestroy = 5;
 
-    static public Rigidbody rb;
-
-    static public int damage = 1;
-
-    static public int bossDamage = 3;
+    [SerializeField] private bool DestroyOnHit = true;
 
 
-    private void Awake()
+    // Start is called before the first frame update
+    void Start()
     {
-        
+        damage = WeaponsDatabase.Instance.GetWeaponDefinition(WeaponType).baseDamage;
     }
-
-    private void Start()
-    {
-       damage = WeaponsDatabase.Instance.GetWeaponDefinition(weaponType).baseDamage;
-
-       // EnemyFollowBasicAI basicAI;
-
-       // basicAI.Attack();
-    }
-
-    protected virtual void OnEnable()
-    {
-        Destroy(gameObject, timeToDestroy);
-         
-    }
-   
 
     private void OnTriggerEnter(Collider other)
     {
+        other.GetComponent<IDamageable>()?.ApplyDamage(damage, WeaponType);
 
-        other.GetComponent<IDamageable>()?.ApplyDamage(damage, weaponType);
+        if (DestroyOnHit)
+            Destroy(gameObject);
+    }
 
-        if(destroyOnHit)
-        Destroy(gameObject);
- 
+    private void OnEnable()
+    {
+        Destroy(gameObject, timeToDestroy);
 
     }
-   
+
+    // Update is called once per frame
+    void Update()
+    {
+
+
+    }
 }
+
