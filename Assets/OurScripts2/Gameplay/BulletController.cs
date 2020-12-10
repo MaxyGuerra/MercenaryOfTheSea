@@ -27,11 +27,14 @@ public class BulletController : MonoBehaviour
 
     private void Start()
     {
-        damage = WeaponsDatabase.Instance.GetWeaponDefinition(weaponType).baseDamage;
+       damage = WeaponsDatabase.Instance.GetWeaponDefinition(weaponType).baseDamage;
 
+       // EnemyFollowBasicAI basicAI;
+
+       // basicAI.Attack();
     }
 
-    private void OnEnable()
+    protected virtual void OnEnable()
     {
         Destroy(gameObject, timeToDestroy);
          

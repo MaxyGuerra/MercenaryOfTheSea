@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
@@ -12,15 +13,15 @@ public class EnemyFollowBasicAI : MonoBehaviour
     NavMeshAgent navAgent;
     public EEnemyState enemyState;
     public HealthBar enemyHealthBar;
-    public int enemyHealth = 3;
-    private NavMeshAgent speedReference;
+    public int enemyHealth = 3; 
     private float timeToWait;
 
     public Transform player;
     public float AttackDistance = 8;
     [Header("Debug AI")]
     public float remainingDistance;
-    
+    public bool hasPath; 
+
     // [Header("Attack Scripts")]
 
     // public bool thisEnemyShoot = false;
@@ -29,14 +30,16 @@ public class EnemyFollowBasicAI : MonoBehaviour
     private void Awake()
     {
         navAgent = GetComponent<NavMeshAgent>();
-        speedReference = GetComponent<NavMeshAgent>();
-        remainingDistance = Mathf.Infinity;
+         remainingDistance = Mathf.Infinity;
+
+       
     }
    
     // Start is called before the first frame update
     void Start()
     {
         enemyHealthBar.SetMaxHealth(enemyHealth);
+      
        
     }
 
@@ -60,7 +63,13 @@ public class EnemyFollowBasicAI : MonoBehaviour
         //}
     }
 
-    void Attack()
+    public void AttackWithParams()
+    {
+
+    }
+
+   // [Obsolete("Esto va a ser borrado en versiones futuras asi que reemplazar por AttackWithParams",true)]
+    public virtual void Attack()
     {
         if (player == null)
         {
@@ -81,6 +90,8 @@ public class EnemyFollowBasicAI : MonoBehaviour
         if (!navAgent.SetDestination(player.position)) return;
 
         if (!navAgent.hasPath) return;
+      
+        
         remainingDistance = navAgent.remainingDistance;
 
 
@@ -93,9 +104,26 @@ public class EnemyFollowBasicAI : MonoBehaviour
 
 
     }
+    private void OnDrawGizmos()
+    {
+        if (!navAgent) return;
+        Gizmos.DrawLine(navAgent.transform.position, navAgent.pathEndPosition);
+        Gizmos.DrawWireSphere(navAgent.pathEndPosition, 1);
+    }
 
+    public NavMeshPathStatus pathStatus;
+    void DebugAI()
+    {
+        hasPath = navAgent.hasPath;
+        pathStatus = navAgent.pathStatus;
+    }
     void AIBrain()
     {
+#if UNITY_EDITOR
+        DebugAI();
+#endif
+
+
         switch (enemyState)
         {
             case EEnemyState.IDLE:
