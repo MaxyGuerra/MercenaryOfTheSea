@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 5157009745987459819}
   - component: {fileID: 5761427339541238542}
   m_Layer: 9
-  m_Name: Cannon
+  m_Name: Stickyball
   m_TagString: PlayerBullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -62,7 +62,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 46d5dbcc8c3918d44961311967f5cc04, type: 2}
+  - {fileID: 2100000, guid: e6a52a97f4228244f925e9bc0aaaec8a, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
