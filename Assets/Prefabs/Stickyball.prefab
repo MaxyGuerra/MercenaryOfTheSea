@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 8355275365571860560}
   m_Layer: 9
   m_Name: Stickyball
-  m_TagString: PlayerBullet
+  m_TagString: StickyBall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -130,4 +130,5 @@ MonoBehaviour:
   damage: 1
   impactFX: {fileID: 0}
   DestroyOnHit: 1
-  reduceSpeed: 2
+  enemyReduceSpeed: 2
+  reduceSpeedTime: 0

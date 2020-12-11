@@ -15,42 +15,24 @@ public class StickyBullet : BulletController
 
     private void Awake()
     {
-     
+
     }
-    private void OnCollisionEnter(Collision collision)
+    private new void OnTriggerEnter(Collider other)
     {
-        enemyNavMesh = collision.gameObject.GetComponent<NavMeshAgent>();
+        enemyNavMesh = other.gameObject.GetComponent<NavMeshAgent>();
 
         enemyNavMesh.speed = enemySpeed;
 
-        if (collision.gameObject.CompareTag("Player"))
-        {
-            return;
-        }
 
-        if (collision.gameObject.GetComponent<IDamageable>() != null && collision.gameObject.CompareTag("Enemy"))
+        if (other.gameObject.GetComponent<IDamageable>() != null && other.gameObject.CompareTag("Enemy"))
         {
 
             enemySpeed = enemyReduceSpeed;
 
             isTimerOn = true;
         }
-
     }
 
-    private void Update()
-    {
-        if(isTimerOn == true)
-        {
-            _timer += Time.deltaTime;
 
-            if(_timer >= reduceSpeedTime)
-            {
-                enemySpeed = 6;
-                _timer = 0;
-                isTimerOn = false;
-            }
-        }
-    }
-
+    
 }
