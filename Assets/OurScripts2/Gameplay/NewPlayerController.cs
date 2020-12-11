@@ -187,12 +187,10 @@ public class NewPlayerController : MonoBehaviour,IDamageable
 
     void UpdateWeaponIndex()
     {
-        //   Para agregar más armas.
-
+        
         if (Input.GetKeyDown(KeyCode.Alpha1)) ChangeWeaponIndex(0);
         if (Input.GetKeyDown(KeyCode.Alpha2)) ChangeWeaponIndex(1);
         if (Input.GetKeyDown(KeyCode.Alpha3)) ChangeWeaponIndex(2);
-        if (Input.GetKeyDown(KeyCode.Alpha4)) ChangeWeaponIndex(3);
 
 
 
