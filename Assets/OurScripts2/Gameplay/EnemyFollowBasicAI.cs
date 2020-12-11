@@ -7,13 +7,12 @@ using UnityEngine.UI;
 
 public enum EEnemyState { IDLE, PATROL, FOLLOW, ATTACK, RETREAT }
 
-public class EnemyFollowBasicAI : MonoBehaviour
+public class EnemyFollowBasicAI : MonoBehaviour,IDamageable
 {
     
     NavMeshAgent navAgent;
     public EEnemyState enemyState;
-    public HealthBar enemyHealthBar;
-    public int enemyHealth = 3; 
+    public HealthBar enemyHealthBar; 
     private float timeToWait;
 
     public Transform player;
@@ -38,29 +37,15 @@ public class EnemyFollowBasicAI : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        enemyHealthBar.SetMaxHealth(enemyHealth);
-      
+       
        
     }
 
-    private void OnTriggerEnter(Collider other)
+   
+
+    public void DestroyShip()
     {
-        if (other.gameObject.CompareTag("PlayerBullet"))
-        {
-            enemyHealth--;
-
-            enemyHealthBar.SetHealth(enemyHealth);
-
-
-            Destroy(other.gameObject);
-            
-        }
-
-        //if (other.gameObject.CompareTag("StickyBall"))
-        //{
-          //  speedReference.speed = 2;
-
-        //}
+        Destroy(gameObject);
     }
 
     public void AttackWithParams()
@@ -155,10 +140,14 @@ public class EnemyFollowBasicAI : MonoBehaviour
 
         AIBrain();
 
-        if (enemyHealth <= 0)
-        {
-            Destroy(gameObject);
-        }
+       
+    }
+
+    public void ApplyDamage(float Damage, EWeaponType weaponType = EWeaponType.None)
+    {
+
+        GetComponent<AttributeBase>().SubtractToValue(Damage);
+
     }
 }
 

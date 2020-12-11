@@ -11,7 +11,7 @@ public class PlayerHealthBar : MonoBehaviour
     public Image fill;
 
 
-    public void SetMaxHealth(int health)
+    public void SetMaxHealth(float health)
     {
         _healthbar.maxValue = health;
         _healthbar.value = health;
@@ -19,7 +19,7 @@ public class PlayerHealthBar : MonoBehaviour
         fill.color = gradient.Evaluate(1f);
     }
 
-    public void SetHealth(int health)
+    public void SetHealth(float health)
     {
         _healthbar.value = health;
 

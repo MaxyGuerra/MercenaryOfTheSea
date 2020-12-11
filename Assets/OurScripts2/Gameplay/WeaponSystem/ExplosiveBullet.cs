@@ -7,9 +7,19 @@ public class ExplosiveBullet : BulletController
 
     [SerializeField] private float delay = 3f;
     private bool hasExploted = false;
+    public float explosionRadius=3f;
+
+    public bool canDamagePlayer;
+
 
     //public GameObject explos
 
+    private void OnDrawGizmosSelected()
+    {
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(transform.position, explosionRadius);
+
+    }
     // Start is called before the first frame update
     void Start()
     {
@@ -18,16 +28,42 @@ public class ExplosiveBullet : BulletController
 
     private void Detonate()
     {
-      
+        if (hasExploted) return;
+
+        hasExploted = true;
+
+        Collider[] hits = Physics.OverlapSphere(transform.position, explosionRadius);
+
+        for (int i = 0; i < hits.Length; i++)
+        {
+            hits[i].GetComponent<IDamageable>()?.ApplyDamage(damage, WeaponType);
+
+        }
+
+        if(impactFX)
+        {
+            Instantiate(impactFX, transform.position, Quaternion.identity);
+
+        }
+
+
+       Destroy(gameObject);
     }
 
+    protected override void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.GetComponent<IDamageable>() != null)
+        {
+            Detonate();
+        }
+    }
     // Update is called once per frame
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.CompareTag("Enemy")&& !hasExploted)
+        if(collision.gameObject.GetComponent<IDamageable>()!=null)
         {
             Detonate();
-            Destroy(gameObject);
         }
+        
     }
 }

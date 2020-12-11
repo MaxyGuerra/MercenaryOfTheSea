@@ -6,9 +6,11 @@ using UnityEngine;
 public class BulletController : MonoBehaviour
 {
 
-    [SerializeField] private EWeaponType WeaponType;
+    [SerializeField] protected EWeaponType WeaponType;
     [SerializeField] private float m_bulletSpeed = 2;
-    [SerializeField] private int damage = 1;
+    [SerializeField] protected int damage = 1;
+
+    public GameObject impactFX;
 
     public float bulletSpeed { get { return m_bulletSpeed; } set { m_bulletSpeed = value; } }
     private int timeToDestroy = 5;
@@ -22,7 +24,7 @@ public class BulletController : MonoBehaviour
         damage = WeaponsDatabase.Instance.GetWeaponDefinition(WeaponType).baseDamage;
     }
 
-    private void OnTriggerEnter(Collider other)
+    protected virtual void OnTriggerEnter(Collider other)
     {
         other.GetComponent<IDamageable>()?.ApplyDamage(damage, WeaponType);
 
@@ -35,12 +37,6 @@ public class BulletController : MonoBehaviour
         Destroy(gameObject, timeToDestroy);
 
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-
-
-    }
+ 
 }
 

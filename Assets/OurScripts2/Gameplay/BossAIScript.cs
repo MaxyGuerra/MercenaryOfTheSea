@@ -21,7 +21,7 @@ public class BossAIScript : MonoBehaviour, IDamageable
     public bool isCollected = false;
     public GameObject healthBarCanvas;
     public HealthBar bossHealthBar;
-    public int bossHealth = 3;
+    public float bossHealth = 3;
     public BossState bossState;
 
    
@@ -111,7 +111,7 @@ public class BossAIScript : MonoBehaviour, IDamageable
 
  
 
-    public void ApplyDamage(int Dmg, EWeaponType weaponType)
+    public void ApplyDamage(float Dmg, EWeaponType weaponType)
     {
         if (weaponType != EWeaponType.Harpoon) return;
 

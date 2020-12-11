@@ -10,7 +10,7 @@ public enum EPlayerActions { NONE, PlayerMove, ShootingHarpoon, ShootingCannon }
 public class NewPlayerController : MonoBehaviour,IDamageable
 {
    
-    public int playerHealth = 10; 
+    public float playerHealth = 10; 
     public PlayerHealthBar playerHealthBar;
     public CanvasGroup loseScreen;
     //AudioClip playerDeath;
@@ -190,6 +190,7 @@ public class NewPlayerController : MonoBehaviour,IDamageable
         
         if (Input.GetKeyDown(KeyCode.Alpha1)) ChangeWeaponIndex(0);
         if (Input.GetKeyDown(KeyCode.Alpha2)) ChangeWeaponIndex(1);
+        if (Input.GetKeyDown(KeyCode.Alpha3)) ChangeWeaponIndex(2);
 
 
 
@@ -217,11 +218,11 @@ public class NewPlayerController : MonoBehaviour,IDamageable
             playerHealth = -2;
         }
     }
+ 
 
-    public void ApplyDamage(int Dmg, EWeaponType weaponType)
+    public void ApplyDamage(float Damage, EWeaponType weaponType)
     {
-
-        playerHealth -= Dmg;
+        playerHealth -= Damage;
         playerHealthBar.SetHealth(playerHealth);
 
         if (playerHealth <= 0)
@@ -230,7 +231,10 @@ public class NewPlayerController : MonoBehaviour,IDamageable
 
             PlayerIsDead();
         }
+    }
 
-         
+    public void ForceDestroy(Vector3 _hitPosition)
+    {
+      
     }
 }

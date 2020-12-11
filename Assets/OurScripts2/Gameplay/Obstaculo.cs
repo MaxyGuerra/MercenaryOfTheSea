@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Obstaculo : MonoBehaviour,IDamageable
 {
-    public void ApplyDamage(int Dmg, EWeaponType weaponType)
+    public void ApplyDamage(float Dmg, EWeaponType weaponType)
     {
         Destroy(gameObject);
     }

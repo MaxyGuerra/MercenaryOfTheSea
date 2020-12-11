@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public enum EWeaponType { CannonBall,Harpoon, MineCannon}
+public enum EWeaponType { None,CannonBall,Harpoon, MineCannon}
 public class WeaponHarpoon : AddonBase
 {
     [Header("Harpoon settings")]

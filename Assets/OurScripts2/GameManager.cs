@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -11,6 +12,25 @@ public class GameManager : Singleton<GameManager>
     public static event FNotify_1Params<BossAIScript> OnBossCollected;
 
     public WeaponsDatabase weaponsDbReference;
+
+    public static Action<int> OnScoreChange { get; internal set; }
+    public static Action<EGameStates> OnGameStateChange { get; internal set; }
+
+    internal void AddScore(int v)
+    {
+        throw new NotImplementedException();
+    }
+
+    internal void SetRoundBegin()
+    {
+        throw new NotImplementedException();
+    }
+
+    internal void AddWinCount(int v)
+    {
+        throw new NotImplementedException();
+    }
+
     public void NextScene()
     {
         Debug.Log("Next Scene");
@@ -56,7 +76,12 @@ public class GameManager : Singleton<GameManager>
         Time.timeScale = 1;
     }
 
-   public void Update()
+    internal void SetRoundOver(ERoundWinCondition roundTimeCompleted)
+    {
+        throw new NotImplementedException();
+    }
+
+    public void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {

@@ -9,6 +9,7 @@ public class AddonMineCannon : AddonBase
     private float counter;
 
     private Transform playerTransform;
+    public Vector3 spawnPositionOffset;
 
     private void Awake()
     {
@@ -28,7 +29,7 @@ public class AddonMineCannon : AddonBase
         BeginCooldown();
 
 
-        Instantiate(mineGameObject, playerTransform.transform.position, Quaternion.identity);
+        Instantiate(mineGameObject,  transform.position+ spawnPositionOffset, Quaternion.identity);
 
     }
 }
