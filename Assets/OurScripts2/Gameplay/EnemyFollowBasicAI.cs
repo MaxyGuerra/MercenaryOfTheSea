@@ -21,11 +21,6 @@ public class EnemyFollowBasicAI : MonoBehaviour,IDamageable
     public float remainingDistance;
     public bool hasPath; 
 
-    // [Header("Attack Scripts")]
-
-    // public bool thisEnemyShoot = false;
-    // public EnemyShotController enemycannon;
-
     private void Awake()
     {
         navAgent = GetComponent<NavMeshAgent>();

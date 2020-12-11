@@ -5,7 +5,6 @@ using UnityEngine;
 public class ExplosiveBullet : BulletController
 {
 
-    [SerializeField] private float delay = 3f;
     private bool hasExploted = false;
     public float explosionRadius=3f;
 

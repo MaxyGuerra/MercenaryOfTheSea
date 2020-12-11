@@ -12,10 +12,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 03479311cdc93da4d87673d5065a6125, type: 3}
   m_Name: WeaponsDatabase
   m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes: []
   weapons:
   - weaponType: 0
     baseDamage: 1
-  - weaponType: 1
+  - weaponType: 3
     baseDamage: 3
   - weaponType: 2
     baseDamage: 3
