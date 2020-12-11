@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class AddonMineCannon : AddonBase
 {
-    public Rigidbody mineGameObject;
+    public GameObject mineGameObject;
     [SerializeField] private float cadence = 3;
     private float counter;
 

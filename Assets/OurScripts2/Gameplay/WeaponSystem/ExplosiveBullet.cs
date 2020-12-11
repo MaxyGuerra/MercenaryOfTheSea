@@ -52,17 +52,31 @@ public class ExplosiveBullet : BulletController
 
     protected override void OnTriggerEnter(Collider other)
     {
+
+        if (other.gameObject.CompareTag("Player"))
+        {
+            return;
+        }
+
         if (other.gameObject.GetComponent<IDamageable>() != null)
         {
+
             Detonate();
         }
     }
     // Update is called once per frame
     private void OnCollisionEnter(Collision collision)
     {
-        if(collision.gameObject.GetComponent<IDamageable>()!=null)
+
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            return;
+        }
+
+        if (collision.gameObject.GetComponent<IDamageable>()!=null)
         {
             Detonate();
+
         }
         
     }
