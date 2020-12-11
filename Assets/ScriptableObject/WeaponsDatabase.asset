@@ -17,3 +17,5 @@ MonoBehaviour:
     baseDamage: 1
   - weaponType: 1
     baseDamage: 3
+  - weaponType: 2
+    baseDamage: 3

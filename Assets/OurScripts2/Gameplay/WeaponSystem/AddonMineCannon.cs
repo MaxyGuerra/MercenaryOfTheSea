@@ -5,7 +5,6 @@ using UnityEngine;
 public class AddonMineCannon : AddonBase
 {
     public Rigidbody mineGameObject;
-    private bool isShooting = false;
     [SerializeField] private float cadence = 3;
     private float counter;
 
@@ -28,10 +27,9 @@ public class AddonMineCannon : AddonBase
         if (isInCooldown) return;
         BeginCooldown();
 
-        
-        // Instantiate(gameObject, transform.position, playerTransform.rotation);
-    
-        
+
+        Instantiate(mineGameObject, playerTransform.transform.position, Quaternion.identity);
+
     }
 }
 
