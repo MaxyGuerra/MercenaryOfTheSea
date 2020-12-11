@@ -12,11 +12,11 @@ GameObject:
   - component: {fileID: 1587670511332709805}
   - component: {fileID: 1587670511332709806}
   - component: {fileID: 1587670511332709807}
-  - component: {fileID: 5157009745987459819}
   - component: {fileID: 5761427339541238542}
+  - component: {fileID: 8355275365571860560}
   m_Layer: 9
   m_Name: Stickyball
-  m_TagString: PlayerBullet
+  m_TagString: StickyBall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -97,22 +97,6 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &5157009745987459819
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1587670511332709808}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 605770086b3dec7409f94c4f39c8df07, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  weaponType: 0
-  destroyOnHit: 1
-  bulletSpeed: 1
-  timeToDestroy: 2
 --- !u!54 &5761427339541238542
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -129,3 +113,22 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &8355275365571860560
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1587670511332709808}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2eefb56145b6022408c1cb9416a61167, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  WeaponType: 2
+  m_bulletSpeed: 2
+  damage: 1
+  impactFX: {fileID: 0}
+  DestroyOnHit: 1
+  enemyReduceSpeed: 2
+  reduceSpeedTime: 0

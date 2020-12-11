@@ -5,9 +5,8 @@ using UnityEngine;
 public class ExplosiveBullet : BulletController
 {
 
-    [SerializeField] private float delay = 3f;
     private bool hasExploted = false;
-    public float explosionRadius=3f;
+    [SerializeField] private float explosionRadius=3f;
 
     public bool canDamagePlayer;
 
@@ -36,6 +35,7 @@ public class ExplosiveBullet : BulletController
 
         for (int i = 0; i < hits.Length; i++)
         {
+
             hits[i].GetComponent<IDamageable>()?.ApplyDamage(damage, WeaponType);
 
         }
