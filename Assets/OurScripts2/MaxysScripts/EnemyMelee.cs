@@ -4,27 +4,42 @@ using UnityEngine;
 
 public class EnemyMelee : EnemyBase
 {
+    public int TiempoDeStun;
+    private float Timer;
+    private bool TimerOn = false;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        navAgent.stoppingDistance = 1;
     }
 
-    protected override void Attack()
+    private void OnCollisionEnter(Collision collision)
     {
-        if (player == null)
+        if (collision.gameObject.CompareTag("Player"))
         {
-            //player is dead?
-            enemyState = EnemyState.IDLE;
-            return;
+            navAgent.speed = 0;
+            TimerOn = true;
         }
-
     }
 
     // Update is called once per frame
     void Update()
     {
         AIBrain();
+
+        if (TimerOn == true)
+        {
+            Timer += Time.deltaTime;
+
+            if (Timer >= TiempoDeStun)
+            {
+                navAgent.speed = 5;
+                Timer = 0;
+                TimerOn = false;
+                enemyState = EnemyState.FOLLOW;
+            }
+        }
 
         if (enemyHealth <= 0)
         {

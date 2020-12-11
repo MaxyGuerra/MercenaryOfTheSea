@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public enum EnemyState { IDLE, PATROL, FOLLOW, ATTACK, RETREAT }
 public class EnemyBase : MonoBehaviour
 {
-    NavMeshAgent navAgent;
+    public NavMeshAgent navAgent;
     public EnemyState enemyState;
     public HealthBar enemyHealthBar;
     public int enemyHealth = 3;
