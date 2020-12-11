@@ -9,6 +9,10 @@ public class StickyBullet : BulletController
     private NavMeshAgent enemyNavMesh;
     private float enemySpeed;
 
+    private float _timer;
+    private bool isTimerOn = false;
+    [SerializeField] private int reduceSpeedTime;
+
     private void Awake()
     {
      
@@ -28,8 +32,25 @@ public class StickyBullet : BulletController
         {
 
             enemySpeed = enemyReduceSpeed;
+
+            isTimerOn = true;
         }
 
+    }
+
+    private void Update()
+    {
+        if(isTimerOn == true)
+        {
+            _timer += Time.deltaTime;
+
+            if(_timer >= reduceSpeedTime)
+            {
+                enemySpeed = 6;
+                _timer = 0;
+                isTimerOn = false;
+            }
+        }
     }
 
 }
