@@ -161,5 +161,6 @@ MonoBehaviour:
   damage: 111
   impactFX: {fileID: 130346, guid: 07bf9ced87963e24299c2c2a22bfeeb6, type: 3}
   DestroyOnHit: 1
-  explosionRadius: 8
+  delay: 3
+  explosionRadius: 22
   canDamagePlayer: 0
