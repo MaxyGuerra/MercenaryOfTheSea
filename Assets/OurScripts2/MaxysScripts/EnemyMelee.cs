@@ -8,7 +8,6 @@ public class EnemyMelee : EnemyBase
     private float Timer;
     private bool TimerOn = false;
 
-    // Start is called before the first frame update
     void Start()
     {
         navAgent.stoppingDistance = 1;
@@ -30,7 +29,7 @@ public class EnemyMelee : EnemyBase
             navAgent.speed = 3;
         }
     }
-    // Update is called once per frame
+
     void Update()
     {
         AIBrain();

@@ -12,6 +12,7 @@ public class EnemyBase : MonoBehaviour
     public HealthBar enemyHealthBar;
     public int enemyHealth = 3;
     private NavMeshAgent speedReference;
+    public int CampoDeVision;
 
     public Transform player;
     public float AttackDistance = 8;
@@ -47,20 +48,21 @@ public class EnemyBase : MonoBehaviour
     {
         if (player == null) return;
 
-
         if (!navAgent.SetDestination(player.position)) return;
 
         if (!navAgent.hasPath) return;
         remainingDistance = navAgent.remainingDistance;
 
+        if (remainingDistance <= CampoDeVision)
+        {
+            navAgent.speed = 5;
+        }
 
         if (remainingDistance <= AttackDistance)
         {
             enemyState = EnemyState.ATTACK;
             return;
         }
-
-
 
     }
 
