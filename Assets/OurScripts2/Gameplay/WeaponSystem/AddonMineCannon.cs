@@ -5,12 +5,10 @@ using UnityEngine;
 public class AddonMineCannon : AddonBase
 {
     public GameObject mineGameObject;
-    [SerializeField] private float cadence = 3;
     private float counter;
 
     private Transform playerTransform;
-    public Vector3 spawnPositionOffset;
-
+    [SerializeField] protected Vector3 spawnPositionOffset;
     private void Awake()
     {
         playerTransform = transform.parent;

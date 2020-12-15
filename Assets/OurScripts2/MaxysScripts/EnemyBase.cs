@@ -12,8 +12,6 @@ public class EnemyBase : MonoBehaviour
     public HealthBar enemyHealthBar;
     public int enemyHealth = 3;
     private NavMeshAgent speedReference;
-    public int CampoDeVision;
-
 
     public Transform player;
     public float AttackDistance = 8;
