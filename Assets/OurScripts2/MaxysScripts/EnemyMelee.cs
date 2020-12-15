@@ -23,6 +23,13 @@ public class EnemyMelee : EnemyBase
         }
     }
 
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag("StickyBall"))
+        {
+            navAgent.speed = 3;
+        }
+    }
     // Update is called once per frame
     void Update()
     {

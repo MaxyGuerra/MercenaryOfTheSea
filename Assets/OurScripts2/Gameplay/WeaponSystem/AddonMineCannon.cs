@@ -21,6 +21,7 @@ public class AddonMineCannon : AddonBase
 
     }
 
+
     protected override void TryToShoot()
     {
         if (!canShoot) return;
