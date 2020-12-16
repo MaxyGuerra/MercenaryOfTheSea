@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: WaterMaterial
+  m_Name: WaterMaterial(2)
   m_Shader: {fileID: -6465566751694194690, guid: 27f2e82c8a303cd4d874d05f945253d1,
     type: 3}
   m_ShaderKeywords: 
@@ -22,11 +22,11 @@ Material:
     m_TexEnvs: []
     m_Floats:
     - Vector1_27B40B66: 3
-    - Vector1_5E15243A: 0.7
+    - Vector1_5E15243A: 1.5
     - Vector1_BFCEB1C1: 1.2
     - Vector1_C63C361F: 0.1
-    - Vector1_FED38AA1: 60
+    - Vector1_FED38AA1: 100
     m_Colors:
-    - Color_E59F6CB: {r: 0.3767889, g: 0.50321627, b: 0.509434, a: 0}
+    - Color_E59F6CB: {r: 0.2784314, g: 0.5176471, b: 0.5294118, a: 0}
     - Color_F32D316E: {r: 0.2840868, g: 0.68549556, b: 0.990566, a: 0}
   m_BuildTextureStacks: []
