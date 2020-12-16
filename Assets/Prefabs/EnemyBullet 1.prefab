@@ -125,5 +125,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 605770086b3dec7409f94c4f39c8df07, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bulletSpeed: 7
-  timeToDestroy: 5
+  WeaponType: 1
+  m_bulletSpeed: 2
+  damage: 1
+  impactFX: {fileID: 0}
+  targetTags:
+  - Player
+  DestroyOnHit: 1

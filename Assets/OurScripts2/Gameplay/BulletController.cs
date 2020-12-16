@@ -11,7 +11,7 @@ public class BulletController : MonoBehaviour
     [SerializeField] protected int damage = 1;
 
     public GameObject impactFX;
-
+    public string[] targetTags;
     public float bulletSpeed { get { return m_bulletSpeed; } set { m_bulletSpeed = value; } }
     private int timeToDestroy = 5;
 
@@ -24,11 +24,28 @@ public class BulletController : MonoBehaviour
         damage = WeaponsDatabase.Instance.GetWeaponDefinition(WeaponType).baseDamage;
     }
 
+    public void ShootToDirection(Vector3 direction)
+    {
+        GetComponent<Rigidbody>().velocity=direction*bulletSpeed;
+    }
+    public void ShootToDirection(Vector3 direction,float shootSpeed)
+    {
+        GetComponent<Rigidbody>().velocity = direction * bulletSpeed;
+    }
     protected virtual void OnTriggerEnter(Collider other)
     {
-        other.GetComponent<IDamageable>()?.ApplyDamage(damage, WeaponType);
+        bool hitSucess=false;
+        for (int i = 0; i < targetTags.Length; i++)
+        {
+          if(  other.CompareTag(targetTags[i]))
+            {
+                other.GetComponent<IDamageable>()?.ApplyDamage(damage, WeaponType);
+                hitSucess=true;
+            }
+        }
+     
 
-        if (DestroyOnHit)
+        if (DestroyOnHit && hitSucess)
             Destroy(gameObject);
     }
 

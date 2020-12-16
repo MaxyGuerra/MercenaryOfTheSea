@@ -4,9 +4,24 @@ using UnityEngine;
 
 public class Obstaculo : MonoBehaviour,IDamageable
 {
-    public void ApplyDamage(float Dmg, EWeaponType weaponType)
+    AttributeBase attributeBase;
+    void Awake()
+    {
+        attributeBase=GetComponent<AttributeBase>();
+    }
+
+    void OnEnable()
+    {
+        attributeBase.OnAttributeDepletedEvent=OnHpisZero;
+    }
+
+    void OnHpisZero()
     {
         Destroy(gameObject);
+    }
+    public void ApplyDamage(float Dmg, EWeaponType weaponType)
+    {
+        attributeBase.SubtractToValue(Dmg);
     }
  
 }

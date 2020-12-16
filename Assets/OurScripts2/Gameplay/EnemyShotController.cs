@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+public enum EShootStatus {OK, COOLDOWN,OUT_OF_RANGE,}
 public class EnemyShotController : MonoBehaviour
 {
     [Header("Rotation and Following Settings")]
@@ -11,7 +12,7 @@ public class EnemyShotController : MonoBehaviour
 
     [Header("Shooting Settings")]
 
-    public bool canShoot = false;
+    public bool bIsInCooldown = false;
     public Transform firePoint;
     public float shootingDistance = 8;
     public float offset = 1;
@@ -27,7 +28,35 @@ public class EnemyShotController : MonoBehaviour
     }
 
 
+    public EShootStatus TryToShoot(Transform Target)
+    {
+        if(bIsInCooldown)return EShootStatus.COOLDOWN;
 
+        if(!GetIsInRange(Target.position))
+        {
+            return EShootStatus.OUT_OF_RANGE;
+        }
+        bIsInCooldown=true;
+        BulletController newBullet = Instantiate(enemyBullet, firePoint.position, firePoint.rotation) as BulletController;
+
+        
+        newBullet.ShootToDirection(transform.forward.normalized,enemyBulletSpeed);
+
+        StartCoroutine(WaitForCooldown());
+        return EShootStatus.OK;
+
+    }
+    IEnumerator WaitForCooldown()
+    {
+        yield return new WaitForSeconds(cadence);
+        bIsInCooldown=false;
+    }
+ 
+    bool GetIsInRange(Vector3 targetPosition)
+    {
+        return     Vector3.Distance(transform.position, targetPosition) < shootingDistance;
+
+    }
     void Update()
     {
 
@@ -36,23 +65,7 @@ public class EnemyShotController : MonoBehaviour
         transform.rotation = Quaternion.Lerp(transform.rotation, rotation, rotationSpeed * Time.deltaTime);
 
 
-        if (Vector3.Distance(transform.position, NewPlayerController.instance.transform.position) < shootingDistance) canShoot = true; 
-        else canShoot = false;
-
-        if (canShoot)
-        {
-
-            counter -= Time.deltaTime;
-
-            if (counter <= 0)
-            {
-
-                counter = cadence;
-                BulletController newBullet = Instantiate(enemyBullet, firePoint.position, firePoint.rotation) as BulletController;
-
-                newBullet.bulletSpeed = enemyBulletSpeed;
-            }
-        }
+        
         
     }
 }

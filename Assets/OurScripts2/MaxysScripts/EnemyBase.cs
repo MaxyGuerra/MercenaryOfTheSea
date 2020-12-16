@@ -7,6 +7,7 @@ using UnityEngine.UI;
 public enum EnemyState { IDLE, PATROL, FOLLOW, ATTACK, RETREAT } 
 public class EnemyBase : MonoBehaviour, IDamageable
 {
+    EnemyShotController ShotController;
     public NavMeshAgent navAgent;
     public EnemyState enemyState;
     public HealthBar enemyHealthBar;
@@ -14,8 +15,10 @@ public class EnemyBase : MonoBehaviour, IDamageable
     private NavMeshAgent speedReference;
     public int CampoDeVision;
 
+    [Header("Attack settings")]
     public Transform player;
     public float AttackDistance = 8;
+     
     [Header("Debug AI")]
     public float remainingDistance;
 
@@ -24,6 +27,7 @@ public class EnemyBase : MonoBehaviour, IDamageable
         navAgent = GetComponent<NavMeshAgent>();
         speedReference = GetComponent<NavMeshAgent>();
         remainingDistance = Mathf.Infinity;
+        ShotController=GetComponent<EnemyShotController>();
     }
 
     private void OnTriggerEnter(Collider other)
@@ -36,12 +40,15 @@ public class EnemyBase : MonoBehaviour, IDamageable
 
     protected virtual void Attack()
     {
+
         if (player == null)
         {
             //player is dead?
             enemyState = EnemyState.IDLE;
             return;
         }
+
+        ShotController.TryToShoot(player);
     }
 
     void FollowPlayer()

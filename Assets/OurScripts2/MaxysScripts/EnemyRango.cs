@@ -29,7 +29,8 @@ public class EnemyRango : EnemyBase
             return;
         }
 
-        EnemyShot.canShoot = true;
+        EShootStatus shootStatus= EnemyShot.TryToShoot(player);
+
 
         TimerOn = true;
     }
