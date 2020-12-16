@@ -41,6 +41,8 @@ public class BulletController : MonoBehaviour
             {
                 other.GetComponent<IDamageable>()?.ApplyDamage(damage, WeaponType);
                 hitSucess=true;
+
+                Instantiate(impactFX, transform.position, Quaternion.identity);
             }
         }
      

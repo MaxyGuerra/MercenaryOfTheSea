@@ -112,9 +112,9 @@ MonoBehaviour:
   WeaponType: 1
   m_bulletSpeed: 2
   damage: 1
-  impactFX: {fileID: 0}
+  impactFX: {fileID: 130346, guid: 07bf9ced87963e24299c2c2a22bfeeb6, type: 3}
   targetTags:
-  - 
+  - Obstacle
   DestroyOnHit: 1
 --- !u!54 &5761427339541238542
 Rigidbody:
