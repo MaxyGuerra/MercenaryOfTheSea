@@ -6,10 +6,18 @@ using UnityEngine.UI;
 
 public class EnemyRango : EnemyBase
 {
+    EnemyShotController EnemyShot;
+    private float Timer;
+    private bool TimerOn = false;
+    private int TiempoDeProximidad = 2;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        navAgent.stoppingDistance = 12;
+        AttackDistance = navAgent.stoppingDistance;
+        EnemyShot = GetComponent<EnemyShotController>();
+        EnemyShot.shootingDistance = navAgent.stoppingDistance + 2;
     }
 
     protected override void Attack()
@@ -21,6 +29,9 @@ public class EnemyRango : EnemyBase
             return;
         }
 
+        EnemyShot.canShoot = true;
+
+        TimerOn = true;
     }
 
     private void OnTriggerEnter(Collider other)
@@ -31,10 +42,22 @@ public class EnemyRango : EnemyBase
         }
     }
 
-    // Update is called once per frame
-    void Update()
+        // Update is called once per frame
+        void Update()
     {
         AIBrain();
+
+        if (TimerOn == true)
+        {
+            Timer += Time.deltaTime;
+
+            if (Timer >= TiempoDeProximidad)
+            {
+                Timer = 0;
+                TimerOn = false;
+                enemyState = EnemyState.FOLLOW;
+            }
+        }
 
         if (enemyHealth <= 0)
         {
