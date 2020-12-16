@@ -43,7 +43,7 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.7
+  m_Radius: 0.31
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &1306575828640373753
 MonoBehaviour:
@@ -58,6 +58,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Bandera: {fileID: 7889780406961184178}
+  particles: {fileID: 143098, guid: 7d5bdfc07d77aab4a963e018ba7bccc4, type: 3}
 --- !u!1 &2224930062381376338
 GameObject:
   m_ObjectHideFlags: 0

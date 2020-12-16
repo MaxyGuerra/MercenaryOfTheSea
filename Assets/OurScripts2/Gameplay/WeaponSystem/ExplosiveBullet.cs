@@ -19,11 +19,6 @@ public class ExplosiveBullet : BulletController
         Gizmos.DrawWireSphere(transform.position, explosionRadius);
 
     }
-    // Start is called before the first frame update
-    void Start()
-    {
-
-    }
 
     private void Detonate()
     {
