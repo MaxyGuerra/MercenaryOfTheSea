@@ -123,9 +123,9 @@ public class NewPlayerController : MonoBehaviour,IDamageable
     {
         //_audioSource.PlayOneShot(playerDeath);
 
-        //loseScreen.gameObject.SetActive(true);
+        loseScreen.gameObject.SetActive(true);
 
-        // Time.timeScale = 0;
+        Time.timeScale = 0;
 
         PlayerRespawn();
     }

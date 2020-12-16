@@ -21,9 +21,5 @@ public class Checkpoint : MonoBehaviour
             thePlayer.SetSpawnPoint(transform.position);
         }
     }
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+  
 }

@@ -4,8 +4,8 @@ using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.UI;
 
-public enum EnemyState { IDLE, PATROL, FOLLOW, ATTACK, RETREAT }
-public class EnemyBase : MonoBehaviour
+public enum EnemyState { IDLE, PATROL, FOLLOW, ATTACK, RETREAT } 
+public class EnemyBase : MonoBehaviour, IDamageable
 {
     public NavMeshAgent navAgent;
     public EnemyState enemyState;
@@ -101,5 +101,12 @@ public class EnemyBase : MonoBehaviour
         {
             Destroy(gameObject);
         }
+    }
+
+    public void ApplyDamage(float Damage, EWeaponType weaponType = EWeaponType.None)
+    {
+
+        GetComponent<AttributeBase>().SubtractToValue(Damage);
+
     }
 }
