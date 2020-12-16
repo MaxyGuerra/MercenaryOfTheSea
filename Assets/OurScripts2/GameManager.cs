@@ -15,20 +15,23 @@ public class GameManager : Singleton<GameManager>
 
     public static Action<int> OnScoreChange { get; internal set; }
     public static Action<EGameStates> OnGameStateChange { get; internal set; }
+    public static event FNotify_1Params<EGameStates> OnGameStateChangeEvent;
+    public Vector3 LastCheckpoint;
+
 
     internal void AddScore(int v)
     {
-        throw new NotImplementedException();
+        
     }
 
     internal void SetRoundBegin()
     {
-        throw new NotImplementedException();
+        
     }
 
     internal void AddWinCount(int v)
     {
-        throw new NotImplementedException();
+       
     }
 
     public void NextScene()
@@ -78,7 +81,7 @@ public class GameManager : Singleton<GameManager>
 
     internal void SetRoundOver(ERoundWinCondition roundTimeCompleted)
     {
-        throw new NotImplementedException();
+         
     }
 
     public void Update()
@@ -88,7 +91,22 @@ public class GameManager : Singleton<GameManager>
             PauseGame();
         }
     }
+    public void RestartToCheckPoint()
+    {
+        Time.timeScale = 1;
+        ChangeGameState(EGameStates.RELOADING_TO_CHECKPOINT);
+    }
 
+    public void ChangeGameState(EGameStates newGameState)
+    {
+        OnGameStateChangeEvent?.Invoke(newGameState);
+
+      
+    }
+    public void SaveCheckpoint(Vector3 newCheckPoint)
+    {
+        LastCheckpoint = newCheckPoint;
+    }
     public void SetBossCollected(BossAIScript bossAIScript)
     {
 
@@ -96,5 +114,22 @@ public class GameManager : Singleton<GameManager>
 
     }
 
-   
+    private void Start()
+    {
+        BeginGame();
+    }
+    public void BeginGame()
+    {
+        ChangeGameState(EGameStates.GAMEPLAY);
+
+    }
+
+    public void SetGameOver()
+    {
+
+        //TODO si quieren detener el tiempo haganlo aca
+        Time.timeScale = 0;
+     ChangeGameState(EGameStates.GAME_OVER);
+
+    }
 }

@@ -4,21 +4,21 @@ using UnityEngine;
 
 public class Checkpoint : MonoBehaviour
 {
-    public NewPlayerController thePlayer;
-
-
+    bool checkpointReady;
     // Start is called before the first frame update
     void Start()
     {
-        thePlayer = FindObjectOfType<NewPlayerController>();    
+ 
     }
 
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.tag == ("Player"))
+        if (checkpointReady) return;
+        checkpointReady = true;
+        if(other.CompareTag("Player"))
         {
-            thePlayer.SetSpawnPoint(transform.position);
+            GameManager.Instance.SaveCheckpoint(transform.position);
         }
     }
   

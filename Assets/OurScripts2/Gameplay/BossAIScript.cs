@@ -23,6 +23,7 @@ public class BossAIScript : MonoBehaviour, IDamageable
     public HealthBar bossHealthBar;
     public float bossHealth = 3;
     public BossState bossState;
+    bool shouldBeHooked;
 
    
 
@@ -38,6 +39,7 @@ public class BossAIScript : MonoBehaviour, IDamageable
         bossHealthBar.SetMaxHealth(bossHealth);
     }
 
+  
     private void OnTriggerEnter(Collider other)
     {
        
@@ -51,9 +53,56 @@ public class BossAIScript : MonoBehaviour, IDamageable
         }
     }
 
+    /// <summary>
+    /// esto detecta un game over se suscribe a lo que hace el game over del game manager
+    /// 
+    /// </summary>
+    void OnDisable()
+    {
+        GameManager.OnGameStateChangeEvent -= GameManager_OnGameStateChangeEvent;
 
+    }
+    void OnEnable()
+    {
+        GameManager.OnGameStateChangeEvent += GameManager_OnGameStateChangeEvent;
+    }
+
+    private void GameManager_OnGameStateChangeEvent(EGameStates Param1)
+    {
+        switch (Param1)
+        {
+            case EGameStates.MAIN_MENU:
+                break;
+            case EGameStates.CONNECTING:
+                break;
+            case EGameStates.RELOADING_TO_CHECKPOINT:
+                ///realod
+                ResetBossToCheckpointState();
+                break;
+            case EGameStates.LOADING_NEXTROUND:
+                break;
+            case EGameStates.LOADING_REMATCH:
+                break;
+            case EGameStates.GAMEPLAY:
+                break;
+            case EGameStates.ROUND_OVER:
+                break;
+            case EGameStates.GAME_OVER:
+
+                //no hago?
+                break;
+        }
+    }
+    /// <summary>
+    /// 
+    /// </summary>
+    void ResetBossToCheckpointState()
+    {
+        shouldBeHooked = true;
+    }
     public Rigidbody SetHooked(bool IsHooked)
     {
+     
         GetComponent<Collider>().isTrigger = true;
 
         return GetComponent<Rigidbody>();
@@ -69,6 +118,11 @@ public class BossAIScript : MonoBehaviour, IDamageable
         OnBossDead?.Invoke(transform);
     }
   
+    void HookAgain()
+    {
+        OnBossDead?.Invoke(transform);
+        shouldBeHooked = false;
+    }
 
     void FollowPlayer()
     {
@@ -115,8 +169,12 @@ public class BossAIScript : MonoBehaviour, IDamageable
     {
         if (weaponType != EWeaponType.Harpoon) return;
 
-        if (bossState == BossState.DEAD) return;
-
+        if (bossState == BossState.DEAD)
+        {
+            if (shouldBeHooked)
+                HookAgain();
+            return;
+        }
         bossHealth -= Dmg;
 
         bossHealthBar.SetHealth(bossHealth);
@@ -133,4 +191,5 @@ public class BossAIScript : MonoBehaviour, IDamageable
         }
        
     }
+    
 }

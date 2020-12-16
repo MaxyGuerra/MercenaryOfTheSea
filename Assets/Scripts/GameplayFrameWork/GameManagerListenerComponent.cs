@@ -20,7 +20,8 @@ public class GameManagerListenerComponent : MonoBehaviour
     }
     private void GameManager_OnGameStateChange(EGameStates GameState)
     {
- 
+
+       
         switch (GameState)
         {
             case EGameStates.MAIN_MENU:
@@ -28,7 +29,7 @@ public class GameManagerListenerComponent : MonoBehaviour
                 break;
             case EGameStates.CONNECTING:
                 break;
-            case EGameStates.RELOADING_ROUND:
+            case EGameStates.RELOADING_TO_CHECKPOINT:
                 break;
             case EGameStates.LOADING_NEXTROUND:
                 OnRoundBegin.Invoke();

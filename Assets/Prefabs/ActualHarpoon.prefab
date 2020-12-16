@@ -76,10 +76,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 605770086b3dec7409f94c4f39c8df07, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weaponType: 1
-  destroyOnHit: 1
-  bulletSpeed: 10
-  timeToDestroy: 5
+  WeaponType: 2
+  m_bulletSpeed: 2
+  damage: 1
+  impactFX: {fileID: 0}
+  DestroyOnHit: 1
 --- !u!1 &8448643784670038835
 GameObject:
   m_ObjectHideFlags: 0

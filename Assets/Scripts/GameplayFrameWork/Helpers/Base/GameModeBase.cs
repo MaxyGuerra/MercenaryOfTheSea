@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 using System.Linq;
 //using GameAnalyticsSDK;
 
-public enum EGameStates { MAIN_MENU, CONNECTING, RELOADING_ROUND, LOADING_NEXTROUND, LOADING_REMATCH, GAMEPLAY, ROUND_OVER, GAME_OVER }
+public enum EGameStates { MAIN_MENU, CONNECTING, RELOADING_TO_CHECKPOINT, LOADING_NEXTROUND, LOADING_REMATCH, GAMEPLAY, ROUND_OVER, GAME_OVER }
 
 public class GameModeBase<T> : MonoBehaviour where T : MonoBehaviour
 {

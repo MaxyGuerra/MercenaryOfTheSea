@@ -18,6 +18,8 @@ public class AttributeBase : MonoBehaviour
 
     public static event FNotify_3Params<string,float, float> OnAttributeChangeWithPercentInternal;
     public UnityEvent OnAttributeDepleted  ;
+    public FNotify OnAttributeDepletedEvent;
+
     private void OnEnable()
     {
         
@@ -47,7 +49,11 @@ public class AttributeBase : MonoBehaviour
         NotifyUI();
 
         if (currentValue <= minValue)
+        {
             OnAttributeDepleted.Invoke();
+            OnAttributeDepletedEvent?.Invoke();
+        }
+          
 
     }
     public void SubtractToValue(float NewValue)
@@ -56,6 +62,10 @@ public class AttributeBase : MonoBehaviour
 
     }
 
+    public void ResetToInitialStats()
+    {
+        InitializeAttribute(baseValue);
+    }
     private void NotifyUI()
     {
         float percent = currentValue / baseValue;

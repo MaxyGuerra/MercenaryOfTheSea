@@ -46,14 +46,16 @@ public class UISubCanvas : MonoBehaviour
         if(defaultShowContainer==false)
         container?.SetActive(false);
         GameManager.OnGameStateChange += GameManager_OnGameStateChange;
+        GameManager.OnGameStateChangeEvent += GameManager_OnGameStateChange;
 
     }
 
-
+   
 
     private void OnDisable()
     {
         GameManager.OnGameStateChange -= GameManager_OnGameStateChange;
+        GameManager.OnGameStateChangeEvent -= GameManager_OnGameStateChange;
     }
     protected virtual void GameManager_OnGameStateChange(EGameStates NewGameState)
     {

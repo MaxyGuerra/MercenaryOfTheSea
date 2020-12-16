@@ -10,9 +10,9 @@ public enum EPlayerActions { NONE, PlayerMove, ShootingHarpoon, ShootingCannon }
 public class NewPlayerController : MonoBehaviour,IDamageable
 {
    
-    public float playerHealth = 10; 
-    public PlayerHealthBar playerHealthBar;
-    public CanvasGroup loseScreen;
+ 
+    private AttributeBase playerHealthAtribute;
+ 
     //AudioClip playerDeath;
     public float moveSpeed = 1;
     public float rotationSpeed = 1;
@@ -21,6 +21,7 @@ public class NewPlayerController : MonoBehaviour,IDamageable
     Rigidbody rb;
     public   bool canMove = true;
  
+    
 
     public static NewPlayerController instance;
 
@@ -45,25 +46,55 @@ public class NewPlayerController : MonoBehaviour,IDamageable
     private void Awake()
     {
         rb = GetComponent<Rigidbody>();
-
+        playerHealthAtribute = GetComponent<AttributeBase>();
         instance = this;
     }
     // Start is called before the first frame update
     void Start()
     {
-        playerHealthBar.SetMaxHealth(playerHealth);
+        playerHealthAtribute.OnAttributeDepletedEvent += OnHPDepleted;
     }
     private void OnEnable()
     {
         GameManager.OnBossCollected += GameManager_OnBossCollected;
         BossAIScript.OnBossDead += BossAIScript_OnBossDead;
         hookLine.positionCount = 0;
+
+        GameManager.OnGameStateChangeEvent += GameManager_OnGameStateChangeEvent;
+
+    
     }
 
-
+    private void GameManager_OnGameStateChangeEvent(EGameStates CurrentGameState)
+    {
+        switch (CurrentGameState)
+        {
+            case EGameStates.MAIN_MENU:
+                break;
+            case EGameStates.CONNECTING:
+                break;
+            case EGameStates.RELOADING_TO_CHECKPOINT:
+                RestartPlayerInCheckpoint();
+                break;
+            case EGameStates.LOADING_NEXTROUND:
+                break;
+            case EGameStates.LOADING_REMATCH:
+                break;
+            case EGameStates.GAMEPLAY:
+                GameManager.Instance.SaveCheckpoint(transform.position);
+                break;
+            case EGameStates.ROUND_OVER:
+                break;
+            case EGameStates.GAME_OVER:
+                break;
+             
+        }
+    }
+ 
     private void OnDisable()
     {
         GameManager.OnBossCollected -= GameManager_OnBossCollected;
+        GameManager.OnGameStateChangeEvent -= GameManager_OnGameStateChangeEvent;
 
         BossAIScript.OnBossDead -= BossAIScript_OnBossDead;
 
@@ -93,6 +124,18 @@ public class NewPlayerController : MonoBehaviour,IDamageable
 
         compass.gameObject.SetActive(true);
     }
+
+    void ResetHookLine()
+    {
+       
+        hookLine.SetPosition(0, transform.position);
+        hookLine.SetPosition(1, joint.connectedBody.position);
+
+        compass.gameObject.SetActive(false);
+        hookLine.positionCount = 0;
+        joint.connectedBody  =null;
+
+    }
     private void OnDrawGizmos()
     {
         Gizmos.DrawLine(transform.position, transform.position + moveDirection * 10);
@@ -103,41 +146,27 @@ public class NewPlayerController : MonoBehaviour,IDamageable
     {
         if (collision.gameObject.CompareTag("Tentaculos"))
         {
-            playerHealth--;
-
-            playerHealthBar.SetHealth(playerHealth);
-
-            if (playerHealth <= 0)
-            {
-                playerHealth = 0;
-
-                PlayerIsDead();
-            }
+            ApplyDamage(2);
 
         }
     }
+
 
  
 
     void PlayerIsDead()
     {
-        //_audioSource.PlayOneShot(playerDeath);
-
-        loseScreen.gameObject.SetActive(true);
-
-        Time.timeScale = 0;
-
-        PlayerRespawn();
+   
+        GameManager.Instance.SetGameOver();
+        
     }
 
-    void PlayerRespawn()
+    public void RestartPlayerInCheckpoint()
     {
-        transform.position = respawnPoint;
-    }
+        ResetHookLine();
+        playerHealthAtribute.ResetToInitialStats();
+        transform.position = GameManager.Instance.LastCheckpoint;
 
-    public void SetSpawnPoint(Vector3 newPosition)
-    {
-        respawnPoint = newPosition;
     }
 
     void MoveShip()
@@ -217,22 +246,20 @@ public class NewPlayerController : MonoBehaviour,IDamageable
 
         if(Input.GetKeyDown(KeyCode.X))
         {
-            playerHealth = -2;
+            ApplyDamage(2);
         }
     }
  
 
-    public void ApplyDamage(float Damage, EWeaponType weaponType)
+    public void ApplyDamage(float Damage, EWeaponType weaponType=EWeaponType.None)
     {
-        playerHealth -= Damage;
-        playerHealthBar.SetHealth(playerHealth);
+        playerHealthAtribute.SubtractToValue(Damage);
+ 
+    }
 
-        if (playerHealth <= 0)
-        {
-            playerHealth = 0;
-
-            PlayerIsDead();
-        }
+    private void OnHPDepleted()
+    {
+        PlayerIsDead();
     }
 
     public void ForceDestroy(Vector3 _hitPosition)
