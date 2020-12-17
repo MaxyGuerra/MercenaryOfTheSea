@@ -2075,9 +2075,9 @@ MonoBehaviour:
   textDisplay: {fileID: 635336373}
   playerReference: {fileID: 270101671}
   sentences:
-  - Ahoy, Matey! Welcome to the ship.
+  - Ahoy, Matey! Let's go hunting.
   - It seems like you've never taken a steering wheel in your life.
-  - Move with W.A.D and follow those buoys.
+  - Move with W.A.D.
   typingSpeed: 0
   skipTime: 1.8
   endingAction: 1
