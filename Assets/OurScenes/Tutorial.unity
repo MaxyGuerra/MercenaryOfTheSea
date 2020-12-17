@@ -1937,7 +1937,7 @@ MonoBehaviour:
   - Ahoy, Matey! Let's go hunting.
   - It seems like you've never taken a steering wheel in your life.
   - Move with W.A.D.
-  typingSpeed: 0
+  typingSpeed: 0.1
   skipTime: 1.8
   endingAction: 1
   useTriggerToBegin: 0
@@ -3428,7 +3428,7 @@ MonoBehaviour:
   - Avast Ye! A monsters.
   - Change your weapon with 2 and use the harpoon,
   - shoot it and follow the compass to your destiny.
-  typingSpeed: 0
+  typingSpeed: 0.1
   skipTime: 1.8
   endingAction: 1
   useTriggerToBegin: 1
@@ -4332,7 +4332,7 @@ MonoBehaviour:
   - Blimey!
   - 'A stranded ship blocks the way. '
   - Shoot with the cannonball to destroy obstacles like this.
-  typingSpeed: 0
+  typingSpeed: 0.1
   skipTime: 1.8
   endingAction: 1
   useTriggerToBegin: 1
