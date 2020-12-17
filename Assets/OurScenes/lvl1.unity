@@ -4125,13 +4125,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1485663177}
-  m_LocalRotation: {x: -0, y: 0.35781702, z: -0, w: 0.9337917}
-  m_LocalPosition: {x: 198, y: 2.2, z: -177}
-  m_LocalScale: {x: 1.3856795, y: 1.6528453, z: 1.6528453}
+  m_LocalRotation: {x: 0, y: 0.39522484, z: 0, w: 0.9185844}
+  m_LocalPosition: {x: 179, y: 2.2, z: -159}
+  m_LocalScale: {x: 0.23131149, y: 1.6528453, z: 1.6528453}
   m_Children: []
   m_Father: {fileID: 621302740}
   m_RootOrder: 4
-  m_LocalEulerAnglesHint: {x: 0, y: 41.932, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 46.56, z: 0}
 --- !u!114 &1485663179
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4147,7 +4147,7 @@ MonoBehaviour:
   firstZone: {fileID: 1023512825}
   canvasWin: {fileID: 7251212059720207840}
   addonsIcons: {fileID: 7251212060211326433}
-  particleFX: {fileID: 147324, guid: c51e34914bd18ff4880b11005334182e, type: 3}
+  particleFX: {fileID: 162456, guid: aa67315846cbf1a4db925cced0c050da, type: 3}
   playerReference: {fileID: 733446636}
   soundEfect1: {fileID: 8300000, guid: 6205a3b4e812f314ab6115a8c935cdbe, type: 3}
   soundEfect2: {fileID: 8300000, guid: 6fdd4b7edaeb9ea4ea10cffccd7e16d1, type: 3}
@@ -4661,6 +4661,19 @@ MonoBehaviour:
   OnAttributeDepleted:
     m_PersistentCalls:
       m_Calls: []
+--- !u!65 &1639913388
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1639913381}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &1687320258
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4882,25 +4895,6 @@ Transform:
   m_Father: {fileID: 621302740}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1755726889 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3583593557240157084, guid: 5b1d49eb87a809d47a543da8d9167d48,
-    type: 3}
-  m_PrefabInstance: {fileID: 1464017255}
-  m_PrefabAsset: {fileID: 0}
---- !u!65 &1755726890
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1755726889}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.03543374, y: 0.052160397, z: 0.06477204}
-  m_Center: {x: 0, y: -0.0009763297, z: 0.01269452}
 --- !u!1 &1810566184
 GameObject:
   m_ObjectHideFlags: 0
