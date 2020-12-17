@@ -111,7 +111,7 @@ public class TutorialDialogue : MonoBehaviour
     private void Update()
     {
 
-        if (Input.GetKeyDown(KeyCode.E) && bCanSkip)///bCanSkip es el freno
+        if (Input.GetMouseButtonDown(0) && bCanSkip)///bCanSkip es el freno
         {
             NextSentence();
         }
