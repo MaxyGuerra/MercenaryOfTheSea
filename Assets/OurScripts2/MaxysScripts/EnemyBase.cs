@@ -11,7 +11,8 @@ public class EnemyBase : MonoBehaviour, IDamageable
     public NavMeshAgent navAgent;
     public EnemyState enemyState;
     public HealthBar enemyHealthBar;
-    public int enemyHealth = 3;
+    //public int enemyHealth = 3;
+    private AttributeBase EnemyHealthAttribute;
     private NavMeshAgent speedReference;
     public int CampoDeVision;
 
@@ -28,6 +29,7 @@ public class EnemyBase : MonoBehaviour, IDamageable
         speedReference = GetComponent<NavMeshAgent>();
         remainingDistance = Mathf.Infinity;
         ShotController=GetComponent<EnemyShotController>();
+        EnemyHealthAttribute = GetComponent<AttributeBase>();
     }
 
     private void OnTriggerEnter(Collider other)
@@ -104,7 +106,7 @@ public class EnemyBase : MonoBehaviour, IDamageable
     {
         AIBrain();
 
-        if (enemyHealth <= 0)
+        if (EnemyHealthAttribute.currentValue <= 0)
         {
             Destroy(gameObject);
         }
@@ -112,8 +114,6 @@ public class EnemyBase : MonoBehaviour, IDamageable
 
     public void ApplyDamage(float Damage, EWeaponType weaponType = EWeaponType.None)
     {
-
-        GetComponent<AttributeBase>().SubtractToValue(Damage);
-
+        EnemyHealthAttribute.SubtractToValue(Damage);
     }
 }

@@ -4,12 +4,13 @@ using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.UI;
 
-public class EnemyRango : EnemyBase
+public class EnemyRango : EnemyBase, IDamageable
 {
     EnemyShotController EnemyShot;
     private float Timer;
     private bool TimerOn = false;
     private int TiempoDeProximidad = 2;
+    private AttributeBase EnemyHealthAttribute;
 
     // Start is called before the first frame update
     void Start()
@@ -18,6 +19,7 @@ public class EnemyRango : EnemyBase
         AttackDistance = navAgent.stoppingDistance;
         EnemyShot = GetComponent<EnemyShotController>();
         EnemyShot.shootingDistance = navAgent.stoppingDistance + 2;
+        EnemyHealthAttribute = GetComponent<AttributeBase>();
     }
 
     protected override void Attack()
@@ -43,8 +45,8 @@ public class EnemyRango : EnemyBase
         }
     }
 
-        // Update is called once per frame
-        void Update()
+    // Update is called once per frame
+    void Update()
     {
         AIBrain();
 
@@ -60,7 +62,7 @@ public class EnemyRango : EnemyBase
             }
         }
 
-        if (enemyHealth <= 0)
+        if (EnemyHealthAttribute.currentValue <= 0)
         {
             Destroy(gameObject);
         }

@@ -126,7 +126,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   WeaponType: 1
-  m_bulletSpeed: 2
+  m_bulletSpeed: 5
   damage: 1
   impactFX: {fileID: 0}
   targetTags:

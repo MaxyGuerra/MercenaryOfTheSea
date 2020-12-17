@@ -495,7 +495,7 @@ GameObject:
   - component: {fileID: 6224224976965615535}
   - component: {fileID: 6224224976965615537}
   - component: {fileID: 6224224976965615534}
-  - component: {fileID: 6224224976965615536}
+  - component: {fileID: 7034623258019045545}
   m_Layer: 5
   m_Name: Gear
   m_TagString: Untagged
@@ -561,7 +561,7 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!95 &6224224976965615536
+--- !u!95 &7034623258019045545
 Animator:
   serializedVersion: 3
   m_ObjectHideFlags: 0
@@ -571,7 +571,7 @@ Animator:
   m_GameObject: {fileID: 6224224976965615532}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: c2a6a83aa8a008148be240602d9a37e1, type: 2}
+  m_Controller: {fileID: 9100000, guid: e9416c2feaea0704ab8c2893e735e1bd, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -2519,7 +2519,7 @@ MonoBehaviour:
   m_BlockingObjects: 0
   m_BlockingMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 32567
 --- !u!1 &6224224978478164936
 GameObject:
   m_ObjectHideFlags: 0

@@ -121,7 +121,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   AttributeName: Hp
-  baseValue: 3
+  baseValue: 5
   minValue: 0
   currentValue: 0
   OnAttributeChange:
@@ -163,7 +163,6 @@ MonoBehaviour:
   navAgent: {fileID: 0}
   enemyState: 0
   enemyHealthBar: {fileID: 0}
-  enemyHealth: 3
   CampoDeVision: 50
   player: {fileID: 0}
   AttackDistance: 8
@@ -183,7 +182,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerPosition: {fileID: 0}
   rotationSpeed: 1
-  canShoot: 0
+  bIsInCooldown: 0
   firePoint: {fileID: 6230227720228943984}
   shootingDistance: 0
   offset: 1

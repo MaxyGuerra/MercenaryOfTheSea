@@ -29,7 +29,7 @@ GameObject:
   - component: {fileID: 6155767560998928595}
   - component: {fileID: 6155767560998928594}
   m_Layer: 5
-  m_Name: EnemyShipRango (1)
+  m_Name: EnemyShipRango
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -120,7 +120,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   AttributeName: Hp
-  baseValue: 3
+  baseValue: 5
   minValue: 0
   currentValue: 0
   OnAttributeChange:
@@ -162,7 +162,6 @@ MonoBehaviour:
   navAgent: {fileID: 0}
   enemyState: 0
   enemyHealthBar: {fileID: 0}
-  enemyHealth: 3
   CampoDeVision: 50
   player: {fileID: 0}
   AttackDistance: 8
@@ -181,7 +180,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerPosition: {fileID: 0}
   rotationSpeed: 1
-  canShoot: 0
+  bIsInCooldown: 0
   firePoint: {fileID: 6155767560998928600}
   shootingDistance: 0
   offset: 1

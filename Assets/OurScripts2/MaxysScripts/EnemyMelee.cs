@@ -2,16 +2,18 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyMelee : EnemyBase
+public class EnemyMelee : EnemyBase, IDamageable
 {
 
     public int TiempoDeStun;
     private float Timer;
     private bool TimerOn = false;
+    private AttributeBase EnemyHealthAttribute;
 
     void Start()
     {
         navAgent.stoppingDistance = 1;
+        EnemyHealthAttribute = GetComponent<AttributeBase>();
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -48,7 +50,7 @@ public class EnemyMelee : EnemyBase
             }
         }
 
-        if (enemyHealth <= 0)
+        if (EnemyHealthAttribute.currentValue <= 0)
         {
             Destroy(gameObject);
         }
