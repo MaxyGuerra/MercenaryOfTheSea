@@ -79,7 +79,9 @@ MonoBehaviour:
   WeaponType: 2
   m_bulletSpeed: 2
   damage: 1
-  impactFX: {fileID: 0}
+  impactFX: {fileID: 160900, guid: 1b1f4eecb848b384f93fd0216a95f56e, type: 3}
+  targetTags:
+  - Boss
   DestroyOnHit: 1
 --- !u!1 &8448643784670038835
 GameObject:

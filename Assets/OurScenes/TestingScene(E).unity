@@ -1599,7 +1599,6 @@ MonoBehaviour:
   navAgent: {fileID: 0}
   enemyState: 0
   enemyHealthBar: {fileID: 0}
-  enemyHealth: 3
   CampoDeVision: 0
   player: {fileID: 652515828}
   AttackDistance: 8
