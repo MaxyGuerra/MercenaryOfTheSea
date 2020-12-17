@@ -885,6 +885,7 @@ GameObject:
   - component: {fileID: 4194848887521911244}
   - component: {fileID: 6883832971056415355}
   - component: {fileID: 1464017257}
+  - component: {fileID: 5721712434118926127}
   m_Layer: 0
   m_Name: Pulpo02
   m_TagString: Boss
@@ -998,8 +999,6 @@ MonoBehaviour:
   remainingDistance: 0
   playerTarget: {fileID: 0}
   isFollowingPlayer: 0
-  isDead: 0
-  isCollected: 0
   healthBarCanvas: {fileID: 1976507827956154527}
   bossHealthBar: {fileID: 1976507827051503037}
   bossHealth: 3
@@ -1026,6 +1025,34 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!114 &5721712434118926127
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3960477198927961257}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d074c9f65e36d98479d9db3d6f8f9b78, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  AttributeName: Hp
+  baseValue: 15
+  minValue: 0
+  currentValue: 0
+  OnAttributeChange:
+    m_PersistentCalls:
+      m_Calls: []
+  OnAttributeInitialized:
+    m_PersistentCalls:
+      m_Calls: []
+  OnAttributeChangeWithPercent:
+    m_PersistentCalls:
+      m_Calls: []
+  OnAttributeDepleted:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &4049781766228148824
 GameObject:
   m_ObjectHideFlags: 0
