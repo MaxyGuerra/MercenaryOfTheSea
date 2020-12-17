@@ -9,6 +9,7 @@ public class AreaBoya : MonoBehaviour
     public GameObject particles;
     private AudioSource _audioSource;
     public AudioClip soundEfect;
+    private bool IsActive = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -20,13 +21,15 @@ public class AreaBoya : MonoBehaviour
 
  private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player"))
+        if (other.CompareTag("Player") && IsActive == false)
         {
             Bandera.SetActive(true);
 
            Instantiate(particles, transform.position, Quaternion.identity);
 
             _audioSource.PlayOneShot(soundEfect, 0.7F);
+
+            IsActive = true;
         }
     }
 }
