@@ -161,6 +161,7 @@ public class BossAIScript : MonoBehaviour, IDamageable
         Brain();
 
         transform.LookAt(playerTarget);
+
     }
 
  
