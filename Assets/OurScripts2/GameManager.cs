@@ -37,8 +37,8 @@ public class GameManager : Singleton<GameManager>
     public void NextScene()
     {
         Debug.Log("Next Scene");
-        Time.timeScale = 1;
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex+1);
+        Time.timeScale = 1;
     }
 
     public void GoToInitialMenu()
