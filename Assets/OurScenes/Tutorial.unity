@@ -846,17 +846,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 385084736}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b3474352ae5929647b6eaa41485b2e85, type: 3}
+  m_Script: {fileID: 11500000, guid: 7925b134ebd5124409f3f21be7feb2fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  firstZone: {fileID: 0}
-  secondZone: {fileID: 0}
-  enemiesSecondZone: {fileID: 0}
-  enemiesThirdZone: {fileID: 0}
-  canvasWin: {fileID: 0}
-  firstCatchIcon: {fileID: 0}
-  secondCatchIcon: {fileID: 0}
-  thirdCatchIcon: {fileID: 0}
+  winCanvas: {fileID: 400013599}
 --- !u!65 &385084738
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -868,7 +861,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 30, y: 5, z: 60}
+  m_Size: {x: 30, y: 20, z: 60}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!4 &385084739
 Transform:
@@ -878,7 +871,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 385084736}
   m_LocalRotation: {x: -0, y: 0.45206442, z: -0, w: 0.89198536}
-  m_LocalPosition: {x: 150.1, y: 2.9, z: -169.2}
+  m_LocalPosition: {x: 150.1, y: 2, z: -169.2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 92534578}
@@ -995,6 +988,12 @@ PrefabInstance:
     - {fileID: 7254464257502550498, guid: 3cc0e1816d872174cbdb2c72d9434763, type: 3}
     - {fileID: 2384943122759295426, guid: 3cc0e1816d872174cbdb2c72d9434763, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 3cc0e1816d872174cbdb2c72d9434763, type: 3}
+--- !u!225 &400013599 stripped
+CanvasGroup:
+  m_CorrespondingSourceObject: {fileID: 7251212059230827999, guid: 478e928115933924aba83336cd0e879a,
+    type: 3}
+  m_PrefabInstance: {fileID: 1096994710}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &432005891
 GameObject:
   m_ObjectHideFlags: 0
@@ -2304,22 +2303,22 @@ PrefabInstance:
     - target: {fileID: 7251212059527051920, guid: 478e928115933924aba83336cd0e879a,
         type: 3}
       propertyPath: m_Color.r
-      value: 0.5591867
+      value: 0.30922613
       objectReference: {fileID: 0}
     - target: {fileID: 7251212059527051920, guid: 478e928115933924aba83336cd0e879a,
         type: 3}
       propertyPath: m_Color.g
-      value: 0.8396226
+      value: 0.7075472
       objectReference: {fileID: 0}
     - target: {fileID: 7251212059527051920, guid: 478e928115933924aba83336cd0e879a,
         type: 3}
       propertyPath: m_Color.b
-      value: 0.5101103
+      value: 0.23629402
       objectReference: {fileID: 0}
     - target: {fileID: 7251212059527051920, guid: 478e928115933924aba83336cd0e879a,
         type: 3}
       propertyPath: m_Color.a
-      value: 0.7607843
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7251212059527051921, guid: 478e928115933924aba83336cd0e879a,
         type: 3}
