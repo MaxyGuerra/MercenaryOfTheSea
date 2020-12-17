@@ -21,15 +21,19 @@ public class BossAIScript : MonoBehaviour, IDamageable
     private bool isCollected = false;
     public GameObject healthBarCanvas;
     public HealthBar bossHealthBar;
-    public float bossHealth = 3;
+    private float bossHealth;
     public BossState bossState;
     bool shouldBeHooked;
+    public GameObject tentaculos;
+    public GameObject armature;
+    private AttributeBase EnemyHealthAttribute;
 
-   
+
 
     private void Awake()
     {
         navAgent = GetComponent<NavMeshAgent>();
+        EnemyHealthAttribute = GetComponent<AttributeBase>();
         remainingDistance = Mathf.Infinity;
     }
 
@@ -162,6 +166,9 @@ public class BossAIScript : MonoBehaviour, IDamageable
 
         transform.LookAt(playerTarget);
 
+        bossHealth = EnemyHealthAttribute.currentValue;
+        bossHealthBar.SetHealth(bossHealth);
+
     }
 
  
@@ -176,17 +183,18 @@ public class BossAIScript : MonoBehaviour, IDamageable
                 HookAgain();
             return;
         }
-        bossHealth -= Dmg;
+        
+        EnemyHealthAttribute.SubtractToValue(Dmg);
 
-        bossHealthBar.SetHealth(bossHealth);
+        //bossHealthBar.SetHealth(bossHealth);
 
-
-
-        if (bossHealth <= 0)
+        if (EnemyHealthAttribute.currentValue <= 0)
         {
             healthBarCanvas.SetActive(false);
 
-            bossHealth = 0;
+            tentaculos.SetActive(false);
+
+            armature.SetActive(false);
 
             SetDead();
         }
