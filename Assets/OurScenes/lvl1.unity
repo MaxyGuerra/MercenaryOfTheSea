@@ -123,6 +123,95 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 23800000, guid: aaae3df4eb8924e48a65289cdaab6aee, type: 2}
+--- !u!1001 &37962436
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 719902178}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: 0ef0267687b1581448be4b3b606c13ec,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0ef0267687b1581448be4b3b606c13ec,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 2.45
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0ef0267687b1581448be4b3b606c13ec,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0ef0267687b1581448be4b3b606c13ec,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0ef0267687b1581448be4b3b606c13ec,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0ef0267687b1581448be4b3b606c13ec,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0ef0267687b1581448be4b3b606c13ec,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071067
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0ef0267687b1581448be4b3b606c13ec,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0ef0267687b1581448be4b3b606c13ec,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0ef0267687b1581448be4b3b606c13ec,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0ef0267687b1581448be4b3b606c13ec,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0ef0267687b1581448be4b3b606c13ec,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0ef0267687b1581448be4b3b606c13ec,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 18
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0ef0267687b1581448be4b3b606c13ec,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 0ef0267687b1581448be4b3b606c13ec,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: e13347e86235f994183173ae6f125107, type: 2}
+    - target: {fileID: 919132149155446097, guid: 0ef0267687b1581448be4b3b606c13ec,
+        type: 3}
+      propertyPath: m_Name
+      value: Vela
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 0ef0267687b1581448be4b3b606c13ec, type: 3}
 --- !u!1001 &59921075
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2582,7 +2671,7 @@ PrefabInstance:
     - target: {fileID: 7463187368090274571, guid: 3cc0e1816d872174cbdb2c72d9434763,
         type: 3}
       propertyPath: m_ConnectedAnchor.x
-      value: 208.42
+      value: 206.28773
       objectReference: {fileID: 0}
     - target: {fileID: 7463187368090274571, guid: 3cc0e1816d872174cbdb2c72d9434763,
         type: 3}
@@ -2592,7 +2681,7 @@ PrefabInstance:
     - target: {fileID: 7463187368090274571, guid: 3cc0e1816d872174cbdb2c72d9434763,
         type: 3}
       propertyPath: m_ConnectedAnchor.z
-      value: -189.90001
+      value: -185.73131
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 2384943122759295426, guid: 3cc0e1816d872174cbdb2c72d9434763, type: 3}
@@ -5070,7 +5159,7 @@ Light:
   m_Type: 1
   m_Shape: 0
   m_Color: {r: 1, g: 0.95686275, b: 0.8392157, a: 1}
-  m_Intensity: 1
+  m_Intensity: 2
   m_Range: 10
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
