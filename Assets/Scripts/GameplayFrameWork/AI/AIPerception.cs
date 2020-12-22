@@ -1,9 +1,8 @@
-﻿using Sirenix.OdinInspector.Editor;
-using Sirenix.OdinInspector.Editor.Drawers;
+﻿ 
 using Sirenix.Serialization;
 using System.Collections;
 using System.Collections.Generic;
-using UnityEditorInternal;
+
 using UnityEngine;
 using UnityEngine.Events;
 

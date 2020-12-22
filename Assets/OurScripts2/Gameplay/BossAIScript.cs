@@ -27,6 +27,7 @@ public class BossAIScript : MonoBehaviour, IDamageable
     public GameObject tentaculos;
     public GameObject armature;
     private AttributeBase EnemyHealthAttribute;
+    public bool Apagador = true;
 
 
 
@@ -192,11 +193,14 @@ public class BossAIScript : MonoBehaviour, IDamageable
         {
             healthBarCanvas.SetActive(false);
 
-            tentaculos.SetActive(false);
-
-            armature.SetActive(false);
-
             SetDead();
+
+            if (Apagador == true)
+            {
+                tentaculos.SetActive(false);
+
+                armature.SetActive(false);
+            }
         }
        
     }

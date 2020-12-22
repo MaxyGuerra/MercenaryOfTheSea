@@ -248,8 +248,10 @@ MonoBehaviour:
   isFollowingPlayer: 0
   healthBarCanvas: {fileID: 1863468846885710735}
   bossHealthBar: {fileID: 1863468847858005677}
-  bossHealth: 3
   bossState: 0
+  tentaculos: {fileID: 0}
+  armature: {fileID: 0}
+  Apagador: 0
 --- !u!95 &5972038004147781125
 Animator:
   serializedVersion: 3

@@ -1,11 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using Sirenix.OdinInspector;
-using Sirenix.OdinInspector.Editor.Drawers;
+using Sirenix.OdinInspector; 
 using UnityEngine.Events;
-using System;
-using Sirenix.OdinInspector.Editor;
+using System; 
 using DG.Tweening;
 
 public enum EProjectileBehaviour { Normal,FollowPath}
