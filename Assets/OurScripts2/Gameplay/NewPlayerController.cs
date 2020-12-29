@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 public enum NewEPlayerActions { NONE, PlayerMove, ShootingHarpoon, ShootingCannon }
 //todo: deprecated?
-public enum EPlayerActions { NONE, PlayerMove, ShootingHarpoon, ShootingCannon }
+public enum EPlayerActions { NONE, Idle, PlayerMove, ShootingHarpoon, ShootingCannon }
 
 
 
@@ -182,6 +182,7 @@ public class NewPlayerController : MonoBehaviour,IDamageable
 
         rb.velocity = transform.forward * moveSpeed * Mathf.Clamp(v, 0, 1);
         if (rb.velocity.magnitude > 0.9f) OnPlayerActionActivate?.Invoke(EPlayerActions.PlayerMove);
+        else OnPlayerActionActivate?.Invoke(EPlayerActions.Idle);
 
 
     }
