@@ -17,7 +17,7 @@ public class BossAIScript : MonoBehaviour, IDamageable
     public static event FBossDeadNotify OnBossDead;
 
     [Header("Life settings")]
-    private bool isDead = false;
+    public bool isDead = false;
     private bool isCollected = false;
     public GameObject healthBarCanvas;
     public HealthBar bossHealthBar;
