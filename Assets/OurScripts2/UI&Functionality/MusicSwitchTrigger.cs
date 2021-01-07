@@ -6,17 +6,14 @@ public class MusicSwitchTrigger : MonoBehaviour
 {
     public AudioClip bossTrack;
 
-    public AudioClip exploringTrack;
-
-    private BossAIScript bossReference;
+    public AudioClip exploringMusic;
 
     private AudioManagerScript theAM;
-    // Start is called before the first frame update
+
+    public BossState _bossState = BossState.IDLE;
     private void Awake()
     {
         theAM = FindObjectOfType<AudioManagerScript>();
-
-        bossReference = FindObjectOfType<BossAIScript>();
     }
 
     private void OnTriggerEnter(Collider other)
@@ -27,6 +24,14 @@ public class MusicSwitchTrigger : MonoBehaviour
             {
                 theAM.ChangeBGMusic(bossTrack);
             }
+        }
+    }
+
+    private void BossAIScript_State(BossState currentAction)
+    {
+        if (_bossState == BossState.DEAD && _bossState != BossState.IDLE)
+        {
+            theAM.ChangeBGMusic(exploringMusic);
         }
     }
 }

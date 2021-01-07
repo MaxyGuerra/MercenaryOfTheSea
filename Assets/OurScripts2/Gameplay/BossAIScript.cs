@@ -14,6 +14,7 @@ public class BossAIScript : MonoBehaviour, IDamageable
     public Transform playerTarget;
     public bool isFollowingPlayer = false;
     public delegate void FBossDeadNotify(Transform BossTransform);
+
     public static event FBossDeadNotify OnBossDead;
 
     [Header("Life settings")]
