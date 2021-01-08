@@ -43,6 +43,8 @@ public class NewPlayerController : MonoBehaviour,IDamageable
 
     public delegate void FNotifyAction(EPlayerActions currentAction);
     public static event FNotifyAction OnPlayerActionActivate;
+
+
     private void Awake()
     {
         rb = GetComponent<Rigidbody>();

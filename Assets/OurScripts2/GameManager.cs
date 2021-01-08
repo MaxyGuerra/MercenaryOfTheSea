@@ -3,13 +3,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.Events;
 
 public class GameManager : Singleton<GameManager>
 {
 
     public bool canPause;
     public CanvasGroup pausePanel;
-    public static event FNotify_1Params<BossAIScript> OnBossCollected;
 
     public WeaponsDatabase weaponsDbReference;
 
@@ -17,6 +17,14 @@ public class GameManager : Singleton<GameManager>
     public static Action<EGameStates> OnGameStateChange { get; internal set; }
     public static event FNotify_1Params<EGameStates> OnGameStateChangeEvent;
     public Vector3 LastCheckpoint;
+
+
+    public static event FNotify_1Params<BossAIScript> OnBossCollected;
+
+
+    public static event FNotify OnBatteBeging, OnBattleEnd;
+
+    public bool isOnBattle = false;
 
 
     internal void AddScore(int v)
@@ -131,5 +139,18 @@ public class GameManager : Singleton<GameManager>
         Time.timeScale = 0;
      ChangeGameState(EGameStates.GAME_OVER);
 
+    }
+
+    void SetBattle()
+    {
+        if(isOnBattle == true)
+        {
+            
+        } 
+
+        else
+        {
+
+        }
     }
 }

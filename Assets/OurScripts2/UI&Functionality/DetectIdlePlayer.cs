@@ -18,6 +18,8 @@ public class DetectIdlePlayer : MonoBehaviour
     {
         NewPlayerController.OnPlayerActionActivate -= NewPlayerController_OnPlayerActionActivate;
     }
+
+
     private void NewPlayerController_OnPlayerActionActivate(EPlayerActions currentAction)
     {
         if(currentAction == EPlayerActions.Idle && currentPlayerAction!= EPlayerActions.Idle)

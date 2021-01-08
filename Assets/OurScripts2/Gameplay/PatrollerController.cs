@@ -59,9 +59,11 @@ public class PatrollerController : MonoBehaviour
     {
         if (navAgent.remainingDistance < minThresholdDistance)
             ChangeNextWaypoint();
-        
 
-
+        else
+        {
+            return;
+        }
 
        // dist = Vector3.Distance(transform.position, waypoints[waypointIndex].position);
 

@@ -471,7 +471,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 789861747}
-  m_LocalRotation: {x: 0.47161913, y: -0.000000021457334, z: 0.000000011476144, w: 0.8818024}
+  m_LocalRotation: {x: 0.47161913, y: 0.000000021457332, z: -0.000000011476143, w: 0.8818024}
   m_LocalPosition: {x: 20, y: 37.4, z: -20}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -521,6 +521,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae9ad95e2efede94a9d6836053b6d7e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes: []
+  dontdestroyOnLoad: 0
   backgroundMusic: {fileID: 789861753}
 --- !u!82 &789861753
 AudioSource:
@@ -1428,7 +1438,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bossTrack: {fileID: 8300000, guid: 4cbf0f698519f8949976887010081157, type: 3}
   exploringMusic: {fileID: 8300000, guid: 6c3060b91119b514cbb254cddc07098e, type: 3}
-  _bossState: 0
+  instance: {fileID: 789861752}
+  currentBossState: 0
 --- !u!1 &1902041104
 GameObject:
   m_ObjectHideFlags: 0
@@ -1819,12 +1830,12 @@ PrefabInstance:
     - target: {fileID: 1686206356850251553, guid: 771b6512bbc22f84ba97b1bf40d9a68f,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.000000021457334
+      value: 0.000000021457332
       objectReference: {fileID: 0}
     - target: {fileID: 1686206356850251553, guid: 771b6512bbc22f84ba97b1bf40d9a68f,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.000000011476144
+      value: -0.000000011476143
       objectReference: {fileID: 0}
     - target: {fileID: 1686206356850251553, guid: 771b6512bbc22f84ba97b1bf40d9a68f,
         type: 3}
@@ -2622,6 +2633,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2053825526, guid: 478e928115933924aba83336cd0e879a, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2053825526, guid: 478e928115933924aba83336cd0e879a, type: 3}
+      propertyPath: m_Name
+      value: Text
+      objectReference: {fileID: 0}
     - target: {fileID: 7251212059416680792, guid: 478e928115933924aba83336cd0e879a,
         type: 3}
       propertyPath: m_LocalPosition.x

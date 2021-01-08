@@ -8,13 +8,27 @@ public class MusicSwitchTrigger : MonoBehaviour
 
     public AudioClip exploringMusic;
 
-    private AudioManagerScript theAM;
+    public AudioManagerScript instance;
 
-    public BossState _bossState = BossState.IDLE;
-    private void Awake()
+    public BossState currentBossState = BossState.IDLE;
+
+    private void OnEnable()
     {
-        theAM = FindObjectOfType<AudioManagerScript>();
+        BossAIScript.OnBossDead += BossAIScript_OnBossDead;
     }
+
+    private void BossAIScript_OnBossDead(Transform BossTransform)
+    {
+      
+       instance.ChangeBGMusic(exploringMusic);
+      
+    }
+
+    private void OnDisable()
+    {
+          BossAIScript.OnBossDead -= BossAIScript_OnBossDead;
+    }
+    
 
     private void OnTriggerEnter(Collider other)
     {
@@ -22,16 +36,8 @@ public class MusicSwitchTrigger : MonoBehaviour
         {
             if (bossTrack != null)
             {
-                theAM.ChangeBGMusic(bossTrack);
+                instance.ChangeBGMusic(bossTrack);
             }
-        }
-    }
-
-    private void BossAIScript_State(BossState currentAction)
-    {
-        if (_bossState == BossState.DEAD && _bossState != BossState.IDLE)
-        {
-            theAM.ChangeBGMusic(exploringMusic);
         }
     }
 }
