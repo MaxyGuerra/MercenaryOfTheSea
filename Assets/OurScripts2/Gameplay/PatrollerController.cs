@@ -8,7 +8,7 @@ public class PatrollerController : MonoBehaviour
 {
     NavMeshAgent navAgent;
     [SerializeField] private Transform[] waypoints;
-    [SerializeField] private float speed;
+    private float speed;
     public float minThresholdDistance = 1f;
 
     private int waypointIndex;
