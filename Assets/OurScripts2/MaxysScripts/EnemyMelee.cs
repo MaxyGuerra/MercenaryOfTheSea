@@ -33,6 +33,12 @@ public class EnemyMelee : EnemyBase, IDamageable
         }
     }
 
+    protected override void Attack()
+    {
+
+        return;
+    }
+
     void Update()
     {
         AIBrain();

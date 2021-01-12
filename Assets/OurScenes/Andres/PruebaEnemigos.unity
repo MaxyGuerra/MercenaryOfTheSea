@@ -995,7 +995,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 511158895}
-  m_LocalRotation: {x: 0.33715802, y: 0.61658454, z: -0.32977122, w: 0.6303959}
+  m_LocalRotation: {x: 0.337158, y: 0.61658466, z: -0.32977128, w: 0.6303958}
   m_LocalPosition: {x: -2.6186695, y: 37.4, z: 1.2570243}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -1583,7 +1583,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 789861747}
-  m_LocalRotation: {x: 0.33715802, y: 0.61658454, z: -0.32977122, w: 0.6303959}
+  m_LocalRotation: {x: 0.337158, y: 0.61658466, z: -0.32977128, w: 0.6303958}
   m_LocalPosition: {x: -2.6186695, y: 37.4, z: 1.2570243}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -2689,7 +2689,7 @@ MonoBehaviour:
   m_BlockingObjects: 0
   m_BlockingMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 32567
 --- !u!114 &1451676244
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4204,7 +4204,7 @@ MonoBehaviour:
   m_BlockingObjects: 0
   m_BlockingMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 32567
 --- !u!114 &2103443745
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4653,6 +4653,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Dusklosteus
       objectReference: {fileID: 0}
+    - target: {fileID: 1940596973623199611, guid: 072be14f2603b9e4bb1baa582cff78fd,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 072be14f2603b9e4bb1baa582cff78fd, type: 3}
 --- !u!1001 &2117741046223337055
@@ -4666,6 +4671,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Marlin
+      objectReference: {fileID: 0}
+    - target: {fileID: 1270810674132410301, guid: c8a038fa284dc674aa4297e746e2efb9,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1939084686410089735, guid: c8a038fa284dc674aa4297e746e2efb9,
         type: 3}

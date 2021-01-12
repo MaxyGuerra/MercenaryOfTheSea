@@ -9,7 +9,7 @@ public enum EPlayerActions { NONE, Idle, PlayerMove, ShootingHarpoon, ShootingCa
 
 public class NewPlayerController : MonoBehaviour,IDamageable
 {
-   
+    public GameObject gaviotas;
  
     private AttributeBase playerHealthAtribute;
  
