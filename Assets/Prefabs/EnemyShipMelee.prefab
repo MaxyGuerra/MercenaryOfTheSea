@@ -27,7 +27,6 @@ GameObject:
   - component: {fileID: 6230227720228943999}
   - component: {fileID: 6230227720228943996}
   - component: {fileID: 6230227720228943997}
-  - component: {fileID: 6230227720228943994}
   m_Layer: 5
   m_Name: EnemyShipMelee
   m_TagString: Enemy
@@ -168,28 +167,6 @@ MonoBehaviour:
   AttackDistance: 8
   remainingDistance: 0
   TiempoDeStun: 6
---- !u!114 &6230227720228943994
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6230227720228943995}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 44e984d492a45a847b3e9ccf494116c3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerPosition: {fileID: 0}
-  rotationSpeed: 1
-  bIsInCooldown: 0
-  firePoint: {fileID: 6230227720228943984}
-  shootingDistance: 0
-  offset: 1
-  enemyBullet: {fileID: 8591834648606094271, guid: c3933c6db14318e4baf27858ba96745f,
-    type: 3}
-  enemyBulletSpeed: 1
-  cadence: 3
 --- !u!1001 &6230227720190118463
 PrefabInstance:
   m_ObjectHideFlags: 0

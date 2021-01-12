@@ -51,8 +51,8 @@ public class EnemyMelee : EnemyBase, IDamageable
             {
                 navAgent.speed = 5;
                 Timer = 0;
-                TimerOn = false;
                 enemyState = EnemyState.FOLLOW;
+                TimerOn = false;
             }
         }
 
