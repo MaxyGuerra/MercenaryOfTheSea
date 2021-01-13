@@ -7,13 +7,7 @@ public class CamaraZoomController : MonoBehaviour
 {
     public CinemachineVirtualCamera vcam;
     public float timeToGetCloser;
-
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public float timeToGetFurther;
 
     IEnumerator StartBattleAnimation()
     {
@@ -32,21 +26,34 @@ public class CamaraZoomController : MonoBehaviour
         yield return new WaitForSeconds(1);
 
         //Alejar la camara
-        for (float i = 0; i < timeToGetCloser; i += Time.deltaTime)
+        for (float i = 0; i < timeToGetFurther; i += Time.deltaTime)
         {
 
-            transposer.m_FollowOffset = new Vector3(0, Mathf.Lerp(30, 37, i / timeToGetCloser), -20);
+            transposer.m_FollowOffset = new Vector3(0, Mathf.Lerp(30, 37, i / timeToGetFurther), -20);
             yield return null;
         }
 
         transposer.m_FollowOffset = new Vector3(0, 37, -20);
 
-        //Activar la batalla si es necesario
+
     }
 
-    // Update is called once per frame
-    void Update()
+    private void OnTriggerEnter(Collider other)
     {
-        
+        if (other.CompareTag("Player"))
+        {
+
+            StartCoroutine(StartBattleAnimation());
+        }
+
+    }
+
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            Destroy(gameObject);
+        }
     }
 }
