@@ -15,6 +15,8 @@ public class TwoBossesWinCondition : MonoBehaviour
 
     public NewPlayerController playerReference;
 
+    public GameObject compass;
+
     private AudioSource _audioSource;
     public AudioClip soundEfect1;
     public AudioClip soundEfect2;
@@ -29,6 +31,7 @@ public class TwoBossesWinCondition : MonoBehaviour
 
         if (other.gameObject.CompareTag("Boss"))
         {
+            compass.gameObject.SetActive(false);
 
             Instantiate(particleFX, transform.position, Quaternion.identity);
 
@@ -50,6 +53,8 @@ public class TwoBossesWinCondition : MonoBehaviour
 
             else if (numberOfBossesInBase == 2)
             {
+                compass.gameObject.SetActive(false);
+
                 _audioSource.PlayOneShot(soundEfect2, 0.7F);
 
                 playerReference.canMove = false;

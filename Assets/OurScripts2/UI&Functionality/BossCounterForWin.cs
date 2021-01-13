@@ -18,6 +18,9 @@ public class BossCounterForWin : MonoBehaviour
     public GameObject secondCatchIcon;
     public GameObject thirdCatchIcon;
 
+
+    public GameObject compass;
+
     // Start is called before the first frame update
    
     private void OnTriggerEnter(Collider other)
@@ -25,12 +28,15 @@ public class BossCounterForWin : MonoBehaviour
 
         if (other.gameObject.CompareTag("Boss"))
         {
+            compass.gameObject.SetActive(false);
             numberOfBossesInBase++;
 
             Destroy(other.gameObject);
 
             if (numberOfBossesInBase == 1)
             {
+                  compass.gameObject.SetActive(false);
+
                 Debug.Log("There are" + " " + numberOfBossesInBase + " " + "Bosses" + " " + "in base");
                 Destroy(firstZone);
                 enemiesSecondZone.gameObject.SetActive(true);
@@ -40,6 +46,7 @@ public class BossCounterForWin : MonoBehaviour
 
             else if (numberOfBossesInBase == 2)
             {
+                compass.gameObject.SetActive(false);
 
                 Debug.Log("There are" + " " + numberOfBossesInBase + " " + "Bosses" + " " + "in base");
                 Destroy(secondZone);
@@ -50,6 +57,7 @@ public class BossCounterForWin : MonoBehaviour
 
             else if (numberOfBossesInBase == 3)
             {
+                compass.gameObject.SetActive(false);
                 Debug.Log("There are" + " " + numberOfBossesInBase + " " + "Bosses" + " " + "in base");
 
                 thirdCatchIcon.gameObject.SetActive(true);

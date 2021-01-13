@@ -119,7 +119,9 @@ public class NewPlayerController : MonoBehaviour,IDamageable
 
     void DrawHookLine()
     {
+
         if (joint.connectedBody == null) return;
+        joint.gameObject.SetActive(true);
         hookLine.positionCount = 2;
         hookLine.SetPosition(0, transform.position);
         hookLine.SetPosition(1, joint.connectedBody.position);
@@ -133,9 +135,11 @@ public class NewPlayerController : MonoBehaviour,IDamageable
         hookLine.SetPosition(0, transform.position);
         hookLine.SetPosition(1, joint.connectedBody.position);
 
-        compass.gameObject.SetActive(false);
+      
         hookLine.positionCount = 0;
         joint.connectedBody  =null;
+        compass.gameObject.SetActive(false);
+        joint.gameObject.SetActive(false);
 
     }
     private void OnDrawGizmos()

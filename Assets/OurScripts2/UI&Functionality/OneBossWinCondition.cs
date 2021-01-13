@@ -10,6 +10,8 @@ public class OneBossWinCondition : MonoBehaviour
 
     public NewPlayerController playerReference;
 
+    public GameObject compass;
+
     private AudioSource _audioSource;
     public AudioClip soundEfect;
 
@@ -23,6 +25,9 @@ public class OneBossWinCondition : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Boss"))
         {
+
+            compass.gameObject.SetActive(false);
+
             _audioSource.PlayOneShot(soundEfect, 0.7F);
 
             addonsIcons.gameObject.SetActive(false);
