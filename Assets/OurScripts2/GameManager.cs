@@ -22,7 +22,7 @@ public class GameManager : Singleton<GameManager>
     public static event FNotify_1Params<BossAIScript> OnBossCollected;
 
 
-    public static event FNotify OnBatteBeging, OnBattleEnd;
+    //public static event FNotify OnBatteBeging, OnBattleEnd;
 
     public bool isOnBattle = false;
 
@@ -141,7 +141,7 @@ public class GameManager : Singleton<GameManager>
 
     }
 
-    void SetBattle()
+  /*  void SetBattle()
     {
         if(isOnBattle == true)
         {
@@ -152,5 +152,5 @@ public class GameManager : Singleton<GameManager>
         {
 
         }
-    }
+    }*/
 }

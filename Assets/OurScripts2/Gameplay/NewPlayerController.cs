@@ -138,8 +138,6 @@ public class NewPlayerController : MonoBehaviour,IDamageable
       
         hookLine.positionCount = 0;
         joint.connectedBody  =null;
-        compass.gameObject.SetActive(false);
-        joint.gameObject.SetActive(false);
 
     }
     private void OnDrawGizmos()
