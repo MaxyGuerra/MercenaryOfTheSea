@@ -97,6 +97,7 @@ GameObject:
   - component: {fileID: 234074552070804141}
   - component: {fileID: 5083319867807068819}
   - component: {fileID: 234074552070804140}
+  - component: {fileID: 4010091133207782069}
   m_Layer: 10
   m_Name: PlayerWeapons
   m_TagString: Player
@@ -268,6 +269,46 @@ MonoBehaviour:
   joint: {fileID: 2129877082}
   hookLine: {fileID: 5083319868465086675}
   compass: {fileID: 79903641963757304}
+--- !u!114 &4010091133207782069
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 234074552070804136}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d074c9f65e36d98479d9db3d6f8f9b78, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  AttributeName: PlayerHP
+  baseValue: 20
+  minValue: 20
+  currentValue: 0
+  OnAttributeChange:
+    m_PersistentCalls:
+      m_Calls: []
+  OnAttributeInitialized:
+    m_PersistentCalls:
+      m_Calls: []
+  OnAttributeChangeWithPercent:
+    m_PersistentCalls:
+      m_Calls: []
+  OnAttributeDepleted:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 234074552070804140}
+        m_TargetAssemblyTypeName: NewPlayerController, Assembly-CSharp
+        m_MethodName: PlayerIsDead
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &234074552648003187
 GameObject:
   m_ObjectHideFlags: 0

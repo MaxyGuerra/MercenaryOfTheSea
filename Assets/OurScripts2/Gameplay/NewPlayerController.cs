@@ -158,7 +158,7 @@ public class NewPlayerController : MonoBehaviour,IDamageable
 
  
 
-    void PlayerIsDead()
+    public void PlayerIsDead()
     {
    
         GameManager.Instance.SetGameOver();
