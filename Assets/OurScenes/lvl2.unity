@@ -2832,7 +2832,7 @@ MonoBehaviour:
   winCanvas: {fileID: 1204446497}
   addonsIcons: {fileID: 0}
   playerReference: {fileID: 154551653}
-  compass: {fileID: 0}
+  compass: {fileID: 1774401407}
   soundEfect: {fileID: 8300000, guid: 6fdd4b7edaeb9ea4ea10cffccd7e16d1, type: 3}
 --- !u!65 &695524923
 BoxCollider:
@@ -7008,6 +7008,12 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 6155767560998928600, guid: 97a9e3a0ed4a0f442a8a2d37d11e008d,
     type: 3}
   m_PrefabInstance: {fileID: 1751384274}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1774401407 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 79903641963757304, guid: a689f8549ab67d04b887182c988497fb,
+    type: 3}
+  m_PrefabInstance: {fileID: 154551652}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1805152061
 PrefabInstance:

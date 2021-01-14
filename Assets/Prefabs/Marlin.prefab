@@ -48,7 +48,7 @@ GameObject:
   - component: {fileID: 2117741045525692987}
   m_Layer: 0
   m_Name: Marlin
-  m_TagString: Boss
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -135,11 +135,11 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1270810674132410301}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.4412555, y: 3.5980084, z: 10.309647}
-  m_Center: {x: 0.042574055, y: 0.2817394, z: -0.26905614}
+  m_Size: {x: 1.4412555, y: 9.603826, z: 10.309647}
+  m_Center: {x: 0.042574055, y: 1.7672415, z: -0.26905614}
 --- !u!114 &2117741045525692986
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -155,7 +155,7 @@ MonoBehaviour:
   navAgent: {fileID: 0}
   enemyState: 0
   enemyHealthBar: {fileID: 5333950340544063610}
-  CampoDeVision: 50
+  CampoDeVision: 20
   player: {fileID: 0}
   AttackDistance: 8
   remainingDistance: 0
