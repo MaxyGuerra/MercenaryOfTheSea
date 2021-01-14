@@ -6,8 +6,6 @@ public class OneBossWinCondition : MonoBehaviour
 {
     public CanvasGroup winCanvas;
 
-    public GameObject addonsIcons;
-
     public NewPlayerController playerReference;
 
     public GameObject compass;
@@ -29,8 +27,6 @@ public class OneBossWinCondition : MonoBehaviour
             compass.gameObject.SetActive(false);
 
             _audioSource.PlayOneShot(soundEfect, 0.7F);
-
-            addonsIcons.gameObject.SetActive(false);
 
             Destroy(other.gameObject);
 

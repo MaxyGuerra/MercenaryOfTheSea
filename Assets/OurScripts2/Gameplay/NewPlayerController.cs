@@ -153,6 +153,18 @@ public class NewPlayerController : MonoBehaviour,IDamageable
             ApplyDamage(2);
 
         }
+
+        if (collision.gameObject.CompareTag("Boss"))
+        {
+            ApplyDamage(2);
+
+        }
+
+        if (collision.gameObject.CompareTag("T"))
+        {
+            ApplyDamage(2);
+
+        }
     }
 
 

@@ -9,8 +9,6 @@ public class TwoBossesWinCondition : MonoBehaviour
     private int numberOfBossesInBase;
     public CanvasGroup canvasWin;
 
-    public GameObject addonsIcons;
-
     public GameObject particleFX;
 
     public NewPlayerController playerReference;
@@ -58,8 +56,6 @@ public class TwoBossesWinCondition : MonoBehaviour
                 _audioSource.PlayOneShot(soundEfect2, 0.7F);
 
                 playerReference.canMove = false;
-
-                addonsIcons.gameObject.SetActive(false);
 
                 canvasWin.gameObject.SetActive(true);
 
