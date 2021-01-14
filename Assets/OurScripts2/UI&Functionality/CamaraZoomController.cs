@@ -33,7 +33,6 @@ public class CamaraZoomController : MonoBehaviour
             yield return null;
         }
 
-        transposer.m_FollowOffset = new Vector3(0, 37, -20);
 
 
     }

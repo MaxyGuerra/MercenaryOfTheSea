@@ -7,7 +7,7 @@ using UnityEngine.AI;
 public class PatrollerController : MonoBehaviour
 {
     NavMeshAgent navAgent;
-    [SerializeField] private Transform[] waypoints;
+    [SerializeField] private Transform[] waypoints ;
     private float speed = 1;
     public float minThresholdDistance = 1f;
 
