@@ -192,7 +192,7 @@ public class BossAIScript : MonoBehaviour, IDamageable
 
         //bossHealthBar.SetHealth(bossHealth);
 
-        if (EnemyHealthAttribute.currentValue <= 0)
+        if (EnemyHealthAttribute.currentValue == 0)
         {
             healthBarCanvas.SetActive(false);
 
