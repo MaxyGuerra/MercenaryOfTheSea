@@ -889,6 +889,11 @@ PrefabInstance:
       propertyPath: m_ConnectedAnchor.z
       value: -182.20755
       objectReference: {fileID: 0}
+    - target: {fileID: 79903641963757310, guid: a689f8549ab67d04b887182c988497fb,
+        type: 3}
+      propertyPath: portTarget
+      value: 
+      objectReference: {fileID: 1113923921}
     - target: {fileID: 234074552070804136, guid: a689f8549ab67d04b887182c988497fb,
         type: 3}
       propertyPath: m_Name
