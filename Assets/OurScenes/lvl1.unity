@@ -9409,7 +9409,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   firstZone: {fileID: 1023512825}
   canvasWin: {fileID: 1868731948}
-  addonsIcons: {fileID: 0}
   particleFX: {fileID: 147324, guid: c51e34914bd18ff4880b11005334182e, type: 3}
   playerReference: {fileID: 1286300294}
   compass: {fileID: 1315487416}

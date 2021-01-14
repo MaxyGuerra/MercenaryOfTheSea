@@ -15,11 +15,11 @@ public class CamaraZoomController : MonoBehaviour
 
         //camara zoom
 
-        for (float i = 0; i <timeToGetCloser; i += Time.deltaTime)
+       /* for (float i = 0; i <timeToGetCloser; i += Time.deltaTime)
         {
             transposer.m_FollowOffset = new Vector3(0, Mathf.Lerp(37, 30, i / timeToGetCloser), -20);
             yield return null;
-        }
+        }*/
 
 
         //Wait for the camara
@@ -29,7 +29,7 @@ public class CamaraZoomController : MonoBehaviour
         for (float i = 0; i < timeToGetFurther; i += Time.deltaTime)
         {
 
-            transposer.m_FollowOffset = new Vector3(0, Mathf.Lerp(30, 37, i / timeToGetFurther), -20);
+            transposer.m_FollowOffset = new Vector3(0, Mathf.Lerp(70, 70, i / timeToGetFurther), -20);
             yield return null;
         }
 

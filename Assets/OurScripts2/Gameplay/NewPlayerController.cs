@@ -160,9 +160,9 @@ public class NewPlayerController : MonoBehaviour,IDamageable
 
         }
 
-        if (collision.gameObject.CompareTag("T"))
+        if (collision.gameObject.CompareTag("Enemy"))
         {
-            ApplyDamage(2);
+            ApplyDamage(1);
 
         }
     }
