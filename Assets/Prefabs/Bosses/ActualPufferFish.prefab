@@ -145,7 +145,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d074c9f65e36d98479d9db3d6f8f9b78, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AttributeName: 
+  AttributeName: Hp
   baseValue: 1
   minValue: 0
   currentValue: 0
@@ -173,9 +173,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9802d2d662da6504d94dd1481f87cebc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  waypoints:
-  - {fileID: 0}
-  - {fileID: 0}
+  waypoints: []
   minThresholdDistance: 1
 --- !u!1 &4610188528702027866
 GameObject:
