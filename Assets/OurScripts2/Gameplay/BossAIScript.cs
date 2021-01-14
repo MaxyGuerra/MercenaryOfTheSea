@@ -31,6 +31,9 @@ public class BossAIScript : MonoBehaviour, IDamageable
     private AttributeBase EnemyHealthAttribute;
     public bool Apagador = true;
 
+    public GameObject SeActivaAlMorir;
+    public bool AccionAlMorir = false;
+
 
 
     private void Awake()
@@ -44,6 +47,7 @@ public class BossAIScript : MonoBehaviour, IDamageable
     void Start()
     {
        //bossHealthBar.SetMaxHealth(bossHealth);
+       SeActivaAlMorir.SetActive(false);
     }
 
   
@@ -203,6 +207,11 @@ public class BossAIScript : MonoBehaviour, IDamageable
                 tentaculos.SetActive(false);
 
                 armature.SetActive(false);
+            }
+
+            if (AccionAlMorir == true)
+            {
+                SeActivaAlMorir.SetActive(true);
             }
         }
        

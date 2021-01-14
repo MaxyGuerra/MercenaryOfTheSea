@@ -1484,6 +1484,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: EnemyShipRango (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 6155767560998928594, guid: 97a9e3a0ed4a0f442a8a2d37d11e008d,
+        type: 3}
+      propertyPath: playerPosition
+      value: 
+      objectReference: {fileID: 896856379}
     - target: {fileID: 6155767560998928595, guid: 97a9e3a0ed4a0f442a8a2d37d11e008d,
         type: 3}
       propertyPath: player
@@ -3346,6 +3351,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: EnemyShipRango (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 6155767560998928594, guid: 97a9e3a0ed4a0f442a8a2d37d11e008d,
+        type: 3}
+      propertyPath: playerPosition
+      value: 
+      objectReference: {fileID: 896856379}
     - target: {fileID: 6155767560998928595, guid: 97a9e3a0ed4a0f442a8a2d37d11e008d,
         type: 3}
       propertyPath: player
@@ -6881,6 +6891,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: EnemyShipRango (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 6155767560998928594, guid: 97a9e3a0ed4a0f442a8a2d37d11e008d,
+        type: 3}
+      propertyPath: playerPosition
+      value: 
+      objectReference: {fileID: 896856379}
     - target: {fileID: 6155767560998928595, guid: 97a9e3a0ed4a0f442a8a2d37d11e008d,
         type: 3}
       propertyPath: player
@@ -7791,6 +7806,16 @@ PrefabInstance:
       propertyPath: armature
       value: 
       objectReference: {fileID: 1576335686}
+    - target: {fileID: 7989391046743222292, guid: 6d0e3e6e1e38d8f47944eb6edd6c1bda,
+        type: 3}
+      propertyPath: AccionAlMorir
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7989391046743222292, guid: 6d0e3e6e1e38d8f47944eb6edd6c1bda,
+        type: 3}
+      propertyPath: SeActivaAlMorir
+      value: 
+      objectReference: {fileID: 424157092}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6d0e3e6e1e38d8f47944eb6edd6c1bda, type: 3}
 --- !u!4 &1867717327 stripped
