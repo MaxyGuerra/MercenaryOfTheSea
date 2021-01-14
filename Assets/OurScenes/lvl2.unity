@@ -2363,6 +2363,21 @@ PrefabInstance:
       propertyPath: m_Name
       value: CamaraController
       objectReference: {fileID: 0}
+    - target: {fileID: 6830227057917445076, guid: 6568db88c88cebf429f5cc01ab729f98,
+        type: 3}
+      propertyPath: bossTrack
+      value: 
+      objectReference: {fileID: 8300000, guid: 81fe4f150081a404181902d5e45497f4, type: 3}
+    - target: {fileID: 6830227057917445076, guid: 6568db88c88cebf429f5cc01ab729f98,
+        type: 3}
+      propertyPath: exploringMusic
+      value: 
+      objectReference: {fileID: 8300000, guid: 6c3060b91119b514cbb254cddc07098e, type: 3}
+    - target: {fileID: 6830227057917445076, guid: 6568db88c88cebf429f5cc01ab729f98,
+        type: 3}
+      propertyPath: instance
+      value: 
+      objectReference: {fileID: 2130936565}
     - target: {fileID: 7713239153651690670, guid: 6568db88c88cebf429f5cc01ab729f98,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3227,22 +3242,22 @@ PrefabInstance:
     - target: {fileID: 1686206356850251553, guid: 771b6512bbc22f84ba97b1bf40d9a68f,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.46938127
+      value: 0.46938133
       objectReference: {fileID: 0}
     - target: {fileID: 1686206356850251553, guid: 771b6512bbc22f84ba97b1bf40d9a68f,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.3719142
+      value: -0.37191418
       objectReference: {fileID: 0}
     - target: {fileID: 1686206356850251553, guid: 771b6512bbc22f84ba97b1bf40d9a68f,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.22733162
+      value: 0.2273316
       objectReference: {fileID: 0}
     - target: {fileID: 1686206356850251553, guid: 771b6512bbc22f84ba97b1bf40d9a68f,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.76790714
+      value: 0.7679072
       objectReference: {fileID: 0}
     - target: {fileID: 1686206356850251553, guid: 771b6512bbc22f84ba97b1bf40d9a68f,
         type: 3}
@@ -9274,7 +9289,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2130936558}
-  m_LocalRotation: {x: 0.46938127, y: -0.3719142, z: 0.22733162, w: 0.76790714}
+  m_LocalRotation: {x: 0.46938133, y: -0.37191418, z: 0.2273316, w: 0.7679072}
   m_LocalPosition: {x: 153.78381, y: 51.5, z: -195.66756}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
