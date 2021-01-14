@@ -1027,14 +1027,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f60c857b80ce4e43982bc695f574a5b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  patrolReference: {fileID: 0}
   remainingDistance: 0
   playerTarget: {fileID: 0}
   isFollowingPlayer: 0
+  isDead: 0
   healthBarCanvas: {fileID: 1976507827956154527}
   bossHealthBar: {fileID: 1976507827051503037}
   bossState: 0
   tentaculos: {fileID: 223654063946051594}
-  armature: {fileID: 0}
+  armature: {fileID: 6598546048691363015}
+  Apagador: 1
+  SeActivaAlMorir: {fileID: 0}
+  AccionAlMorir: 0
 --- !u!195 &1464017257
 NavMeshAgent:
   m_ObjectHideFlags: 0

@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 6727078254102526982}
   - component: {fileID: 2150780164951814210}
   - component: {fileID: 8824027756301138631}
-  - component: {fileID: 3780434914871036448}
   - component: {fileID: 5204564995567060902}
   - component: {fileID: 7392163366537445168}
   - component: {fileID: 5204564995267020987}
@@ -82,6 +81,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f60c857b80ce4e43982bc695f574a5b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  patrolReference: {fileID: 0}
   remainingDistance: 3
   playerTarget: {fileID: 0}
   isFollowingPlayer: 0
@@ -92,25 +92,8 @@ MonoBehaviour:
   tentaculos: {fileID: 0}
   armature: {fileID: 0}
   Apagador: 0
---- !u!95 &3780434914871036448
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4086915882063918959}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 21f6c8d11c97d4042844d04a54245365, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 1
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
+  SeActivaAlMorir: {fileID: 0}
+  AccionAlMorir: 0
 --- !u!195 &5204564995567060902
 NavMeshAgent:
   m_ObjectHideFlags: 0

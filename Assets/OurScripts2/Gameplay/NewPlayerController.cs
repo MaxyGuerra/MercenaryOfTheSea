@@ -160,7 +160,11 @@ public class NewPlayerController : MonoBehaviour,IDamageable
 
         }
 
-        if (collision.gameObject.CompareTag("Enemy"))
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Enemy"))
         {
             ApplyDamage(1);
 
@@ -168,7 +172,7 @@ public class NewPlayerController : MonoBehaviour,IDamageable
     }
 
 
- 
+
 
     public void PlayerIsDead()
     {
