@@ -828,14 +828,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f60c857b80ce4e43982bc695f574a5b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  patrolReference: {fileID: 0}
   remainingDistance: 0
   playerTarget: {fileID: 0}
   isFollowingPlayer: 0
+  isDead: 0
   healthBarCanvas: {fileID: 0}
   bossHealthBar: {fileID: 0}
   bossState: 0
   tentaculos: {fileID: 0}
   armature: {fileID: 0}
+  Apagador: 1
 --- !u!114 &2909027894372065731
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -848,8 +851,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d074c9f65e36d98479d9db3d6f8f9b78, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AttributeName: 
-  baseValue: 25
+  AttributeName: Hp
+  baseValue: 15
   minValue: 0
   currentValue: 0
   OnAttributeChange:
@@ -1749,12 +1752,12 @@ PrefabInstance:
     - target: {fileID: 3994752415321781142, guid: dc805ebdab0769e4094dec8ed0697779,
         type: 3}
       propertyPath: m_MaxValue
-      value: 25
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 3994752415321781142, guid: dc805ebdab0769e4094dec8ed0697779,
         type: 3}
       propertyPath: m_Value
-      value: 25
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 3994752415836726654, guid: dc805ebdab0769e4094dec8ed0697779,
         type: 3}
