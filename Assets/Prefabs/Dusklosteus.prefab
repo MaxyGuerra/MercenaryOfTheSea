@@ -305,7 +305,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   AttributeName: Hp
-  baseValue: 7
+  baseValue: 5
   minValue: 0
   currentValue: 0
   OnAttributeChange:
@@ -1052,12 +1052,12 @@ PrefabInstance:
     - target: {fileID: 3994752415321781142, guid: dc805ebdab0769e4094dec8ed0697779,
         type: 3}
       propertyPath: m_MaxValue
-      value: 7
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 3994752415321781142, guid: dc805ebdab0769e4094dec8ed0697779,
         type: 3}
       propertyPath: m_Value
-      value: 7
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 3994752415836726654, guid: dc805ebdab0769e4094dec8ed0697779,
         type: 3}

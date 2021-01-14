@@ -283,7 +283,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   AttributeName: PlayerHP
   baseValue: 20
-  minValue: 20
+  minValue: 0
   currentValue: 0
   OnAttributeChange:
     m_PersistentCalls:
