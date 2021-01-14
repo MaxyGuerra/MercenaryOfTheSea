@@ -8,7 +8,7 @@ public class PatrollerController : MonoBehaviour
 {
     NavMeshAgent navAgent;
     [SerializeField] private Transform[] waypoints;
-    private float speed;
+    private float speed = 1;
     public float minThresholdDistance = 1f;
 
     private int waypointIndex;
@@ -55,27 +55,31 @@ public class PatrollerController : MonoBehaviour
     }
 
     // Update is called once per frame
+    // Update is called once per frame
     void Update()
     {
-        if (navAgent.remainingDistance < minThresholdDistance)
-            ChangeNextWaypoint();
-
-        else
+        if (navAgent != null)
         {
-            return;
+            if (navAgent.remainingDistance < minThresholdDistance)
+                ChangeNextWaypoint();
+
+            else
+            {
+                return;
+            }
         }
 
-       // dist = Vector3.Distance(transform.position, waypoints[waypointIndex].position);
+        // dist = Vector3.Distance(transform.position, waypoints[waypointIndex].position);
 
         //if(dist < 0f)
         //{
         //    IncreaseIndex();
-       // }
+        // }
 
-       // Patrol();
+        // Patrol();
     }
 
 
 
-    
+
 }

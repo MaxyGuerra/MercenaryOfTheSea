@@ -10,6 +10,7 @@ public class BossAIScript : MonoBehaviour, IDamageable
 {
 
     NavMeshAgent navAgent;
+    public PatrollerController patrolReference;
     public float remainingDistance; 
     public Transform playerTarget;
     public bool isFollowingPlayer = false;
@@ -118,6 +119,7 @@ public class BossAIScript : MonoBehaviour, IDamageable
     void SetDead()
     {
         isDead = true;
+        patrolReference.enabled = false;
         bossState = BossState.DEAD;
         navAgent.enabled = false;
         GetComponent<Rigidbody>().isKinematic = false;

@@ -29,7 +29,7 @@ public class CamaraZoomController : MonoBehaviour
         for (float i = 0; i < timeToGetFurther; i += Time.deltaTime)
         {
 
-            transposer.m_FollowOffset = new Vector3(0, Mathf.Lerp(37, 40, i / timeToGetFurther), -20);
+            transposer.m_FollowOffset = new Vector3(0, Mathf.Lerp(30, 37, i / timeToGetFurther), -20);
             yield return null;
         }
 
